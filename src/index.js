@@ -13,22 +13,17 @@ const router = createBrowserRouter([
     loader: loaderRoot
   },
   {
-    path: '/kills',
+    path: 'events/:eventId',
     element: <div></div>,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: 'players/:playerId',
     element: <div></div>,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: 'guild/:guildId',
-    element: <div></div>,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: 'guild/:guildId/members',
     element: <div></div>,
     errorElement: <ErrorPage />
   }
