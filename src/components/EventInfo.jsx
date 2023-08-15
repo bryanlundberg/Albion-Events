@@ -1,11 +1,20 @@
+import Card from "./Card";
+import CombatDetails from "./CombatDetails";
 
-export default function EventInfo({ title, subTitle }) {
+export default function EventInfo({ event }) {
   return (
     <>
-      <div className="event-info">
-        <div className="event-info-title">1584</div>
-        <div className="event-info-subtitle">Kill item Power</div>
+      <div className="container-content">
+        <div className="container-event-info">
+          <div className="event-info">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </div>
+        <CombatDetails />
       </div>
     </>
   )
 }
+

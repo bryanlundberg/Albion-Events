@@ -1,27 +1,19 @@
 import { Link, useLoaderData } from "react-router-dom"
 import { API } from "../const/api"
-import Sidebar from "../components/Sidebar"
+import SidebarAssistants from "../components/SidebarAssistants"
 import EventInfo from "../components/EventInfo"
-import CombatDetails from "../components/CombatDetails"
+import "../stylesheets/Event.css"
 
 export default function Event() {
   const event = useLoaderData()
   console.log(event)
   return (
     <>
-    <Link to="/" >return index</Link>
-    <Sidebar />
-
-    <div className="container-content">
-      <div className="container-event-info">
-        <div className="event-info">
-          <EventInfo />
-          <EventInfo />
-          <EventInfo />
-        </div>
+      <Link to="/" >return index</Link>
+      <div className="event-view-layout">
+        <SidebarAssistants event={event} />
+        <EventInfo event={event} />
       </div>
-      <CombatDetails />
-    </div>
     </>
   )
 }

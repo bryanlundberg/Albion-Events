@@ -1,6 +1,6 @@
 
 
-export default function CombatDetails({}) {
+export default function CombatDetails({ playerName, guildName}) {
   return (
     <>
       <div className="container-combat-details">

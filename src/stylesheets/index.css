@@ -52,7 +52,8 @@ thead,
 tbody,
 th,
 tr,
-td {
+td,
+div {
   font-size: 18px;
   list-style: none;
   color: var(--color-text);
