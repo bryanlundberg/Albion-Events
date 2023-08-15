@@ -18,5 +18,5 @@ export default function Root() {
 }
 
 export function loader() {
-  return fetch(`${API.V1}/events`)
+  return fetch(`${API.V1}/events?limit=50`)
 }

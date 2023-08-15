@@ -1,19 +1,26 @@
-import { Link } from "react-router-dom"
+import EventRow from './EventRow'
+import EventHeader from './EventHeader'
+import '../stylesheets/Table.css'
 
 export default function EventsTable({ lastEvents }) {
+  
   const renderEvents = lastEvents.map((lastEvent) => {
     return (
-      <li key={lastEvent.EventId}>
-        <Link to="/killer">Killer: {lastEvent.Killer.Name} (IP: {lastEvent.Killer.AverageItemPower.toFixed(0)})</Link>
-        <span> - </span>
-        <Link to="/">Victim: {lastEvent.Victim.Name} (IP: {lastEvent.Victim.AverageItemPower.toFixed(0)})</Link>
-      </li>
+      <EventRow
+        key={lastEvent.EventId}
+        date={lastEvent.TimeStamp.slice(5,10) + ' ' + lastEvent.TimeStamp.slice(11,16) }
+        eventId={lastEvent.EventId}
+        killerName={lastEvent.Killer.Name}
+        ipComparison={lastEvent.Killer.AverageItemPower.toFixed(0) + ' vs ' + lastEvent.Victim.AverageItemPower.toFixed(0)}
+        victimName={lastEvent.Victim.Name}
+        killFame={lastEvent.TotalVictimKillFame} />
     )
   })
 
   return (
-    <ul>
+    <>
+      <EventHeader />
       {renderEvents}
-    </ul>
+    </>
   )
 }

@@ -1,0 +1,13 @@
+.search-bar {
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  padding: 11px;
+  border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus,
+.search-bar:hover {
+  border-color: var(--color-border-active);
+}
