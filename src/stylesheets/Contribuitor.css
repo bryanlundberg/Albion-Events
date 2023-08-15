@@ -1,0 +1,32 @@
+.container-contribuitor {
+  background-color: var(--color-background);
+  padding: 25px;
+}
+
+.contribuitor-card {
+  height: 100%;
+}
+
+.card-align {
+  display: flex;
+}
+
+.contribuitor-avatar {
+  width: 102px;
+  height: 102px;
+}
+
+.contribuitor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.2em;
+}
+
+.contribuitor-set {
+  display: flex;
+  gap: 0.2em;
+  flex-wrap: wrap;
+}
