@@ -1,3 +1,3 @@
 export const API = {
-  V1: 'https://gameinfo.albiononline.com/api/gameinfo',
+  LASTEVENTS: 'https://gameinfo.albiononline.com/api/gameinfo/events?limit=20',
 }

@@ -1,38 +1,16 @@
 .table-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0px;
   background-color: var(--color-background);
   color: var(--color-text);
 }
-.table-date {
-  flex: 1
-}
-
-.table-killer {
-  flex: 1
-}
-
-.table-ip {
-  flex: 2
-}
-
-.table-victim {
-  flex: 1
-}
-
-.table-fame {
-  flex: 1
-}
-
-.table-id-event {
-  flex: 1
-}
 
 .table-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   padding: 13px 0.5rem;
   background-color: var(--color-background);
   color: var(--color-text);

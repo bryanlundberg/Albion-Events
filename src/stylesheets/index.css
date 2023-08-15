@@ -31,6 +31,7 @@ body {
   margin: auto;
   background-color: var(--color-body);
   font-family: 'Lato', sans-serif;
+  padding-bottom: 50px;
 }
 
 h1,
@@ -68,6 +69,7 @@ input {
   margin: 0;
   padding: 0;
   outline: 0;
+  font-size: 18px;
 }
 
 a {
@@ -75,6 +77,43 @@ a {
   color: inherit;
   background: inherit;
   border: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #397524 #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #397524;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #62A34B;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #62A34B;
 }
 
 #root {
@@ -92,4 +131,20 @@ a {
 
 .align-text-end {
   text-align: end;
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.text-success {
+  color: var(--color-success);
 }

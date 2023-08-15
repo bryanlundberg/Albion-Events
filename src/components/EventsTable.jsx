@@ -11,7 +11,8 @@ export default function EventsTable({ lastEvents }) {
         date={lastEvent.TimeStamp.slice(5,10) + ' ' + lastEvent.TimeStamp.slice(11,16) }
         eventId={lastEvent.EventId}
         killerName={lastEvent.Killer.Name}
-        ipComparison={lastEvent.Killer.AverageItemPower.toFixed(0) + ' vs ' + lastEvent.Victim.AverageItemPower.toFixed(0)}
+        ipKiller={lastEvent.Killer.AverageItemPower.toFixed(0)}
+        ipVictim={lastEvent.Victim.AverageItemPower.toFixed(0)}
         victimName={lastEvent.Victim.Name}
         killFame={lastEvent.TotalVictimKillFame} />
     )
