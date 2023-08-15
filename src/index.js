@@ -4,6 +4,7 @@ import './stylesheets/index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root, { loader as loaderRoot } from './routes/root';
 import ErrorPage from './routes/error-page';
+import Event, {loader as loaderEvent } from './routes/event';
 
 const router = createBrowserRouter([
   {
@@ -13,19 +14,10 @@ const router = createBrowserRouter([
     loader: loaderRoot
   },
   {
-    path: 'events/:eventId',
-    element: <div></div>,
+    path: '/events/:eventId',
+    element: <Event />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: 'players/:playerId',
-    element: <div></div>,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: 'guild/:guildId',
-    element: <div></div>,
-    errorElement: <ErrorPage />
+    loader: loaderEvent
   }
 ])
 
