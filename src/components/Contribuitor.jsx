@@ -6,11 +6,12 @@ export default function Contribuitor({ playerName, guildName, itemPower, avatar,
 
   const categories = Object.values(equipment)
   const renderSet = categories.map((category, index) => {
-    if (index === 0) return <Item url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main weapon
-    if (index === 2) return <Item url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main head
-    if (index === 3) return <Item url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main armor
-    if (index === 4) return <Item url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main shoes
-    if (index === 6) return <Item url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main cape
+    if (category === null) return null
+    if (index === 0) return <Item key={`${playerName}${category.Type}`} url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main weapon
+    if (index === 2) return <Item key={`${playerName}${category.Type}`} url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main head
+    if (index === 3) return <Item key={`${playerName}${category.Type}`} url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main armor
+    if (index === 4) return <Item key={`${playerName}${category.Type}`} url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main shoes
+    if (index === 6) return <Item key={`${playerName}${category.Type}`} url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`} /> //main cape
     return null
   })
 

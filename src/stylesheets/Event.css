@@ -1,5 +1,7 @@
 .event-view-layout {
   display: grid;
   grid-template-columns: 400px 1fr;
-  gap: 5em;
+  gap: 2em;
+  margin: 50px 20px;
+  justify-content: space-evenly;
 }

@@ -1,0 +1,18 @@
+.event-info {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+}
+
+.event-info-title {
+  
+}
+
+.event-info-subtitle {
+
+}

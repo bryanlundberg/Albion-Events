@@ -18,10 +18,8 @@ export default function SidebarAssistants({ event }) {
   })
 
   return (
-    <>
-      <div className="sidebar">
-        {contibuitors}
-      </div>
-    </>
+    <div className="sidebar">
+      {contibuitors}
+    </div>
   )
 }
