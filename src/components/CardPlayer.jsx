@@ -3,15 +3,16 @@ import PlayerItemSet from "./PlayerItemSet"
 import { API } from "../const/api"
 
 export default function CardPlayer({ title, subtitle, equipment }) {
-
+  const categoriesNames = Object.keys(equipment)
   const categories = Object.values(equipment)
-  const renderPlayerSet = categories.map(item => {
+  const renderPlayerSet = categories.map((item, index) => {
     if (item === null) return null
     return (
       <PlayerItemSet 
         key={`${item.Type}.png${item.Type}item${item.Quality}`}
         url={`${API.ITEM}${item.Type}.png?count=${item.Count}&quality=${item.Quality}`}
-        alt={item.Type} />
+        alt={item.Type}
+        extraClassName={'position-'+categoriesNames[index].toLowerCase()} />
     )
   })
   return (

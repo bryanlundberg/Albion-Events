@@ -7,7 +7,7 @@ export default function Invetory({ victimInventory }) {
     if (item === null) return null
     return (
       <Item 
-        url={`${API.ITEM}${item.Type}.png`}
+        url={`${API.ITEM}${item.Type}.png?count=${item.Count}&quality=${item.Quality}`}
         alt={`${item.Type}.png`}
         extraClassName={'large-size'} />
     )
