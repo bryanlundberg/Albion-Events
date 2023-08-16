@@ -1,13 +1,31 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/search.css');
+
 .search-bar {
   background-color: var(--color-bg-input);
   border: 1px solid var(--color-border);
-  padding: 11px;
-  border-radius: 5px;
+  padding: 0.5em;
+  border-radius: 0.5em;
   width: 100%;
+  font-size: 1em;
+  height: 2.5em;
   transition: border-color 0.3s;
+  transition: font-size 0.3s;
+  text-align: center;
+}
+
+.gg-search {
+  position: absolute;
+  right: 15px;
+  top: 17px;
+}
+
+
+.search-container {
+  position: relative;
 }
 
 .search-bar:focus,
 .search-bar:hover {
   border-color: var(--color-border-active);
+  font-size: 1.05em;
 }

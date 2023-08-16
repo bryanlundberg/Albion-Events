@@ -10,7 +10,9 @@
 }
 
 .event-info-title {
-  
+  font-size: 2em;
+  color: var(--color-heading);
+  font-weight: 700;
 }
 
 .event-info-subtitle {

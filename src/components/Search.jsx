@@ -4,7 +4,10 @@ export default function Search() {
 
   return (
     <>
-      <input type='text' id="search-bar" className='search-bar' placeholder='Search a player...'></input>
+      <div className='search-container'>
+        <input type='text' id="search-bar" className='search-bar' placeholder="Enter a player's name here"></input>
+        <span className='gg-search'></span>
+      </div>
     </>
   )
 }

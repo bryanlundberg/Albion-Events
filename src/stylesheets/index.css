@@ -8,11 +8,11 @@
 
 :root {
   --color-link: #825391;
-  --color-body: #151924;
-  --color-background: #0F131A;
+  --color-body: #06090f;
+  --color-background: #080C14;
   --color-background-hover: #161a22;
-  --color-heading: #E9EBF0;
-  --color-text: #999999;
+  --color-heading: #FFFFFF;
+  --color-text: #CACBD5;
   --color-bg-input: #1A1D24;
   --color-text-input: #A4A9B3;
   --color-border: #3C3F43;
@@ -40,8 +40,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 48px;
+  font-size: 4em;
   color: var(--color-heading);
+  font-weight: 500;
 }
 
 p,
