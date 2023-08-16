@@ -11,7 +11,7 @@ export default function EventInfo({ event }) {
           <Card title={event.TotalVictimKillFame.toLocaleString() + ' Fame'} subTitle={event.TimeStamp.slice(5,10) + ' ' + event.TimeStamp.slice(11,19)} />
           <Card title={event.Victim.AverageItemPower.toFixed(0)} subTitle={'Victim Item Power'} />
         </div>
-        <CombatDetails />
+        <CombatDetails event={event}/>
       </div>
     </>
   )

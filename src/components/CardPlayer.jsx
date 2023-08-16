@@ -1,24 +1,28 @@
 import "../stylesheets/CardPlayer.css"
+import PlayerItemSet from "./PlayerItemSet"
+import { API } from "../const/api"
 
-export default function CardPlayer() {
+export default function CardPlayer({ title, subtitle, equipment }) {
+
+  const categories = Object.values(equipment)
+  const renderPlayerSet = categories.map(item => {
+    if (item === null) return null
+    return (
+      <PlayerItemSet 
+        key={`${item.Type}.png${item.Type}item${item.Quality}`}
+        url={`${API.ITEM}${item.Type}.png?count=${item.Count}&quality=${item.Quality}`}
+        alt={item.Type} />
+    )
+  })
   return (
     <>
       <div className="card-player">
         <div className="player-info">
-          <div className="player-info-title">Killer</div>
-          <div className="player-info-title">Mephistooo [KAPHABAL]</div>
+          <div className="player-info-title">{title}</div>
+          <div className="player-info-subtitle">{subtitle}</div>
         </div>
         <div className="player-set">
-          <img src="#" alt="killer bag"></img>
-          <img src="#" alt="killer helmet"></img>
-          <img src="#" alt="killer cape"></img>
-          <img src="#" alt="killer main-weapon"></img>
-          <img src="#" alt="killer robe"></img>
-          <img src="#" alt="killer offhand"></img>
-          <img src="#" alt="killer food"></img>
-          <img src="#" alt="killer shoes"></img>
-          <img src="#" alt="killer potion"></img>
-          <img src="#" alt="killer mount"></img>
+          {renderPlayerSet}
         </div>
       </div>
     </>
