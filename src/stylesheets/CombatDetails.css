@@ -8,5 +8,8 @@
 }
 
 .container-inventory {
-
+  width: 100%;
+  background-color: var(--color-background);
+  min-height: 5em;
+  padding: 2em;
 }

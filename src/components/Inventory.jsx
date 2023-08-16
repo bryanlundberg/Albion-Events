@@ -8,7 +8,8 @@ export default function Invetory({ victimInventory }) {
     return (
       <Item 
         url={`${API.ITEM}${item.Type}.png`}
-        alt={`${item.Type}.png`} />
+        alt={`${item.Type}.png`}
+        extraClassName={'large-size'} />
     )
   })
   return (
