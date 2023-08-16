@@ -1,5 +1,6 @@
 import Contribuitor from "./Contribuitor";
 import "../stylesheets/SidebarAssistants.css"
+import Card from "./Card";
 
 export default function SidebarAssistants({ event }) {
 
@@ -19,6 +20,7 @@ export default function SidebarAssistants({ event }) {
 
   return (
     <div className="sidebar">
+      <Card title={event.Participants.length} subTitle={'Participants'} />
       {contibuitors}
     </div>
   )

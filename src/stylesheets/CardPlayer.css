@@ -1,0 +1,16 @@
+.card-player {
+  padding: 1em;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-set {
+  background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+  width: 480px;
+  height: 520px;
+}

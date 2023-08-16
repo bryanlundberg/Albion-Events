@@ -1,0 +1,12 @@
+.container-combat-details {
+  background-color: var(--color-background);
+  margin: 1em 0px;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.container-inventory {
+
+}
