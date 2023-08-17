@@ -11,7 +11,7 @@ export default function Root() {
 
   return (
     <div className="center-content">
-      <Header />
+      <Header title={'ALBION EVENTS'}/>
       <Search />
       <EventsTable lastEvents={events} />
     </div>
