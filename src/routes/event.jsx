@@ -8,7 +8,6 @@ import { formatDistanceToNowStrict } from 'date-fns'
 
 export default function Event() {
   const event = useLoaderData()
-  console.log(event)
   document.title = 'Albion Events | Kill Detail'
   return (
     <>

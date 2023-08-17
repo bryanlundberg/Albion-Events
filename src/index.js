@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root, { loader as loaderRoot } from './routes/root';
 import ErrorPage from './routes/error-page';
 import Event, {loader as loaderEvent } from './routes/event';
-
+import Player, { loader as loaderPlayer } from './routes/player';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,6 +18,12 @@ const router = createBrowserRouter([
     element: <Event />,
     errorElement: <ErrorPage />,
     loader: loaderEvent
+  },
+  {
+    path: '/players/:playerId',
+    element: <Player />,
+    errorElement: <ErrorPage />,
+    loader: loaderPlayer
   }
 ])
 
