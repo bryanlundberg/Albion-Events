@@ -16,17 +16,34 @@ export default function Contribuitor({ playerName, guildName, itemPower, avatar,
     return null
   })
 
+  let percentageDamage = 0;
+
+  if (isFinite(damageDone) && totalDamageDone !== 0) {
+    percentageDamage = ((damageDone / totalDamageDone) * 100).toFixed(1);
+  }
+
+  let percentageHealing = 0;
+
+  if (isFinite(totalHealingDone) && totalHealingDone !== 0) {
+    percentageHealing = ((supportHealingDone / totalHealingDone) * 100).toFixed(1);
+  }
+
   return (
     <>
       <div className="container-contribuitor">
         <div className="contribuitor-card">
           <div className="card-align">
-            <img className="contribuitor-avatar" src={`${API.AVATAR}${avatar}.png`} alt={`${playerName}'s avatar in game`} />
+            <img className="contribuitor-avatar" 
+            src={`${API.AVATAR}${avatar}.png`} 
+            alt={`${playerName}'s avatar in game`} 
+            onError={(e) => {
+              e.target.src = `${API.AVATAR}AVATAR_01.png`
+           }} />
             <div className="contribuitor-info">
               <div>{playerName}</div>
               <div>Item Power: {itemPower.toFixed(0)}</div>
-              <ProgressBar extraClassName={'bg-danger'} amount={damageDone} icon={API.ICONS.BATTLE} />
-              <ProgressBar extraClassName={'bg-success'} amount={supportHealingDone} icon={API.ICONS.HEAL} />
+              <ProgressBar extraClassName={'bg-danger'} amount={damageDone} icon={API.ICONS.BATTLE} percentage={percentageDamage} />
+              <ProgressBar extraClassName={'bg-success'} amount={supportHealingDone} icon={API.ICONS.HEAL} percentage={percentageHealing} />
             </div>
           </div>
           <div className="contribuitor-set">
