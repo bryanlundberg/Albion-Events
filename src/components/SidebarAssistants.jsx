@@ -4,6 +4,14 @@ import Card from "./Card";
 
 export default function SidebarAssistants({ event }) {
 
+  const totalDamageDone = event.Participants.reduce((total, participant) => {
+    return total + participant.DamageDone
+  }, 0)
+
+  const totalHealingDone = event.Participants.reduce((total, participant) => {
+    return total + participant.SupportHealingDone
+  }, 0)
+
   const contibuitors = event.Participants.map((player) => {
     return (
       <Contribuitor 
@@ -14,6 +22,10 @@ export default function SidebarAssistants({ event }) {
         equipment={player.Equipment}
         avatar={player.Avatar}
         frame={player.Frame}
+        damageDone={player.DamageDone}
+        supportHealingDone={player.SupportHealingDone}
+        totalDamageDone={totalDamageDone}
+        totalHealingDone={totalHealingDone}
         />
     )
   })

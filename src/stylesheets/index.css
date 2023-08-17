@@ -17,11 +17,12 @@
   --color-text-input: #A4A9B3;
   --color-border: #3C3F43;
   --color-border-active: #169DE0;
-  --color-success: #29E09D;
-  --color-danger: #E02983;
+  --color-success: #29e09d74;
+  --color-danger: #e02984ae;
   --color-warning: #DCBD5B;
   --color-info: #29CEE0;
   --color-especial: #8561C5;
+  --border-pill: 15px;
 }
 
 html,
@@ -84,7 +85,7 @@ a {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #397524 #DFE9EB;
+  scrollbar-color: var(--color-background-hover) var(--color-bg-input);
 }
 
 /* Chrome, Edge and Safari */
@@ -94,28 +95,20 @@ a {
 }
 *::-webkit-scrollbar-track {
   border-radius: 5px;
-  background-color: #DFE9EB;
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #B8C0C2;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #B8C0C2;
+  background-color: var(--color-border);
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #397524;
+  background-color: var(--color-background-hover);
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #62A34B;
+  background-color: var(--color-background-hover);
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #62A34B;
+  background-color: var(--color-bg-input);
 }
 
 .align-text-start {
@@ -144,4 +137,12 @@ a {
 
 .text-success {
   color: var(--color-success);
+}
+
+.bg-danger {
+  background-color: var(--color-danger);
+}
+
+.bg-success {
+  background-color: var(--color-success);
 }

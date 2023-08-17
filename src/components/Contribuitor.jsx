@@ -1,8 +1,9 @@
 import { API } from "../const/api"
 import "../stylesheets/Contribuitor.css"
 import Item from "./Item"
+import ProgressBar from "./ProgressBar"
 
-export default function Contribuitor({ playerName, guildName, itemPower, avatar, equipment, frame }) {
+export default function Contribuitor({ playerName, guildName, itemPower, avatar, equipment, frame, supportHealingDone, damageDone, totalDamageDone, totalHealingDone }) {
 
   const categories = Object.values(equipment)
   const renderSet = categories.map((category, index) => {
@@ -22,8 +23,10 @@ export default function Contribuitor({ playerName, guildName, itemPower, avatar,
           <div className="card-align">
             <img className="contribuitor-avatar" src={`${API.AVATAR}${avatar}.png`} alt={`${playerName}'s avatar in game`} />
             <div className="contribuitor-info">
-              <div>{playerName} [{guildName}]</div>
+              <div>{playerName}</div>
               <div>Item Power: {itemPower.toFixed(0)}</div>
+              <ProgressBar extraClassName={'bg-danger'} amount={damageDone} icon={API.ICONS.BATTLE} />
+              <ProgressBar extraClassName={'bg-success'} amount={supportHealingDone} icon={API.ICONS.HEAL} />
             </div>
           </div>
           <div className="contribuitor-set">
