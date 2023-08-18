@@ -6,7 +6,7 @@ export default function PlayerInfo() {
   return (
     <div className="container-player-info">
       <PlayerStats />
-      <PlayerFavGear category={'Most Played Gear:'} />
+      <PlayerFavGear category={'Most Played Weapons:'} />
     </div>
   )
 }

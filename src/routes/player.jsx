@@ -6,7 +6,8 @@ import PlayerActivity from "../components/PlayerActivity"
 import "../stylesheets/Player.css"
 
 export default function Player() {
-  const player = useLoaderData()
+  const { player } = useLoaderData()
+  console.log(player)
   document.title = `Albion Events | ${player.Name}`
   return (
     <>
@@ -20,6 +21,13 @@ export default function Player() {
   )
 }
 
-export function loader({ params }) {
-  return fetch(`${API.STATS}${params.playerId}`)
+export async function loader({ params }) {
+  try {
+    const playerResponse = await fetch(`${API.STATS}${params.playerId}`)
+    const player = await playerResponse.json()
+    const weaponResponse = await fetch(`${API.MURDERLEDGER.MOSTUSEDWEAPON.PART1}${player.Name}${API.MURDERLEDGER.MOSTUSEDWEAPON.PART2}`)
+    const weapon = await weaponResponse.json()
+    return { player, weapon }
+  } catch (error) {
+  }
 }

@@ -5,7 +5,7 @@ import { API } from "../const/api"
 import { formatDistanceToNowStrict } from "date-fns"
 
 export default function PlayerStats() {
-  const player = useLoaderData()
+  const { player } = useLoaderData()
 
   return (
     <>

@@ -12,9 +12,9 @@ export const API = {
     HEAL: 'https://media.discordapp.net/attachments/1137527038366978078/1141526774266740857/regeneration.png'
   },
   MURDERLEDGER: {
-    MOSTUSEDGEAR: {
+    MOSTUSEDWEAPON: {
       PART1: 'https://murderledger.com/api/players/',
-      PART2: '/stats/builds?lookback_days=9999'
+      PART2: '/stats/weapons?lookback_days=9999'
     }
   }
 }
