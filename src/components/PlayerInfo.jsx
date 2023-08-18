@@ -4,11 +4,9 @@ import "../stylesheets/PlayerInfo.css"
 
 export default function PlayerInfo() {
   return (
-    <>
-      <div className="container-player-info">
-        <PlayerStats />
-        <PlayerFavGear />
-      </div>
-    </>
+    <div className="container-player-info">
+      <PlayerStats />
+      <PlayerFavGear category={'Most Played Gear:'} />
+    </div>
   )
 }

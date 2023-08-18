@@ -1,0 +1,5 @@
+.player-event-container {
+  height: 120px;
+  background-color: rgba(11, 246, 50, 0.14);
+  border-radius: var(--border-pill);
+}

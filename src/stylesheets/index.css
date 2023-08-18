@@ -22,7 +22,7 @@
   --color-warning: #DCBD5B;
   --color-info: #29CEE0;
   --color-especial: #8561C5;
-  --border-pill: 15px;
+  --border-pill: 1em;
 }
 
 html,

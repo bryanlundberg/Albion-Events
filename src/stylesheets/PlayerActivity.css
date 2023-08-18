@@ -1,0 +1,14 @@
+.player-activity-container {
+  width: 100%;
+}
+
+.player-activity {
+  background-color: var(--color-background);
+  padding: 2em;
+}
+
+.player-activity-event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

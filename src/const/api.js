@@ -10,5 +10,11 @@ export const API = {
   ICONS: {
     BATTLE: 'https://media.discordapp.net/attachments/1137527038366978078/1141526775143333928/sword.png',
     HEAL: 'https://media.discordapp.net/attachments/1137527038366978078/1141526774266740857/regeneration.png'
+  },
+  MURDERLEDGER: {
+    MOSTUSEDGEAR: {
+      PART1: 'https://murderledger.com/api/players/',
+      PART2: '/stats/builds?lookback_days=9999'
+    }
   }
 }
