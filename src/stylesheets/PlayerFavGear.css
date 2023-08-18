@@ -1,0 +1,16 @@
+.favorite-gear-container {
+  background-color: var(--color-background);
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.title {
+
+}
+
+.gear-container {
+  display: flex;
+  gap: 0.5em;
+}
