@@ -7,10 +7,12 @@ export default function CombatDetails({ event }) {
     <>
       <div className="container-combat-details">
         <CardPlayer 
+          playerId={event.Killer.Id}
           equipment={event.Killer.Equipment}
           title={'Killer'}
           subtitle={`${event.Killer.Name} - [${event.Killer.GuildName}]`} />
         <CardPlayer 
+          playerId={event.Victim.Id}
           equipment={event.Victim.Equipment}
           title={'Victim'}
           subtitle={`${event.Victim.Name} - [${event.Victim.GuildName}]`} />

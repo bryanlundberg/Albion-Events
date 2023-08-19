@@ -1,9 +1,9 @@
 import "../stylesheets/FilterActivity.css"
 
-export default function FilterActivity() {
+export default function FilterActivity({ playerName }) {
   return (
     <div className="filter-activity-container">
-      <div>Last UserName events: </div>
+      <div>{playerName}'s last activity: </div>
       <div>Filter</div>
     </div>
   )

@@ -1,8 +1,9 @@
 import "../stylesheets/CardPlayer.css"
 import PlayerItemSet from "./PlayerItemSet"
 import { API } from "../const/api"
+import { Link } from "react-router-dom"
 
-export default function CardPlayer({ title, subtitle, equipment }) {
+export default function CardPlayer({ title, subtitle, equipment, playerId }) {
   const categoriesNames = Object.keys(equipment)
   const categories = Object.values(equipment)
   const renderPlayerSet = categories.map((item, index) => {
@@ -20,7 +21,7 @@ export default function CardPlayer({ title, subtitle, equipment }) {
       <div className="card-player">
         <div className="player-info">
           <div className="player-info-title">{title}</div>
-          <div className="player-info-subtitle">{subtitle}</div>
+          <Link to={`/players/${playerId}`} className="player-info-subtitle">{subtitle}</Link>
         </div>
         <div className="player-set">
           {renderPlayerSet}

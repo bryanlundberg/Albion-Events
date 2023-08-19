@@ -1,7 +1,7 @@
 import "../stylesheets/PlayerEvent.css"
 import Item from "./Item"
 import { API } from "../const/api"
-
+import { Link } from "react-router-dom"
 
 export default function PlayerEvent({ killerName, victimName, gearItemKiller, gearItemVictim, eventId, dropFame, time, killerIp, victimIp, profileName }) {
 
@@ -28,24 +28,24 @@ export default function PlayerEvent({ killerName, victimName, gearItemKiller, ge
   })
   
   return (
-    <div className={`player-event-container ${combatStatus.toLocaleLowerCase()}`}>
-      <div className="killer-section">
+    <Link to={`/events/${eventId}`} className={`player-event-container ${combatStatus.toLocaleLowerCase()}`}>
+      <div className="event-gear-section">
         <div className="title">{killerName} - ({killerIp} IP)</div>
         <div className="gear-items">
           {renderKillerItems}
         </div>
       </div>
       <div className="info-section">
-        <div className="">{combatStatus}</div>
-        <div className="">{dropFame}</div>
-        <div className="">3 hours ago</div>
+        <div className="title">{combatStatus}</div>
+        <div className="subtitle">{dropFame}</div>
+        <div className="time">3 hours ago</div>
       </div>
-      <div className="victim-section">
+      <div className="event-gear-section">
       <div className="title">{victimName} - ({victimIp} IP)</div>
         <div className="gear-items">
           {renderVictimItems}
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

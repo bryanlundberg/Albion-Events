@@ -28,11 +28,11 @@ export default function PlayerFavGear({ category }) {
         <div className="gear-container">
           {renderMostUsedGear}
         </div>
-        <DataStats title={'Average IP:'} stat={weapon.weapons[0].average_item_power} />
-        <DataStats title={'Kill Fame:'} stat={weapon.weapons[0].kill_fame} />
-        <DataStats title={'Usages:'} stat={weapon.weapons[0].usages} />
-        <DataStats title={'Kills:'} stat={weapon.weapons[0].kills} />
-        <DataStats title={'Assist:'} stat={weapon.weapons[0].assists} />
+        <DataStats title={'Average IP:'} stat={(weapon.weapons[0].average_item_power).toFixed(0)} />
+        <DataStats title={'Kill Fame:'} stat={(weapon.weapons[0].kill_fame).toLocaleString()} />
+        <DataStats title={'Usages:'} stat={(weapon.weapons[0].usages).toLocaleString()} />
+        <DataStats title={'Kills:'} stat={(weapon.weapons[0].kills).toLocaleString()} />
+        <DataStats title={'Assist:'} stat={(weapon.weapons[0].assists).toLocaleString()} />
         <DataStats title={'Win rate:'} stat={`${((weapon.weapons[0].win_rate)*100).toFixed(2)}%`} />
       </div>
     </>

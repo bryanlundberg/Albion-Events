@@ -26,6 +26,7 @@ export default function SidebarAssistants({ event }) {
         supportHealingDone={player.SupportHealingDone}
         totalDamageDone={totalDamageDone}
         totalHealingDone={totalHealingDone}
+        playerId={player.Id}
         />
     )
   })

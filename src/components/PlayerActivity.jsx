@@ -25,7 +25,7 @@ export default function PlayerActivity() {
   return (
     <div className="player-activity-container">
       <div className="player-activity">
-        <FilterActivity />
+        <FilterActivity playerName={player.Name}/>
         <div className="player-activity-event-container">
           {renderPlayerEvents}
         </div>

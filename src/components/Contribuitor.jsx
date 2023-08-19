@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 import { API } from "../const/api"
 import "../stylesheets/Contribuitor.css"
 import Item from "./Item"
 import ProgressBar from "./ProgressBar"
 
-export default function Contribuitor({ playerName, guildName, itemPower, avatar, equipment, frame, supportHealingDone, damageDone, totalDamageDone, totalHealingDone }) {
+export default function Contribuitor({ playerName, guildName, itemPower, avatar, equipment, frame, supportHealingDone, damageDone, totalDamageDone, totalHealingDone, playerId }) {
 
   const categories = Object.values(equipment)
   const renderSet = categories.map((category, index) => {
@@ -40,7 +41,7 @@ export default function Contribuitor({ playerName, guildName, itemPower, avatar,
               e.target.src = `${API.AVATAR}AVATAR_01.png`
            }} />
             <div className="contribuitor-info">
-              <div>{playerName}</div>
+              <Link to={`/players/${playerId}`}>{playerName}</Link>
               <div>Item Power: {itemPower.toFixed(0)}</div>
               <ProgressBar extraClassName={'bg-danger'} amount={damageDone} icon={API.ICONS.BATTLE} percentage={percentageDamage} />
               <ProgressBar extraClassName={'bg-success'} amount={supportHealingDone} icon={API.ICONS.HEAL} percentage={percentageHealing} />
