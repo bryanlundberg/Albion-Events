@@ -1,5 +1,15 @@
 .player-event-container {
   height: 120px;
-  background-color: rgba(11, 246, 50, 0.14);
+  
   border-radius: var(--border-pill);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.win {
+  background-color: #0e640394;
+}
+
+.loss {
+  background-color: #a90a5494;
 }

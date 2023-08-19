@@ -15,6 +15,10 @@ export const API = {
     MOSTUSEDWEAPON: {
       PART1: 'https://murderledger.com/api/players/',
       PART2: '/stats/weapons?lookback_days=9999'
+    },
+    EVENTS: {
+      PART1: 'https://murderledger.com/api/players/',
+      PART2: '/events?show_assists=true&show_deaths=true&show_kills=true&skip=0&sort=time&take=10'
     }
   }
 }

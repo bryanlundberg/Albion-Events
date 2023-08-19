@@ -27,7 +27,9 @@ export async function loader({ params }) {
     const player = await playerResponse.json()
     const weaponResponse = await fetch(`${API.MURDERLEDGER.MOSTUSEDWEAPON.PART1}${player.Name}${API.MURDERLEDGER.MOSTUSEDWEAPON.PART2}`)
     const weapon = await weaponResponse.json()
-    return { player, weapon }
+    const eventResponse = await fetch(`${API.MURDERLEDGER.EVENTS.PART1}${player.Name}${API.MURDERLEDGER.EVENTS.PART2}`)
+    const event = await eventResponse.json()
+    return { player, weapon, event }
   } catch (error) {
   }
 }
