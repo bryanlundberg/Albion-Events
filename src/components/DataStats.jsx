@@ -1,11 +1,11 @@
 import "../stylesheets/DataStats.css"
 
-export default function DataStats({ title, stat }) {
+export default function DataStats({ title, stat, bold=false }) {
   return (
     <>
       <div className="profile-data">
-        <div>{title}</div>
-        <div>{stat}</div>
+        <div className={`${bold===true ? 'bold' : ''}`}>{title}</div>
+        <div className={`${bold===true ? 'bold' : ''}`}>{stat}</div>
       </div>
     </>
   )

@@ -15,7 +15,6 @@
   background-color: var(--color-background);
   color: var(--color-text);
   border-top: 0.5px solid var(--color-border);
-  cursor: pointer;
 }
 
 .table-row:hover {

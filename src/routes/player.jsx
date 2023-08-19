@@ -23,13 +23,20 @@ export default function Player() {
 
 export async function loader({ params }) {
   try {
-    const playerResponse = await fetch(`${API.STATS}${params.playerId}`)
-    const player = await playerResponse.json()
-    const weaponResponse = await fetch(`${API.MURDERLEDGER.MOSTUSEDWEAPON.PART1}${player.Name}${API.MURDERLEDGER.MOSTUSEDWEAPON.PART2}`)
-    const weapon = await weaponResponse.json()
-    const eventResponse = await fetch(`${API.MURDERLEDGER.EVENTS.PART1}${player.Name}${API.MURDERLEDGER.EVENTS.PART2}`)
-    const event = await eventResponse.json()
+    const [playerResponse, weaponResponse, eventResponse] = await Promise.all([
+      fetch(`${API.STATS}${params.playerId}`),
+      fetch(`${API.MURDERLEDGER.MOSTUSEDWEAPON.PART1}${params.playerName}${API.MURDERLEDGER.MOSTUSEDWEAPON.PART2}`),
+      fetch(`${API.MURDERLEDGER.EVENTS.PART1}${params.playerName}${API.MURDERLEDGER.EVENTS.PART2}`)
+    ])
+
+    const [player, weapon, event] = await Promise.all([
+      playerResponse.json(),
+      weaponResponse.json(),
+      eventResponse.json()
+    ])
+
     return { player, weapon, event }
   } catch (error) {
+    return null
   }
 }
