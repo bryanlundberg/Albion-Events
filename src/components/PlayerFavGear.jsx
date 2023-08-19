@@ -1,24 +1,44 @@
 import Item from './Item'
 import "../stylesheets/PlayerFavGear.css"
-import DataStats from './DataStats'
-import { useLoaderData } from 'react-router-dom'
 import { API } from "../const/api"
+import { useEffect, useState } from 'react'
+import getPlayerWeapons from '../functions/getPlayerWeapons'
+import { useLoaderData } from 'react-router-dom'
+import GearStats from './GearStats'
 
 export default function PlayerFavGear({ category }) {
-  const { weapon } = useLoaderData()
+  const { player } = useLoaderData()
+  const [weapons, setWeapons] = useState([])
+  const [isLoading, setLoading] = useState(true)
+  console.log(player)
 
-  const removeNakedKill = weapon.weapons.filter(item => {
-    if (item.weapon !== '') return item
+  const renderMostUsedGear = weapons.map((weaponUsed, index) => {
+    if (index < 5) return <Item key={weaponUsed.weapon} alt={weaponUsed.weapon} url={`${API.ITEM}T8_${weaponUsed.weapon}@4.png?count=${1}&quality=${5}`} />
     return null
   })
 
-  const renderMostUsedGear = removeNakedKill.map((weaponUsed, index) => {
-    if (index < 5) {
-      return (
-        <Item key={weaponUsed.weapon} alt={weaponUsed.weapon} url={`${API.ITEM}T8_${weaponUsed.weapon}@4.png?count=${1}&quality=${5}`} />
-      )
+  useEffect(() => {
+    if (isLoading) {
+      getPlayerWeapons({ playerName: player.Name }).then(result => {
+        console.log(result.weapons)
+        const cleanResult = result.weapons.filter(item => item.weapon !== '')
+        setWeapons(cleanResult)
+        console.log(weapons)
+        setLoading(false)
+      })
     }
-    return null
+  }, [])
+  
+  const gearStats = weapons.map((item, index) => {
+    if (index === 0) return (
+        <GearStats 
+        avgIp={weapons[0].average_item_power} 
+        killFame={weapons[0].kill_fame} 
+        usages={weapons[0].usages} 
+        kills={weapons[0].kills} 
+        assists={weapons[0].assists} 
+        winRate={weapons[0].win_rate} />
+      )
   })
   
   return (
@@ -26,14 +46,9 @@ export default function PlayerFavGear({ category }) {
       <div className="favorite-gear-container">
         <div className="title">{category}</div>
         <div className="gear-container">
-          {renderMostUsedGear}
+          {isLoading ? 'Loading': renderMostUsedGear}
         </div>
-        <DataStats title={'Average IP:'} stat={(weapon.weapons[0].average_item_power).toFixed(0)} />
-        <DataStats title={'Kill Fame:'} stat={(weapon.weapons[0].kill_fame).toLocaleString()} />
-        <DataStats title={'Usages:'} stat={(weapon.weapons[0].usages).toLocaleString()} />
-        <DataStats title={'Kills:'} stat={(weapon.weapons[0].kills).toLocaleString()} />
-        <DataStats title={'Assist:'} stat={(weapon.weapons[0].assists).toLocaleString()} />
-        <DataStats title={'Win rate:'} stat={`${((weapon.weapons[0].win_rate)*100).toFixed(2)}%`} />
+          {isLoading ? 'Loading' : gearStats}
       </div>
     </>
   )

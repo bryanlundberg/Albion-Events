@@ -20,17 +20,9 @@ export default function Player() {
 
 export async function loader({ params }) {
   try {
-    const [playerResponse, weaponResponse] = await Promise.all([
-      fetch(`${API.STATS}${params.playerId}`),
-      fetch(`${API.MURDERLEDGER.MOSTUSEDWEAPON.PART1}${params.playerName}${API.MURDERLEDGER.MOSTUSEDWEAPON.PART2}`)
-    ])
-
-    const [player, weapon] = await Promise.all([
-      playerResponse.json(),
-      weaponResponse.json()
-    ])
-
-    return { player, weapon }
+    const request = await fetch(`${API.STATS}${params.playerId}`)
+    const player = await request.json()
+    return { player }
   } catch (error) {
     return null
   }

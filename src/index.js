@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     loader: loaderEvent
   },
   {
-    path: '/players/:playerName/:playerId',
+    path: '/players/:playerId',
     element: <Player />,
     errorElement: <ErrorPage />,
     loader: loaderPlayer
