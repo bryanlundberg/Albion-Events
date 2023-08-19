@@ -21,8 +21,10 @@
   --color-danger: #e02984ae;
   --color-warning: #DCBD5B;
   --color-info: #29CEE0;
-  --color-especial: #8561C5;
+  --color-especial: #b488ff;
   --border-pill: 1em;
+  --color-link: #a1cde3;
+  --color-link-hover: #2aaef0;
 }
 
 html,
@@ -77,9 +79,14 @@ input {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--color-link);
   background: inherit;
   border: none;
+  display: inline;
+}
+
+a:hover {
+  color: var(--color-link-hover);
 }
 
 /* Firefox */

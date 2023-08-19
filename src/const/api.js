@@ -9,7 +9,8 @@ export const API = {
   BG_ITEMS: 'https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42',
   ICONS: {
     BATTLE: 'https://media.discordapp.net/attachments/1137527038366978078/1141526775143333928/sword.png',
-    HEAL: 'https://media.discordapp.net/attachments/1137527038366978078/1141526774266740857/regeneration.png'
+    HEAL: 'https://media.discordapp.net/attachments/1137527038366978078/1141526774266740857/regeneration.png',
+    EMPTY_SLOT: 'https://media.discordapp.net/attachments/1137527038366978078/1142438375450746901/empty_slot.png'
   },
   MURDERLEDGER: {
     MOSTUSEDWEAPON: {

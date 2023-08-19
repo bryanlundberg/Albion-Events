@@ -1,3 +1,5 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css');
+
 .player-event-container {
   height: 120px;
   border-radius: var(--border-pill);
@@ -16,6 +18,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 10%;
+}
+
+.win.assistance {
+  background-color: rgba(75, 253, 253, 0.122);
 }
 
 .event-gear-section {

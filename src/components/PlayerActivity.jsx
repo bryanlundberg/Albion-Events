@@ -5,7 +5,7 @@ import PlayerEvent from "./PlayerEvent"
 
 export default function PlayerActivity() {
   const { event, player } = useLoaderData()
-
+  console.log(event)
   const renderPlayerEvents = event.events.map(event => {
     return (
       <PlayerEvent 
@@ -19,6 +19,7 @@ export default function PlayerActivity() {
         killerIp={event.killer.item_power}
         victimIp={event.victim.item_power}
         profileName={player.Name}
+        partySize={event.party_size}
         eventId={event.id} />
     )
   })

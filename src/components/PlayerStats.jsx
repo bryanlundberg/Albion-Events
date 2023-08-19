@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom"
 import "../stylesheets/PlayerStats.css"
 import DataStats from "./DataStats"
 import { API } from "../const/api"
-import { formatDistanceToNowStrict } from "date-fns"
+import { formatDistanceToNow } from "date-fns"
 
 export default function PlayerStats() {
   const { player } = useLoaderData()
@@ -17,7 +17,7 @@ export default function PlayerStats() {
           <DataStats title={'Total Fame:'} stat={(player.KillFame + player.LifetimeStatistics.PvE.Total).toLocaleString()} />
           <DataStats title={'PvP Fame:'} stat={(player.KillFame).toLocaleString()} />
           <DataStats title={'PvE Fame:'} stat={(player.LifetimeStatistics.PvE.Total).toLocaleString()} />
-          <DataStats title={'Last Fame Activity:'} stat={formatDistanceToNowStrict(new Date(player.LifetimeStatistics.Timestamp))+' ago'} />
+          <DataStats title={'Last Fame Activity:'} stat={formatDistanceToNow(new Date(player.LifetimeStatistics.Timestamp))+' ago'} />
         </div>
     </>
   )
