@@ -4,6 +4,7 @@ import { API } from "../const/api"
 import PlayerInfo from "../components/PlayerInfo"
 import PlayerActivity from "../components/PlayerActivity"
 import "../stylesheets/Player.css"
+import genKey from "../functions/genKey"
 
 export default function Player() {
   return (
@@ -11,8 +12,8 @@ export default function Player() {
       <Header title={'Performance Overview'} />
       <Link to="/" >return index</Link>
       <div className="player-view-layout">
-        <PlayerInfo />
-        <PlayerActivity />
+        <PlayerInfo key={genKey()} />
+        <PlayerActivity key={genKey()} />
       </div>
     </>
   )

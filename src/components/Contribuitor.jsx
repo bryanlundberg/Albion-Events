@@ -40,6 +40,12 @@ export default function Contribuitor({ playerName, guildName, itemPower, avatar,
             onError={(e) => {
               e.target.src = `${API.AVATAR}AVATAR_01.png`
            }} />
+            <img className="contribuitor-frame" 
+            src={`${API.FRAME}${frame}.png`} 
+            alt={`${playerName}'s frame in game`} 
+            onError={(e) => {
+              e.target.src = `${API.FRAME}RING1.png`
+           }} />
             <div className="contribuitor-info">
               <Link to={`/players/${playerId}`}>{playerName}</Link>
               <div>Item Power: {itemPower.toFixed(0)}</div>

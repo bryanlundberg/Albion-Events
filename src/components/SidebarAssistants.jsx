@@ -21,7 +21,7 @@ export default function SidebarAssistants({ event }) {
         itemPower={player.AverageItemPower}
         equipment={player.Equipment}
         avatar={player.Avatar}
-        frame={player.Frame}
+        frame={player.AvatarRing}
         damageDone={player.DamageDone}
         supportHealingDone={player.SupportHealingDone}
         totalDamageDone={totalDamageDone}

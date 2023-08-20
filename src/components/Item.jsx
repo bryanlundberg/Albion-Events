@@ -5,7 +5,7 @@ export default function Item({ alt, url, extraClassName=null, onChoosedWeapon, c
     <>
       <img 
       onClick={(e) => {if (clickable) onChoosedWeapon(id)}}
-      className={`item ${extraClassName === null || undefined ? '' : extraClassName}`} 
+      className={`item ${clickable === true ? 'cursor': ''} ${extraClassName === null || undefined ? '' : extraClassName}`} 
       src={url} 
       alt={alt}
       id={id} />

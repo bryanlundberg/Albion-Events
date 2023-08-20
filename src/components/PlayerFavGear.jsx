@@ -5,19 +5,20 @@ import { useEffect, useState } from 'react'
 import getPlayerWeapons from '../functions/getPlayerWeapons'
 import { useLoaderData } from 'react-router-dom'
 import GearStats from './GearStats'
+import genKey from '../functions/genKey'
+
 
 export default function PlayerFavGear({ category }) {
   const { player } = useLoaderData()
   const [weapons, setWeapons] = useState([])
   const [isLoading, setLoading] = useState(true)
-  const [choosedWeapon, setNewChoosedWeapon] = useState(4)
-  console.log(player)
+  const [choosedWeapon, setNewChoosedWeapon] = useState(0)
 
   const renderMostUsedGear = weapons.map((weaponUsed, index) => {
     if (index < 10) return (
       <div className={index === choosedWeapon ? 'check' : ''}>
         <Item 
-          key={index} 
+          key={genKey()} 
           id={index}
           alt={weaponUsed.weapon} 
           url={`${API.ITEM}T8_${weaponUsed.weapon}@4.png?count=${1}&quality=${5}`}
@@ -45,7 +46,8 @@ export default function PlayerFavGear({ category }) {
   const gearStats = weapons.map((item, index) => {
     if (index === choosedWeapon) return (
         <GearStats
-        key={'stat'+index}
+        current={item.weapon_name}
+        key={genKey()} 
         avgIp={item.average_item_power} 
         killFame={item.kill_fame} 
         usages={item.usages} 
@@ -61,7 +63,7 @@ export default function PlayerFavGear({ category }) {
       <div className="favorite-gear-container">
         <div className="title">{category}</div>
         <div className="gear-container">
-          {isLoading ? 'Loading': renderMostUsedGear}
+          {renderMostUsedGear}
         </div>
           {isLoading ? 'Loading' : gearStats}
       </div>

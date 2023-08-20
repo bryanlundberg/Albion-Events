@@ -2,3 +2,7 @@
   width: 64px;
   height: 64px;
 }
+
+.cursor {
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@
 
 .card-align {
   display: flex;
+  position: relative;
 }
 
 .contribuitor-avatar {
@@ -31,4 +32,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 0.5em;
+}
+
+.contribuitor-frame {
+  position: absolute;
+  width: 102px;
+  height: 102px;
+  
 }

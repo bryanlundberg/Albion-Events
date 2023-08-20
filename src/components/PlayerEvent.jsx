@@ -3,11 +3,13 @@ import Item from "./Item"
 import { API } from "../const/api"
 import { Link } from "react-router-dom"
 import { formatDistanceToNow } from "date-fns"
+import genKey from "../functions/genKey"
 
 export default function PlayerEvent({ killerName, victimName, gearItemKiller, gearItemVictim, eventId, dropFame, time, killerIp, victimIp, profileName, partySize }) {
   const gearItems = [0, null, 2, 3, 4, null, 7, null, null, null]
-  const resultCombat = partySize > 1 ? '' : 'Assistance'
+  const resultCombat = partySize > 1 ? 'Assistance' : ''
   const combatStatus = profileName === killerName ? 'Win' : 'Loss'
+
   
   const categoryItemsKiller = Object.values(gearItemKiller)
   const renderKillerItems = categoryItemsKiller.map((item, index) => {
@@ -15,7 +17,7 @@ export default function PlayerEvent({ killerName, victimName, gearItemKiller, ge
       <Item
         alt={`${item.id}-${item.en_name}`}
         url={item.id !== '' ? `${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}` : `${API.ICONS.EMPTY_SLOT}`}
-        key={item.id + index}
+        key={genKey()}
         onError={(e) => {
           e.target.src = `${API.ICONS.EMPTY_SLOT}`;
         }}
@@ -30,7 +32,7 @@ export default function PlayerEvent({ killerName, victimName, gearItemKiller, ge
       <Item
         alt={`${item.id}-${item.en_name}`}
         url={item.id !== '' ? `${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}` : `${API.ICONS.EMPTY_SLOT}`}
-        key={item.id + index}
+        key={genKey()}
         onError={(e) => {
           e.target.src = `${API.ICONS.EMPTY_SLOT}`;
         }}
