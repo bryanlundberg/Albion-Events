@@ -3,3 +3,12 @@
   justify-content: space-between;
   margin-bottom: 2.5em;
 }
+
+#activity-filter {
+  background-color: var(--color-background);
+  width: 100%;
+  max-width: 8em;
+  padding: 0.5em;
+  border: 0px;
+  cursor: pointer;
+}

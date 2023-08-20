@@ -68,7 +68,8 @@ table {
   border-collapse: collapse;
 }
 
-input {
+input,
+select {
   color: var(--color-text);
   border: 1px solid var(--color-border);
   margin: 0;

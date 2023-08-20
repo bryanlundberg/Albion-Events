@@ -1,0 +1,11 @@
+.result-item {  
+  background-color: var(--color-background);
+  height: 1.5em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.result-item:hover {
+  background-color: var(--color-background-hover);
+}

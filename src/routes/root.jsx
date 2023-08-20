@@ -31,7 +31,7 @@ export default function Root() {
         console.log(result.players)
       })
     }
-  }, [isSearching, possibleSearch])
+  }, [search, isSearching, possibleSearch])
 
   return (
     <div className="center-content">
