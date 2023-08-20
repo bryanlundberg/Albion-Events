@@ -1,9 +1,14 @@
 import '../stylesheets/Item.css'
 
-export default function Item({ alt, url, extraClassName=null }) {
+export default function Item({ alt, url, extraClassName=null, onChoosedWeapon, clickable=false, id }) {
   return (
     <>
-      <img className={`item ${extraClassName === null || undefined ? '' : extraClassName}`} src={url} alt={alt} />
+      <img 
+      onClick={(e) => {if (clickable) onChoosedWeapon(id)}}
+      className={`item ${extraClassName === null || undefined ? '' : extraClassName}`} 
+      src={url} 
+      alt={alt}
+      id={id} />
     </>
   )
 }

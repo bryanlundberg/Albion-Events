@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom"
 import "../stylesheets/PlayerStats.css"
 import DataStats from "./DataStats"
 import { API } from "../const/api"
-import { formatDistanceToNow } from "date-fns"
 
 export default function PlayerStats() {
   const { player } = useLoaderData()
@@ -34,7 +33,6 @@ export default function PlayerStats() {
           <DataStats title={'Gather Ore:'} stat={(player.LifetimeStatistics.Gathering.Ore.Total).toLocaleString()} />
           <DataStats title={'Gather Rock'} stat={(player.LifetimeStatistics.Gathering.Rock.Total).toLocaleString()} />
           <DataStats title={'Gather Wood:'} stat={(player.LifetimeStatistics.Gathering.Wood.Total).toLocaleString()} />
-          <DataStats title={'Last Fame Activity:'} bold={true} stat={formatDistanceToNow(new Date(player.LifetimeStatistics.Timestamp))+' ago'} />
         </div>
     </>
   )

@@ -34,6 +34,7 @@ export default function PlayerActivity() {
       getPlayerEvents({ playerName: player.Name }).then(result => {
         console.log(result.events)
         setEvents(result.events)
+        console.log(events)
         setLoading(false)
       })
     }
