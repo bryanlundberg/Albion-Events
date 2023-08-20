@@ -3,6 +3,7 @@ export const API = {
   EVENT: 'https://gameinfo.albiononline.com/api/gameinfo/events/',
   BATTLE: 'https://gameinfo.albiononline.com/api/gameinfo/battles/',
   STATS: 'https://gameinfo.albiononline.com/api/gameinfo/players/',
+  SEARCH: 'https://gameinfo.albiononline.com/api/gameinfo/search?q=',
   AVATAR: 'https://albiononline.ams3.cdn.digitaloceanspaces.com/game-images/HUMAN_FEMALE_',
   FRAME: 'https://albiononline.ams3.cdn.digitaloceanspaces.com/game-images/',
   ITEM: 'https://render.albiononline.com/v1/item/',
