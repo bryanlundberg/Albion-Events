@@ -1,9 +1,10 @@
 import Contribuitor from "./Contribuitor";
 import "../stylesheets/SidebarAssistants.css"
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 export default function SidebarAssistants({ event }) {
-
+  console.log(event)
   const totalDamageDone = event.Participants.reduce((total, participant) => {
     return total + participant.DamageDone
   }, 0)
@@ -33,6 +34,7 @@ export default function SidebarAssistants({ event }) {
 
   return (
     <div className="sidebar">
+      <Card title={'Battle Report'} subTitle={<Link to={`/battles/${event.BattleId}`}>{event.BattleId}</Link>} />
       <Card title={event.Participants.length} subTitle={'Participants'} />
       {contibuitors}
     </div>
