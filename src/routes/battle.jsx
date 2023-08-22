@@ -2,7 +2,11 @@ import { Link, useLoaderData } from "react-router-dom"
 import { API } from "../const/api"
 import Header from "../components/Header"
 import { useEffect, useState } from "react"
-
+import "../stylesheets/Battle.css"
+import BattleInformation from "../components/BattleInformation"
+import BattleResumen from "../components/BattleResumen"
+import BattleKillHistory from "../components/BattleKillHistory"
+import BattleKillboard from "../components/BattleKillboard"
 // 861067253
 
 export default function Battle() {
@@ -17,21 +21,21 @@ export default function Battle() {
       fetch(`${API.BATTLES.HISTORY}${battle.id}?offset=${killsOffset}&limit=51`)
         .then(response => response.json())
         .then(result => {
-          console.log(result)
           setKillboard(killboard.concat(result))
           setPlayersOffset(killsOffset+51)
         })
     }
+    console.log(killboard)
   })
 
   return (
     <>
       <Header title={'BATTLE REPORT'} />
       <Link to="/" >return index</Link>
-
-      <div>
-        {killboard.length}
-      </div>
+      <BattleInformation />
+      <BattleResumen />
+      <BattleKillboard />
+      <BattleKillHistory />
     </>
   )
 }
