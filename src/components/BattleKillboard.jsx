@@ -5,7 +5,7 @@ export default function BattleKillboard() {
   return (
     <div className="battle-killboard-container">
       <div className="filter"></div>
-      <div>BATTLE STATISTICS</div>
+      <div>GUILD STATISTICS</div>
       <table>
         <thead>
           <th>Guild</th>
