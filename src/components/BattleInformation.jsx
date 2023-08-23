@@ -1,3 +1,5 @@
+import BattleCard from "./BattleCard";
+import "../stylesheets/BattleInformation.css"
 
 export default function BattleInformation() {
   return (
@@ -5,21 +7,13 @@ export default function BattleInformation() {
       <div className="battle-information">
         <div className="battle-id">Battle #43857485</div>
         <div className="battle-resumen-container">
-          <div className="card-container">
-            <div className="card-title">BATTLE INFO</div>
-            <div>Total players: 342 </div>
-            <div>Total fame: 342 </div>
-          </div>
+          <BattleCard />
           <div className="image-section">
-            <img src="#" alt="#" />
+            <img src="https://media.discordapp.net/attachments/1137527038366978078/1143698932292141176/kill__date.png" alt="#" />
             <div>BATTLE</div>
             <div>21.08.2023 18:13:03</div>
           </div>
-          <div className="card-container">
-            <div className="card-title">BATTLE INFO</div>
-            <div>Duration: 9 minutes </div>
-            <div>Difficult: 5 stars</div>
-          </div>
+          <BattleCard />
         </div>
       </div>
     </>

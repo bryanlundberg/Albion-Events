@@ -4,7 +4,7 @@ import Header from "../components/Header"
 import { useEffect, useState } from "react"
 import "../stylesheets/Battle.css"
 import BattleInformation from "../components/BattleInformation"
-import BattleResumen from "../components/BattleResumen"
+import BattlegroundStars from "../components/BattlegroundStars"
 import BattleKillHistory from "../components/BattleKillHistory"
 import BattleKillboard from "../components/BattleKillboard"
 // 861067253
@@ -32,10 +32,12 @@ export default function Battle() {
     <>
       <Header title={'BATTLE REPORT'} />
       <Link to="/" >return index</Link>
-      <BattleInformation />
-      <BattleResumen />
-      <BattleKillboard />
-      <BattleKillHistory />
+      <div className="battle-view-layout">
+        <BattleInformation />
+        <BattlegroundStars />
+        <BattleKillboard />
+        <BattleKillHistory />
+      </div>
     </>
   )
 }

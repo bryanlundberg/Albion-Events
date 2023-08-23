@@ -1,0 +1,6 @@
+.battleground-stars-container {
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
