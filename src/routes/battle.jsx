@@ -14,8 +14,6 @@ export default function Battle() {
   const [killboard, setKillboard] = useState([])
   const [killsOffset, setPlayersOffset] = useState(0)
 
-  console.log(battle)
-
   useEffect(() => {
     if (killsOffset <= battle.totalKills) {
       fetch(`${API.BATTLES.HISTORY}${battle.id}?offset=${killsOffset}&limit=51`)
@@ -27,13 +25,17 @@ export default function Battle() {
     }
   })
 
+  const players = Object.values(battle.players).map(player => {
+    return {...player, damageDone: 0, supportHealingDone: 0, assistDone: 0, averageItemPower: 0, dropFame: 0, equipment: null }
+  })
+
   return (
     <>
       <Header title={'BATTLE REPORT'} />
       <Link to="/" >return index</Link>
       <div className="battle-view-layout">
         <BattleInformation id={battle.id} startTime={battle.startTime} endTime={battle.endTime} totalPlayers={Object.values(battle.players).length} totalKills={battle.totalKills} totalFame={battle.totalFame} />
-        <BattlegroundStars />
+        <BattlegroundStars battle={battle} events={killboard} players={players} />
         <BattleGuildStatistics guilds={battle.guilds}/>
         <BattleKillHistory killHistory={killboard} />
       </div>

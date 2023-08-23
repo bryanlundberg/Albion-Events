@@ -2,7 +2,6 @@ import BattleKillboardData from "./BattleKillboardData";
 import "../stylesheets/BattleGuildStatistics.css"
 
 export default function BattleGuildStatistics({ guilds }) {
-  console.log(guilds)
   const renderGuilds = Object.values(guilds).map((guild) => {
     return (
       <BattleKillboardData 
