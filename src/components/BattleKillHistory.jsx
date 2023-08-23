@@ -1,6 +1,18 @@
 import BattleHistoryData from "./BattleHistoryData"
 
-export default function BattleKillHistory() {
+export default function BattleKillHistory({ killHistory }) {
+  const renderHistoryKillData = killHistory.map((event) => {
+    return (
+      <BattleHistoryData 
+        killer={event.Killer.Name} 
+        victim={event.Victim.Name} 
+        killerIp={event.Killer.AverageItemPower.toFixed(0)} 
+        victimIp={event.Victim.AverageItemPower.toFixed(0)} 
+        fame={event.TotalVictimKillFame.toLocaleString()} 
+        eventId={event.EventId} />
+    )
+  })
+  
   return (
     <div className="battle-killboard-container">
       <div className="filter"></div>
@@ -17,18 +29,7 @@ export default function BattleKillHistory() {
           </tr>
         </thead>
         <tbody>
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
-          <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />
+          {renderHistoryKillData}
         </tbody>
       </table>
     </div>

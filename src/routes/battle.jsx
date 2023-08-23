@@ -6,7 +6,7 @@ import "../stylesheets/Battle.css"
 import BattleInformation from "../components/BattleInformation"
 import BattlegroundStars from "../components/BattlegroundStars"
 import BattleKillHistory from "../components/BattleKillHistory"
-import BattleKillboard from "../components/BattleKillboard"
+import BattleGuildStatistics from "../components/BattleGuildStatistics"
 // 861067253
 
 export default function Battle() {
@@ -25,7 +25,6 @@ export default function Battle() {
           setPlayersOffset(killsOffset+51)
         })
     }
-    console.log(killboard)
   })
 
   return (
@@ -35,8 +34,8 @@ export default function Battle() {
       <div className="battle-view-layout">
         <BattleInformation id={battle.id} startTime={battle.startTime} endTime={battle.endTime} totalPlayers={Object.values(battle.players).length} totalKills={battle.totalKills} totalFame={battle.totalFame} />
         <BattlegroundStars />
-        <BattleKillboard />
-        <BattleKillHistory />
+        <BattleGuildStatistics guilds={battle.guilds}/>
+        <BattleKillHistory killHistory={killboard} />
       </div>
     </>
   )
