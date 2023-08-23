@@ -1,19 +1,27 @@
 import BattleCard from "./BattleCard";
 import "../stylesheets/BattleInformation.css"
+import { API } from "../const/api";
+import { formatDistance } from "date-fns";
 
-export default function BattleInformation() {
+export default function BattleInformation({ id, startTime, endTime, totalPlayers, totalKills, totalFame  }) {
   return (
     <>
       <div className="battle-information">
-        <div className="battle-id">Battle #43857485</div>
+        <div className="battle-id">Battle #{id}</div>
         <div className="battle-resumen-container">
-          <BattleCard />
+          <BattleCard>
+            <div>Total Players: {totalPlayers}</div>
+            <div>Total Kills: {totalKills}</div>
+          </BattleCard>
           <div className="image-section">
-            <img src="https://media.discordapp.net/attachments/1137527038366978078/1143698932292141176/kill__date.png" alt="#" />
+            <img src={API.ICONS.SKULL} alt="Representative skull battle" />
             <div>BATTLE</div>
-            <div>21.08.2023 18:13:03</div>
+            <div>{startTime}</div>
           </div>
-          <BattleCard />
+          <BattleCard>
+            <div>Total Duration: {formatDistance(new Date(startTime), new Date(endTime), {includeSeconds: true })}</div>
+            <div>Total Fame: {totalFame}</div>
+          </BattleCard>
         </div>
       </div>
     </>

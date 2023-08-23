@@ -4,3 +4,9 @@
   background-color: var(--color-background);
   min-height: 5em;
 }
+
+.card-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

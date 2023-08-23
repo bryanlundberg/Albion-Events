@@ -25,7 +25,7 @@ export default function Battle() {
           setPlayersOffset(killsOffset+51)
         })
     }
-    console.log(killboard[0])
+    console.log(killboard)
   })
 
   return (
@@ -33,7 +33,7 @@ export default function Battle() {
       <Header title={'BATTLE REPORT'} />
       <Link to="/" >return index</Link>
       <div className="battle-view-layout">
-        <BattleInformation />
+        <BattleInformation id={battle.id} startTime={battle.startTime} endTime={battle.endTime} totalPlayers={Object.values(battle.players).length} totalKills={battle.totalKills} totalFame={battle.totalFame} />
         <BattlegroundStars />
         <BattleKillboard />
         <BattleKillHistory />

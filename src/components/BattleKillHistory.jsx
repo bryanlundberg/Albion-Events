@@ -7,12 +7,14 @@ export default function BattleKillHistory() {
       <div>HISTORY EVENTS</div>
       <table>
         <thead>
-          <th>Killer</th>
-          <th>Victim</th>
-          <th>Killer IP</th>
-          <th>Victim IP</th>
-          <th>Fame</th>
-          <th>Event</th>
+          <tr>
+            <th>Killer</th>
+            <th>Victim</th>
+            <th>Killer IP</th>
+            <th>Victim IP</th>
+            <th>Fame</th>
+            <th>Event</th>
+          </tr>
         </thead>
         <tbody>
           <BattleHistoryData killer='dasds' victim='dsdasds' killerIp='3242' victimIp='23432' fame='34321432' />

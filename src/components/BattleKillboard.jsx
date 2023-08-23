@@ -8,12 +8,14 @@ export default function BattleKillboard() {
       <div>GUILD STATISTICS</div>
       <table>
         <thead>
-          <th>Guild</th>
-          <th>Alliance</th>
-          <th>Kills</th>
-          <th>Deaths</th>
-          <th>Fame</th>
-          <th>IP</th>
+          <tr>
+            <th>Guild</th>
+            <th>Alliance</th>
+            <th>Kills</th>
+            <th>Deaths</th>
+            <th>Fame</th>
+            <th>IP</th>
+          </tr>
         </thead>
         <tbody>
           <BattleKillboardData guild='ssshgfdhgfdhgfd' alliance='ssss' kills='34' deaths='3' fame='434333' ip='988'/>
