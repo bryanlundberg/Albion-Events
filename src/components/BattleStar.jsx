@@ -1,11 +1,11 @@
 import Item from "./Item"
 import "../stylesheets/BattleStar.css"
 
-export default function BattleStar({ category, playerName,  }) {
+export default function BattleStar({ category, playerName }) {
   return (
     <div className="battle-star-container">
       <div className="card-header">
-        <div className="card-title">Most kills</div>
+        <div className="card-title">{category}</div>
         <div>ICON</div>
       </div>
       <div className="card-body">

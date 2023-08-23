@@ -25,7 +25,7 @@ export default function Battle() {
           setPlayersOffset(killsOffset+51)
         })
     }
-    console.log(killboard)
+    console.log(killboard[0])
   })
 
   return (
