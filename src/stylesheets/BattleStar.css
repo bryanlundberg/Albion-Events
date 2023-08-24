@@ -1,0 +1,22 @@
+.battle-star-container {
+  background-color: var(--color-background);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-footer {
+  display: flex;
+  gap: 0.5em;
+}

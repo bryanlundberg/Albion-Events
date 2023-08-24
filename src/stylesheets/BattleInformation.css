@@ -1,0 +1,23 @@
+.battle-information {
+  background-color: var(--color-background);
+  padding: 2em;
+}
+
+.battle-id {
+  width: 100%;
+  background-color: var(--color-input);
+}
+
+.battle-resumen-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}

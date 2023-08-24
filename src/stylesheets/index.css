@@ -61,6 +61,7 @@ div {
   font-size: 18px;
   list-style: none;
   color: var(--color-text);
+  text-align: start;
 }
 
 table {

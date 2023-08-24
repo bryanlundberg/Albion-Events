@@ -6,6 +6,7 @@ import Root, { loader as loaderRoot } from './routes/root';
 import ErrorPage from './routes/error-page';
 import Event, {loader as loaderEvent } from './routes/event';
 import Player, { loader as loaderPlayer } from './routes/player';
+import Battle, { loader as loaderBattle } from './routes/battle';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,12 @@ const router = createBrowserRouter([
     element: <Player />,
     errorElement: <ErrorPage />,
     loader: loaderPlayer
+  },
+  {
+    path: '/battles/:battleId',
+    element: <Battle />,
+    errorElement: <ErrorPage />,
+    loader: loaderBattle
   }
 ])
 
