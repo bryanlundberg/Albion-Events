@@ -1,7 +1,7 @@
 import Item from "./Item"
 import "../stylesheets/BattleStar.css"
 
-export default function BattleStar({ category, playerName }) {
+export default function BattleStar({ category, playerName, score, equipment }) {
   return (
     <div className="battle-star-container">
       <div className="card-header">
@@ -9,8 +9,8 @@ export default function BattleStar({ category, playerName }) {
         <div>ICON</div>
       </div>
       <div className="card-body">
-        <div className="player-name">Rojonaitor</div>
-        <div className="player-score">454334</div>
+        <div className="player-name">{playerName}</div>
+        <div className="player-score">{score}</div>
       </div>
       <div className="card-footer">
         <Item />

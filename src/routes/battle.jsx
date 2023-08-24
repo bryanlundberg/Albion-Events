@@ -7,12 +7,14 @@ import BattleInformation from "../components/BattleInformation"
 import BattlegroundStars from "../components/BattlegroundStars"
 import BattleKillHistory from "../components/BattleKillHistory"
 import BattleGuildStatistics from "../components/BattleGuildStatistics"
-// 861067253
+import updatePlayer from "../functions/updatePlayer"
 
 export default function Battle() {
   const { battle } = useLoaderData()
   const [killboard, setKillboard] = useState([])
   const [killsOffset, setPlayersOffset] = useState(0)
+  const [players, setPlayers] = useState([])
+  const [updatedPlayers, setUpdatedPlayers] = useState(false);
 
   useEffect(() => {
     if (killsOffset <= battle.totalKills) {
@@ -23,11 +25,18 @@ export default function Battle() {
           setPlayersOffset(killsOffset+51)
         })
     }
-  })
 
-  const players = Object.values(battle.players).map(player => {
-    return {...player, damageDone: 0, supportHealingDone: 0, assistDone: 0, averageItemPower: 0, dropFame: 0, equipment: null }
-  })
+    if (!updatedPlayers && killboard.length === battle.totalKills) {
+      const players = Object.values(battle.players).map(player => {
+       return {...player, damageDone: 0, supportHealingDone: 0, assistDone: 0, averageItemPower: 0, dropFame: 0, equipment: null }
+      })
+      const newPlayerList = players.map(player=> {
+         return updatePlayer(player, killboard)
+      })
+      setPlayers(newPlayerList)
+      setUpdatedPlayers(true)
+    }
+  }, [killsOffset, battle.totalKills, battle.id, battle.players, updatedPlayers, killboard])
 
   return (
     <>
@@ -35,7 +44,7 @@ export default function Battle() {
       <Link to="/" >return index</Link>
       <div className="battle-view-layout">
         <BattleInformation id={battle.id} startTime={battle.startTime} endTime={battle.endTime} totalPlayers={Object.values(battle.players).length} totalKills={battle.totalKills} totalFame={battle.totalFame} />
-        <BattlegroundStars battle={battle} events={killboard} players={players} />
+        <BattlegroundStars players={players} />
         <BattleGuildStatistics guilds={battle.guilds}/>
         <BattleKillHistory killHistory={killboard} />
       </div>

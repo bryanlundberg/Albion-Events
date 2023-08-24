@@ -1,10 +1,12 @@
 import BattleKillboardData from "./BattleKillboardData";
 import "../stylesheets/BattleGuildStatistics.css"
+import genKey from "../functions/genKey";
 
 export default function BattleGuildStatistics({ guilds }) {
   const renderGuilds = Object.values(guilds).map((guild) => {
     return (
       <BattleKillboardData 
+        key={genKey()}
         guild={guild.name} 
         alliance={guild.alliance} 
         kills={guild.kills} 

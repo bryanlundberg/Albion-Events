@@ -1,48 +1,37 @@
-import BattleStar from "./BattleStar"
-import "../stylesheets/BattlegroundStars.css"
+import BattleStar from "./BattleStar";
+import "../stylesheets/BattlegroundStars.css";
+import genKey from "../functions/genKey";
 
-export default function BattlegroundStars({ battle, events, players }) {
-  console.log(battle, events)
-  console.log(players)
+export default function BattlegroundStars({ players }) {
+  const categories = [
+    { name: 'Highest Item Power', prop: 'averageItemPower' },
+    { name: 'Most Fame', prop: 'killFame' },
+    { name: 'Most Kills', prop: 'kills' },
+    { name: 'Most Assists', prop: 'assistDone' },
+    { name: 'Most Damage', prop: 'damageDone' },
+    { name: 'Most Healing', prop: 'supportHealingDone' },
+    { name: 'Most Drop Fame', prop: 'dropFame' },
+  ];
 
-  const updateStats = (players) => {
-    players.forEach(player => {
-      for (let x = 0; x < events.length; x++) {
-        for (let y = 0; y < events[x].Participants.length; y++) {
-          if (player.id === events[x].Participants[y].Id) {
-            player.damageDone += events[x].Participants[y].DamageDone
-            player.supportHealingDone += events[x].Participants[y].SupportHealingDone
-            player.assistDone += 1
-            player.averageItemPower = events[x].Participants[y].AverageItemPower
-            player.equipment = events[x].Participants[y].Equipment
-          }
-        }
-        if (player.id === events[x].Victim.Id) {
-          player.dropFame += events[x].Victim.DeathFame
-        }
-      }
-    })
-    return players
-  }
+  const stars = categories.map((category) => {
+    const sortedPlayers = [...players].sort((a, b) => b[category.prop] - a[category.prop]);
+    const topPlayer = sortedPlayers.length > 0 ? sortedPlayers[0] : null;
 
+    return (
+      <BattleStar
+        key={genKey()}
+        category={category.name}
+        playerName={topPlayer ? topPlayer.name : ''}
+        score={topPlayer ? (category.prop === 'killFame' ? topPlayer[category.prop].toLocaleString() : topPlayer[category.prop].toFixed(0)) : 0}
+        equipment={topPlayer ? Object.values(topPlayer.equipment) : null}
+      />
+    );
+  });
 
-  const updatedPlayers = updateStats(players)
-
-  console.log(updatedPlayers)
-
-  
   return (
-    <>
-      <div className="battleground-stars-container">
-        <BattleStar category='MVP' />
-        <BattleStar category='Highest Item Power' />
-        <BattleStar category='Most Fame' />
-        <BattleStar category='Most Kills' />
-        <BattleStar category='Most Assist' />
-        <BattleStar category='Most Damage' />
-        <BattleStar category='Most Healing' />
-        <BattleStar category='Most Drop Fame' />
-      </div>
-    </>
-  )
+    <div className="battleground-stars-container">
+      <BattleStar category="MVP" />
+      {stars}
+    </div>
+  );
 }
