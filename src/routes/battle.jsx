@@ -8,6 +8,7 @@ import BattlegroundStars from "../components/BattlegroundStars"
 import BattleKillHistory from "../components/BattleKillHistory"
 import BattleGuildStatistics from "../components/BattleGuildStatistics"
 import updatePlayer from "../functions/updatePlayer"
+import calMVP from "../functions/calMVP"
 
 export default function Battle() {
   const { battle } = useLoaderData()
@@ -33,7 +34,11 @@ export default function Battle() {
       const newPlayerList = players.map(player=> {
          return updatePlayer(player, killboard)
       })
-      setPlayers(newPlayerList)
+
+      const playerList = newPlayerList.map(player => {
+        return {...player, mvp: calMVP(player)}
+      })
+      setPlayers(playerList)
       setUpdatedPlayers(true)
     }
   }, [killsOffset, battle.totalKills, battle.id, battle.players, updatedPlayers, killboard])
@@ -45,7 +50,7 @@ export default function Battle() {
       <div className="battle-view-layout">
         <BattleInformation id={battle.id} startTime={battle.startTime} endTime={battle.endTime} totalPlayers={Object.values(battle.players).length} totalKills={battle.totalKills} totalFame={battle.totalFame} />
         <BattlegroundStars players={players} />
-        <BattleGuildStatistics guilds={battle.guilds}/>
+        <BattleGuildStatistics guilds={battle.guilds} players={players} />
         <BattleKillHistory killHistory={killboard} />
       </div>
     </>
