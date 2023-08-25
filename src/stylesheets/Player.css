@@ -1,7 +1,57 @@
 .player-view-layout {
   display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1em;
   margin: 50px 20px;
   justify-content: space-evenly;
+}
+
+@media (min-width: 640px) {
+  .player-view-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+    margin: 50px 20px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 768px) {
+  .player-view-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+    margin: 50px 20px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1024px) {
+  .player-view-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+    margin: 50px 20px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1280px) {
+  .player-view-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+    margin: 50px 20px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1536px) {
+  .player-view-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+    margin: 50px 20px;
+    justify-content: space-evenly;
+  }
 }
