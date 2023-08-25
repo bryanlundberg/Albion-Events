@@ -63,7 +63,6 @@ export async function loader({ params }) {
     const battle = await request.json()
     return { battle }
   } catch (error) {
-    console.error(error)
-    return { battle: null}
+
   }
 }
