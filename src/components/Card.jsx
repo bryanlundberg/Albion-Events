@@ -1,4 +1,4 @@
-import "../stylesheets/Card.css"
+import '../stylesheets/Card.css'
 export default function Card({ title, subTitle }) {
   return (
     <>

@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
-export default function BattleHistoryData({ killer, victim, killerIp, victimIp, fame, eventId }) {
+export default function BattleHistoryData({
+  killer,
+  victim,
+  killerIp,
+  victimIp,
+  fame,
+  eventId,
+}) {
   return (
     <tr>
       <td>{killer}</td>
@@ -8,7 +15,9 @@ export default function BattleHistoryData({ killer, victim, killerIp, victimIp, 
       <td>{killerIp}</td>
       <td>{victimIp}</td>
       <td>{fame}</td>
-      <td><Link to={`/events/${eventId}`}>Details</Link></td>
+      <td>
+        <Link to={`/events/${eventId}`}>Details</Link>
+      </td>
     </tr>
   )
 }

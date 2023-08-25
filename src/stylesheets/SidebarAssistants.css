@@ -4,3 +4,48 @@
   flex-direction: column;
   gap: 1em;
 }
+
+@media (min-width: 640px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1536px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}

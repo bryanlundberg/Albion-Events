@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom"
-import Header from "../components/Header"
-import { API } from "../const/api"
-import PlayerInfo from "../components/PlayerInfo"
-import PlayerActivity from "../components/PlayerActivity"
-import "../stylesheets/Player.css"
-import genKey from "../functions/genKey"
+import { Link } from 'react-router-dom'
+import Header from '../components/Header'
+import { API } from '../const/api'
+import PlayerInfo from '../components/PlayerInfo'
+import PlayerActivity from '../components/PlayerActivity'
+import '../stylesheets/Player.css'
+import genKey from '../functions/genKey'
 
 export default function Player() {
   return (
     <>
       <Header title={'Performance Overview'} />
-      <Link to="/" >return index</Link>
+      <Link to="/">return index</Link>
       <div className="player-view-layout">
         <PlayerInfo key={genKey()} />
         <PlayerActivity key={genKey()} />

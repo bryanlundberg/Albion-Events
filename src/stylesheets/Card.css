@@ -1,6 +1,6 @@
 .event-info {
   width: 100%;
-  padding: 1em;
+  padding: 2em 1em;
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
@@ -15,6 +15,97 @@
   font-weight: 700;
 }
 
-.event-info-subtitle {
+@media (min-width: 640px) {
+  .event-info {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+  }
 
+  .event-info-title {
+    font-size: 2em;
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 768px) {
+  .event-info {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+  }
+
+  .event-info-title {
+    font-size: 2em;
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-info {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+  }
+
+  .event-info-title {
+    font-size: 2em;
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1280px) {
+  .event-info {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+  }
+
+  .event-info-title {
+    font-size: 2em;
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1536px) {
+  .event-info {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+  }
+
+  .event-info-title {
+    font-size: 2em;
+    color: var(--color-heading);
+    font-weight: 700;
+  }
 }

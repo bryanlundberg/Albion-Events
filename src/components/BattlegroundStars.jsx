@@ -1,6 +1,6 @@
-import BattleStar from "./BattleStar";
-import "../stylesheets/BattlegroundStars.css";
-import genKey from "../functions/genKey";
+import BattleStar from './BattleStar'
+import '../stylesheets/BattlegroundStars.css'
+import genKey from '../functions/genKey'
 
 export default function BattlegroundStars({ players }) {
   const categories = [
@@ -12,10 +12,12 @@ export default function BattlegroundStars({ players }) {
     { name: 'Most Damage', prop: 'damageDone' },
     { name: 'Most Healing', prop: 'supportHealingDone' },
     { name: 'Most Drop Fame', prop: 'dropFame' },
-  ];
+  ]
 
   const stars = categories.map((category) => {
-    const sortedPlayers = [...players].sort((a, b) => b[category.prop] - a[category.prop])
+    const sortedPlayers = [...players].sort(
+      (a, b) => b[category.prop] - a[category.prop],
+    )
     const topPlayer = Array.isArray(sortedPlayers) ? sortedPlayers[0] : null
 
     console.log(topPlayer)
@@ -25,15 +27,17 @@ export default function BattlegroundStars({ players }) {
         key={genKey()}
         category={category.name}
         playerName={topPlayer ? topPlayer.name : ''}
-        score={topPlayer ? (category.prop === 'killFame' || category.prop === 'dropFame' ? topPlayer[category.prop].toLocaleString() : topPlayer[category.prop].toFixed(0)) : 0}
+        score={
+          topPlayer
+            ? category.prop === 'killFame' || category.prop === 'dropFame'
+              ? topPlayer[category.prop].toLocaleString()
+              : topPlayer[category.prop].toFixed(0)
+            : 0
+        }
         equipment={topPlayer ? Object.values(topPlayer.equipment) : null}
       />
     )
   })
 
-  return (
-    <div className="battleground-stars-container">
-      {stars}
-    </div>
-  )
+  return <div className="battleground-stars-container">{stars}</div>
 }

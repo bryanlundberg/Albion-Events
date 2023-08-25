@@ -1,10 +1,9 @@
-import Contribuitor from "./Contribuitor";
-import "../stylesheets/SidebarAssistants.css"
-import Card from "./Card";
-import { Link } from "react-router-dom";
+import Contribuitor from './Contribuitor'
+import '../stylesheets/SidebarAssistants.css'
+import Card from './Card'
+import { Link } from 'react-router-dom'
 
 export default function SidebarAssistants({ event }) {
-  console.log(event)
   const totalDamageDone = event.Participants.reduce((total, participant) => {
     return total + participant.DamageDone
   }, 0)
@@ -15,7 +14,7 @@ export default function SidebarAssistants({ event }) {
 
   const contibuitors = event.Participants.map((player) => {
     return (
-      <Contribuitor 
+      <Contribuitor
         key={player.Id}
         playerName={player.Name}
         guildName={player.GuildName}
@@ -28,13 +27,18 @@ export default function SidebarAssistants({ event }) {
         totalDamageDone={totalDamageDone}
         totalHealingDone={totalHealingDone}
         playerId={player.Id}
-        />
+      />
     )
   })
 
   return (
     <div className="sidebar">
-      <Card title={'Battle Report'} subTitle={<Link to={`/battles/${event.BattleId}`}>{event.BattleId}</Link>} />
+      <Card
+        title={'Battle Report'}
+        subTitle={
+          <Link to={`/battles/${event.BattleId}`}>{event.BattleId}</Link>
+        }
+      />
       <Card title={event.Participants.length} subTitle={'Participants'} />
       {contibuitors}
     </div>
