@@ -40,7 +40,7 @@ export default function SidebarAssistants({ event }) {
         }
       />
       <Card title={event.Participants.length} subTitle={'Participants'} />
-      {contibuitors}
+      <div className="contribuitors-layout">{contibuitors}</div>
     </div>
   )
 }
