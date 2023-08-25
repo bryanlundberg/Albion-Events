@@ -1,5 +1,5 @@
 .card-player {
-  padding: 1em;
+  margin: auto;
 }
 
 .player-info {
@@ -19,4 +19,129 @@
 .item-set {
   width: 100px;
   height: 100px;
+}
+
+@media (min-width: 640px) {
+  .card-player {
+    margin: auto;
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-set {
+    background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+    width: 480px;
+    height: 520px;
+    position: relative;
+  }
+
+  .item-set {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-player {
+    margin: auto;
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-set {
+    background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+    width: 480px;
+    height: 520px;
+    position: relative;
+  }
+
+  .item-set {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-player {
+    margin: auto;
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-set {
+    background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+    width: 480px;
+    height: 520px;
+    position: relative;
+  }
+
+  .item-set {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-player {
+    margin: auto;
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-set {
+    background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+    width: 480px;
+    height: 520px;
+    position: relative;
+  }
+
+  .item-set {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .card-player {
+    margin: auto;
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-set {
+    background-image: url(https://assets.albiononline.com/assets/images/killboard/gear.png?u8993ed42);
+    width: 480px;
+    height: 520px;
+    position: relative;
+  }
+
+  .item-set {
+    width: 100px;
+    height: 100px;
+  }
 }

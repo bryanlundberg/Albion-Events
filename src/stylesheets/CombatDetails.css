@@ -1,9 +1,8 @@
 .container-combat-details {
   background-color: var(--color-background);
   margin: 1em 0px;
-  padding: 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1em;
 }
 
@@ -12,4 +11,89 @@
   background-color: var(--color-background);
   min-height: 5em;
   padding: 2em;
+}
+
+@media (min-width: 640px) {
+  .container-combat-details {
+    background-color: var(--color-background);
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+  }
+
+  .container-inventory {
+    width: 100%;
+    background-color: var(--color-background);
+    min-height: 5em;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-combat-details {
+    background-color: var(--color-background);
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+  }
+
+  .container-inventory {
+    width: 100%;
+    background-color: var(--color-background);
+    min-height: 5em;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-combat-details {
+    background-color: var(--color-background);
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+  }
+
+  .container-inventory {
+    width: 100%;
+    background-color: var(--color-background);
+    min-height: 5em;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-combat-details {
+    background-color: var(--color-background);
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .container-inventory {
+    width: 100%;
+    background-color: var(--color-background);
+    min-height: 5em;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-combat-details {
+    background-color: var(--color-background);
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .container-inventory {
+    width: 100%;
+    background-color: var(--color-background);
+    min-height: 5em;
+    padding: 2em;
+  }
 }

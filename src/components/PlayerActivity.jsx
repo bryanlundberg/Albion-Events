@@ -1,10 +1,10 @@
-import { useLoaderData } from "react-router-dom"
-import "../stylesheets/PlayerActivity.css"
-import FilterActivity from "./FilterActivity"
-import PlayerEvent from "./PlayerEvent"
-import { useEffect, useState } from "react"
-import getPlayerEvents from "../functions/getPlayerEvents"
-import genKey from "../functions/genKey"
+import { useLoaderData } from 'react-router-dom'
+import '../stylesheets/PlayerActivity.css'
+import FilterActivity from './FilterActivity'
+import PlayerEvent from './PlayerEvent'
+import { useEffect, useState } from 'react'
+import getPlayerEvents from '../functions/getPlayerEvents'
+import genKey from '../functions/genKey'
 
 export default function PlayerActivity() {
   const { player } = useLoaderData()
@@ -13,10 +13,10 @@ export default function PlayerActivity() {
   const [isLoading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
 
-  const renderPlayerEvents = events.map(event => {
+  const renderPlayerEvents = events.map((event) => {
     return (
-      <PlayerEvent 
-        key={genKey()} 
+      <PlayerEvent
+        key={genKey()}
         killerName={event.killer.name}
         victimName={event.victim.name}
         gearItemKiller={event.killer.loadout}
@@ -27,7 +27,8 @@ export default function PlayerActivity() {
         victimIp={event.victim.item_power}
         profileName={player.Name}
         partySize={event.party_size}
-        eventId={event.id} />
+        eventId={event.id}
+      />
     )
   })
 
@@ -42,17 +43,27 @@ export default function PlayerActivity() {
 
   useEffect(() => {
     if (isLoading) {
-      getPlayerEvents({playerName: player.Name, showAssist: filter === 'assist', showDeaths: filter === 'death', showKills: filter === 'kill', all: filter === 'all'}).then(result => {
+      getPlayerEvents({
+        playerName: player.Name,
+        showAssist: filter === 'assist',
+        showDeaths: filter === 'death',
+        showKills: filter === 'kill',
+        all: filter === 'all',
+      }).then((result) => {
         setEvents(result.events)
         setLoading(false)
       })
     }
-  }, [isLoading, filter])
+  }, [isLoading, filter, player.Name])
 
   return (
     <div className="player-activity-container">
       <div className="player-activity">
-        <FilterActivity playerName={player.Name} onChangeFilter={onChangeFilter} value={filter}/>
+        <FilterActivity
+          playerName={player.Name}
+          onChangeFilter={onChangeFilter}
+          value={filter}
+        />
         <div className="player-activity-event-container">
           <>{isLoading ? 'Loading' : renderPlayerEvents}</>
         </div>

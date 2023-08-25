@@ -1,6 +1,12 @@
-
-
-export default function BattleKillboardData({ guild, alliance, members, kills, deaths, fame, ip }) {
+export default function BattleKillboardData({
+  guild,
+  alliance,
+  members,
+  kills,
+  deaths,
+  fame,
+  ip,
+}) {
   return (
     <tr>
       <td>{guild}</td>

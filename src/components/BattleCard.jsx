@@ -1,4 +1,4 @@
-import "../stylesheets/BattleCard.css"
+import '../stylesheets/BattleCard.css'
 
 export default function BattleCard({ children }) {
   return (
