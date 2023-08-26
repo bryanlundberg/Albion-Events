@@ -1,4 +1,4 @@
-import { API } from "../const/api"
+import { API } from '../const/api'
 
 export default async function getSearch({ query }) {
   try {

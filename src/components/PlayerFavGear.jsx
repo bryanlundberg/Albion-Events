@@ -16,7 +16,7 @@ export default function PlayerFavGear({ category }) {
   const renderMostUsedGear = weapons.map((weaponUsed, index) => {
     if (index < 10)
       return (
-        <div className={index === choosedWeapon ? 'check' : ''}>
+        <div className={index === choosedWeapon ? 'check' : ''} key={genKey()}>
           <Item
             key={genKey()}
             id={index}
