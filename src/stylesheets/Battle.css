@@ -3,3 +3,43 @@
   flex-direction: column;
   gap: 1em;
 }
+
+@media (min-width: 640px) {
+  .battle-view-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .battle-view-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .battle-view-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .battle-view-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1536px) {
+  .battle-view-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}

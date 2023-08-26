@@ -36,7 +36,7 @@ export default function Battle() {
           assistDone: 0,
           averageItemPower: 0,
           dropFame: 0,
-          equipment: null,
+          equipment: null
         }
       })
       const newPlayerList = players.map((player) => {
@@ -55,7 +55,7 @@ export default function Battle() {
     battle.id,
     battle.players,
     updatedPlayers,
-    killboard,
+    killboard
   ])
 
   return (

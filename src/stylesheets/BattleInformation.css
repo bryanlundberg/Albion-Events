@@ -6,12 +6,16 @@
 .battle-id {
   width: 100%;
   background-color: var(--color-input);
+  margin-bottom: 2em;
+  font-size: 1.2em;
 }
 
 .battle-resumen-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
 }
 
 .image-section {
@@ -20,4 +24,154 @@
   gap: 1em;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 640px) {
+  .battle-information {
+    background-color: var(--color-background);
+    padding: 2em;
+  }
+
+  .battle-id {
+    width: 100%;
+    background-color: var(--color-input);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .battle-resumen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .battle-information {
+    background-color: var(--color-background);
+    padding: 2em;
+  }
+
+  .battle-id {
+    width: 100%;
+    background-color: var(--color-input);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .battle-resumen-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .battle-information {
+    background-color: var(--color-background);
+    padding: 2em;
+  }
+
+  .battle-id {
+    width: 100%;
+    background-color: var(--color-input);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .battle-resumen-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .battle-information {
+    background-color: var(--color-background);
+    padding: 2em;
+  }
+
+  .battle-id {
+    width: 100%;
+    background-color: var(--color-input);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .battle-resumen-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1536px) {
+  .battle-information {
+    background-color: var(--color-background);
+    padding: 2em;
+  }
+
+  .battle-id {
+    width: 100%;
+    background-color: var(--color-input);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .battle-resumen-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,9 +1,16 @@
-import BattleCard from "./BattleCard";
-import "../stylesheets/BattleInformation.css"
-import { API } from "../const/api";
-import { formatDistance } from "date-fns";
+import BattleCard from './BattleCard'
+import '../stylesheets/BattleInformation.css'
+import { API } from '../const/api'
+import { formatDistance } from 'date-fns'
 
-export default function BattleInformation({ id, startTime, endTime, totalPlayers, totalKills, totalFame  }) {
+export default function BattleInformation({
+  id,
+  startTime,
+  endTime,
+  totalPlayers,
+  totalKills,
+  totalFame
+}) {
   return (
     <>
       <div className="battle-information">
@@ -19,8 +26,13 @@ export default function BattleInformation({ id, startTime, endTime, totalPlayers
             <div>{startTime}</div>
           </div>
           <BattleCard>
-            <div>Total Duration: {formatDistance(new Date(startTime), new Date(endTime), {includeSeconds: true })}</div>
-            <div>Total Fame: {totalFame}</div>
+            <div>
+              Duration:{' '}
+              {formatDistance(new Date(startTime), new Date(endTime), {
+                includeSeconds: true
+              })}
+            </div>
+            <div>Fame: {totalFame.toLocaleString()}</div>
           </BattleCard>
         </div>
       </div>

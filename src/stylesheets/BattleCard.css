@@ -10,3 +10,18 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.card-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-background-hover);
+  min-height: 5em;
+  max-width: 15em;
+  border-radius: 0.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}

@@ -4,7 +4,8 @@ import DataStats from './DataStats'
 import { API } from '../const/api'
 import genKey from '../functions/genKey'
 
-export default function PlayerStats() {
+export default function PlayerStats({ avatar, frame }) {
+  console.log(avatar, frame)
   const { player } = useLoaderData()
   const totalFame =
     0 +
@@ -20,27 +21,19 @@ export default function PlayerStats() {
       <div className="stats-container">
         <div className="avatar-container">
           <img
-            src={`${
-              player.Avatar.length !== 0
-                ? API.AVATAR + player.Avatar + '.png'
-                : API.AVATAR + 'AVATAR_01.png'
-            }`}
+            src={API.AVATAR + avatar + '.png'}
+            alt={`${player.Name}'s avatar in game`}
             onError={(e) => {
               e.target.src = `${API.AVATAR}AVATAR_01.png`
             }}
-            alt={`${player.Name}'s avatar in game`}
           />
           <img
             className="frame"
-            src={`${
-              player.AvatarRing.length !== 0
-                ? API.FRAME + player.AvatarRing + '.png'
-                : API.FRAME + 'RING1.png'
-            }`}
+            src={API.FRAME + frame + '.png'}
+            alt={`${player.Name}'s frame in game`}
             onError={(e) => {
               e.target.src = `${API.FRAME}RING1.png`
             }}
-            alt={`${player.Name}'s frame in game`}
           />
           <div>{player.Name}</div>
         </div>

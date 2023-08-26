@@ -11,16 +11,14 @@ export default function BattlegroundStars({ players }) {
     { name: 'Most Assists', prop: 'assistDone' },
     { name: 'Most Damage', prop: 'damageDone' },
     { name: 'Most Healing', prop: 'supportHealingDone' },
-    { name: 'Most Drop Fame', prop: 'dropFame' },
+    { name: 'Most Drop Fame', prop: 'dropFame' }
   ]
 
   const stars = categories.map((category) => {
     const sortedPlayers = [...players].sort(
-      (a, b) => b[category.prop] - a[category.prop],
+      (a, b) => b[category.prop] - a[category.prop]
     )
     const topPlayer = Array.isArray(sortedPlayers) ? sortedPlayers[0] : null
-
-    console.log(topPlayer)
 
     return (
       <BattleStar
@@ -34,10 +32,18 @@ export default function BattlegroundStars({ players }) {
               : topPlayer[category.prop].toFixed(0)
             : 0
         }
-        equipment={topPlayer ? Object.values(topPlayer.equipment) : null}
+        equipment={
+          topPlayer && topPlayer.equipment !== null
+            ? Object.values(topPlayer.equipment)
+            : null
+        }
       />
     )
   })
 
-  return <div className="battleground-stars-container">{stars}</div>
+  return (
+    <div className="battleground-stars-container">
+      {players.length === 0 || players === null ? null : stars}
+    </div>
+  )
 }
