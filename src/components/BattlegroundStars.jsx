@@ -3,7 +3,6 @@ import '../stylesheets/BattlegroundStars.css'
 import genKey from '../functions/genKey'
 
 export default function BattlegroundStars({ players }) {
-  console.log(players)
   const categories = [
     { name: 'MVP', prop: 'mvp' },
     { name: 'Highest Item Power', prop: 'averageItemPower' },
@@ -20,7 +19,7 @@ export default function BattlegroundStars({ players }) {
       (a, b) => b[category.prop] - a[category.prop]
     )
     const topPlayer = Array.isArray(sortedPlayers) ? sortedPlayers[0] : null
-    console.log(topPlayer)
+
     return (
       <BattleStar
         key={genKey()}
