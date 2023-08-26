@@ -30,6 +30,18 @@ export default function PlayerInfo() {
                 }
                 return null
               })
+              if (data.Killer.Name === player.Name) {
+                setAvatar(data.Killer.Avatar)
+                setFrame(data.Killer.AvatarRing)
+                setHasChanged(true)
+                return
+              }
+              if (data.Victim.Name === player.Name) {
+                setAvatar(data.Victim.Avatar)
+                setFrame(data.Victim.AvatarRing)
+                setHasChanged(true)
+                return
+              }
             })
         }
       )
