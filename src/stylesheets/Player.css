@@ -1,7 +1,7 @@
 .player-view-layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1em;
+  gap: var(--gap-md);
   margin: 50px 20px;
   justify-content: space-evenly;
 }
@@ -10,7 +10,7 @@
   .player-view-layout {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 1em;
+    gap: var(--gap-md);
     margin: 50px 20px;
     justify-content: space-evenly;
   }
@@ -20,7 +20,7 @@
   .player-view-layout {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     margin: 50px 20px;
     justify-content: space-evenly;
   }
@@ -30,7 +30,7 @@
   .player-view-layout {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     margin: 50px 20px;
     justify-content: space-evenly;
   }
@@ -40,7 +40,7 @@
   .player-view-layout {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     margin: 50px 20px;
     justify-content: space-evenly;
   }
@@ -50,7 +50,7 @@
   .player-view-layout {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     margin: 50px 20px;
     justify-content: space-evenly;
   }

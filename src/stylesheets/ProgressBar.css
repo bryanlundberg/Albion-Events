@@ -2,7 +2,7 @@
   width: 100%;
   height: 0.6em;
   display: flex;
-  gap: 7px;
+  gap: var(--gap-sm);
 }
 
 .progress-bar {

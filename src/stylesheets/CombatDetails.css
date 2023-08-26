@@ -3,7 +3,7 @@
   margin: 1em 0px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .container-inventory {
@@ -19,7 +19,7 @@
     margin: 1em 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 1em;
+    gap: var(--gap-md);
     padding: 1em;
   }
 
@@ -37,7 +37,7 @@
     margin: 1em 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 1em;
+    gap: var(--gap-md);
     padding: 1em;
   }
 
@@ -55,7 +55,7 @@
     margin: 1em 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 1em;
+    gap: var(--gap-md);
     padding: 1em;
   }
 
@@ -73,7 +73,7 @@
     margin: 1em 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     padding: 1em;
   }
 
@@ -91,7 +91,7 @@
     margin: 1em 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    gap: var(--gap-md);
     padding: 1em;
   }
 

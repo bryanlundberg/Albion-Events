@@ -3,22 +3,25 @@
   padding: 2em 1em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .title {
-
 }
 
 .gear-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
+  gap: var(--gap-sm);
 }
 
 .check {
   border-radius: var(--border-pill);
-  background: linear-gradient(360deg, rgb(251, 206, 26) 8%, rgba(0,0,0,0) 70%);
+  background: linear-gradient(
+    360deg,
+    rgb(251, 206, 26) 8%,
+    rgba(0, 0, 0, 0) 70%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +30,9 @@
 .skilled {
   border-radius: var(--border-pill);
   background: var(--color-border-active);
-  background: linear-gradient(360deg, var(--color-border-active) 8%, rgba(0,0,0,0) 70%);
-}
-
-.cristal {
-  
+  background: linear-gradient(
+    360deg,
+    var(--color-border-active) 8%,
+    rgba(0, 0, 0, 0) 70%
+  );
 }

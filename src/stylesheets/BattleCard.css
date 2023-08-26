@@ -23,5 +23,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1em;
+  gap: var(--gap-md);
 }

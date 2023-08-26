@@ -1,14 +1,14 @@
 .battle-view-layout {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 @media (min-width: 640px) {
   .battle-view-layout {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 }
 
@@ -16,7 +16,7 @@
   .battle-view-layout {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 }
 
@@ -24,7 +24,7 @@
   .battle-view-layout {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 }
 
@@ -32,7 +32,7 @@
   .battle-view-layout {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 }
 
@@ -40,6 +40,6 @@
   .battle-view-layout {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 }

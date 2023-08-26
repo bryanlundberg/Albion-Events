@@ -2,8 +2,15 @@ import Item from './Item'
 import '../stylesheets/BattleStar.css'
 import { API } from '../const/api'
 import genKey from '../functions/genKey'
+import { Link } from 'react-router-dom'
 
-export default function BattleStar({ category, playerName, score, equipment }) {
+export default function BattleStar({
+  category,
+  playerName,
+  score,
+  equipment,
+  playerId
+}) {
   const gearItems = [0, null, 2, 3, 4, null, 7, null, null, null]
   const renderPlayerItems = () => {
     if (Array.isArray(equipment)) {
@@ -48,7 +55,9 @@ export default function BattleStar({ category, playerName, score, equipment }) {
         <div>ICON</div>
       </div>
       <div className="card-body">
-        <div className="player-name">{playerName}</div>
+        <div className="player-name">
+          <Link to={`/players/${playerId}`}>{playerName}</Link>
+        </div>
         <div className="player-score">{score}</div>
       </div>
       <div className="card-footer">{renderPlayerItems()}</div>

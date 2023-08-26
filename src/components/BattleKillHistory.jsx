@@ -6,8 +6,10 @@ export default function BattleKillHistory({ killHistory }) {
     return (
       <BattleHistoryData
         key={genKey()}
+        killerId={event.Killer.Id}
         killer={event.Killer.Name}
         victim={event.Victim.Name}
+        victimId={event.Victim.Id}
         killerIp={event.Killer.AverageItemPower.toFixed(0)}
         victimIp={event.Victim.AverageItemPower.toFixed(0)}
         fame={event.TotalVictimKillFame.toLocaleString()}

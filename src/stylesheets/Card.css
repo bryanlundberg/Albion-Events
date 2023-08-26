@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.3em;
+  gap: var(--gap-sm);
 }
 
 .event-info-title {
@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: var(--gap-sm);
   }
 
   .event-info-title {
@@ -43,7 +43,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: var(--gap-sm);
   }
 
   .event-info-title {
@@ -62,7 +62,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: var(--gap-sm);
   }
 
   .event-info-title {
@@ -81,7 +81,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: var(--gap-sm);
   }
 
   .event-info-title {
@@ -100,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: var(--gap-sm);
   }
 
   .event-info-title {

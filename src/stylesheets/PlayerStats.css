@@ -3,7 +3,7 @@
   padding: 0em 2em 2em 2em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .avatar-container {
