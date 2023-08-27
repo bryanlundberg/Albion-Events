@@ -1,6 +1,6 @@
 .container-contribuitor {
   background-color: var(--color-background);
-  padding: 25px;
+  padding: var(--padding-md);
 }
 
 .contribuitor-card {
@@ -43,7 +43,7 @@
 @media (min-width: 640px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -87,7 +87,7 @@
 @media (min-width: 768px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -131,7 +131,7 @@
 @media (min-width: 1024px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -175,7 +175,7 @@
 @media (min-width: 1280px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -219,7 +219,7 @@
 @media (min-width: 1536px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {

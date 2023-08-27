@@ -1,6 +1,6 @@
 .battle-information {
   background-color: var(--color-background);
-  padding: 2em;
+  padding: var(--padding-lg);
 }
 
 .battle-id {
@@ -29,7 +29,7 @@
 @media (min-width: 640px) {
   .battle-information {
     background-color: var(--color-background);
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 
   .battle-id {
@@ -59,7 +59,7 @@
 @media (min-width: 768px) {
   .battle-information {
     background-color: var(--color-background);
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 
   .battle-id {
@@ -89,7 +89,7 @@
 @media (min-width: 1024px) {
   .battle-information {
     background-color: var(--color-background);
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 
   .battle-id {
@@ -119,7 +119,7 @@
 @media (min-width: 1280px) {
   .battle-information {
     background-color: var(--color-background);
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 
   .battle-id {
@@ -149,7 +149,7 @@
 @media (min-width: 1536px) {
   .battle-information {
     background-color: var(--color-background);
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 
   .battle-id {

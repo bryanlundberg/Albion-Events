@@ -1,12 +1,9 @@
 .favorite-gear-container {
   background-color: var(--color-background);
-  padding: 2em 1em;
+  padding: var(--padding-lg) var(--padding-md);
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-}
-
-.title {
 }
 
 .gear-container {

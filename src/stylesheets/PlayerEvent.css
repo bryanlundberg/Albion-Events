@@ -7,7 +7,7 @@
   gap: var(--gap-md);
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1em;
+  padding: var(--padding-md);
 }
 
 .win {
@@ -75,7 +75,7 @@
     gap: var(--gap-md);
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: var(--padding-md);
   }
 
   .win {
@@ -144,7 +144,7 @@
     gap: var(--gap-md);
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: var(--padding-md);
   }
 
   .win {
@@ -211,7 +211,7 @@
     border-radius: var(--border-pill);
     display: flex;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: var(--padding-md);
   }
 
   .win {
@@ -279,7 +279,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: var(--padding-md);
   }
 
   .win {
@@ -346,7 +346,7 @@
     border-radius: var(--border-pill);
     display: flex;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: var(--padding-md);
   }
 
   .win {

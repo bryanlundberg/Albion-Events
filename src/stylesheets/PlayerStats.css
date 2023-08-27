@@ -1,6 +1,6 @@
 .stats-container {
   background-color: var(--color-background);
-  padding: 0em 2em 2em 2em;
+  padding: 0em var(--padding-lg) var(--padding-lg) var(--padding-lg);
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);

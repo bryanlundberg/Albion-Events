@@ -1,6 +1,6 @@
 .event-info {
   width: 100%;
-  padding: 2em 1em;
+  padding: var(--padding-lg) var(--padding-md);
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 @media (min-width: 640px) {
   .event-info {
     width: 100%;
-    padding: 2em 1em;
+    padding: var(--padding-lg) var(--padding-md);
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
 @media (min-width: 768px) {
   .event-info {
     width: 100%;
-    padding: 2em 1em;
+    padding: var(--padding-lg) var(--padding-md);
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@
 @media (min-width: 1024px) {
   .event-info {
     width: 100%;
-    padding: 2em 1em;
+    padding: var(--padding-lg) var(--padding-md);
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@
 @media (min-width: 1280px) {
   .event-info {
     width: 100%;
-    padding: 2em 1em;
+    padding: var(--padding-lg) var(--padding-md);
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@
 @media (min-width: 1536px) {
   .event-info {
     width: 100%;
-    padding: 2em 1em;
+    padding: var(--padding-lg) var(--padding-md);
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;

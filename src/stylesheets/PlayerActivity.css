@@ -4,7 +4,7 @@
 
 .player-activity {
   background-color: var(--color-background);
-  padding: 2em;
+  padding: var(--padding-lg);
 }
 
 .player-activity-event-container {

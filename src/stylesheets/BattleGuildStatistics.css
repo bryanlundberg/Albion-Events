@@ -1,4 +1,4 @@
 .battle-killboard-container {
-  padding: 1em;
+  padding: var(--padding-md);
   background-color: var(--color-background);
 }

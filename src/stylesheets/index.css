@@ -29,6 +29,10 @@
   --gap-sm: 0.5em;
   --gap-md: 1em;
   --gap-lg: 2em;
+  --padding-xsm: 0.2em;
+  --padding-sm: 0.5em;
+  --padding-md: 1em;
+  --padding-lg: 2em;
 }
 
 html,

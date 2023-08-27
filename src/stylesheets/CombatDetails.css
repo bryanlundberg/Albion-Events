@@ -10,7 +10,7 @@
   width: 100%;
   background-color: var(--color-background);
   min-height: 5em;
-  padding: 2em;
+  padding: var(--padding-lg);
 }
 
 @media (min-width: 640px) {
@@ -27,7 +27,7 @@
     width: 100%;
     background-color: var(--color-background);
     min-height: 5em;
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 }
 
@@ -45,7 +45,7 @@
     width: 100%;
     background-color: var(--color-background);
     min-height: 5em;
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 }
 
@@ -63,7 +63,7 @@
     width: 100%;
     background-color: var(--color-background);
     min-height: 5em;
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 }
 
@@ -81,7 +81,7 @@
     width: 100%;
     background-color: var(--color-background);
     min-height: 5em;
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 }
 
@@ -99,6 +99,6 @@
     width: 100%;
     background-color: var(--color-background);
     min-height: 5em;
-    padding: 2em;
+    padding: var(--padding-lg);
   }
 }

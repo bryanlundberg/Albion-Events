@@ -8,7 +8,7 @@
   background-color: var(--color-background);
   width: 100%;
   max-width: 8em;
-  padding: 0.5em;
+  padding: var(--padding-sm);
   border: 0px;
   cursor: pointer;
 }

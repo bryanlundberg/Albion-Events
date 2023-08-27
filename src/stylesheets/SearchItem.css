@@ -1,7 +1,7 @@
-.result-item {  
+.result-item {
   background-color: var(--color-background);
   height: 1.5em;
-  padding: 1em;
+  padding: var(--padding-md);
   display: flex;
   align-items: center;
 }
