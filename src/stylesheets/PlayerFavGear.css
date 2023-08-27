@@ -16,7 +16,7 @@
   border-radius: var(--border-md);
   background: linear-gradient(
     360deg,
-    rgb(251, 206, 26) 8%,
+    rgb(26, 251, 198) 8%,
     rgba(0, 0, 0, 0) 70%
   );
   display: flex;

@@ -13,60 +13,6 @@
   padding: var(--padding-lg);
 }
 
-@media (min-width: 640px) {
-  .container-combat-details {
-    background-color: var(--color-background);
-    margin: var(--margin-md) 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: var(--gap-md);
-    padding: 1em;
-  }
-
-  .container-inventory {
-    width: 100%;
-    background-color: var(--color-background);
-    min-height: 5em;
-    padding: var(--padding-lg);
-  }
-}
-
-@media (min-width: 768px) {
-  .container-combat-details {
-    background-color: var(--color-background);
-    margin: var(--margin-md) 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: var(--gap-md);
-    padding: 1em;
-  }
-
-  .container-inventory {
-    width: 100%;
-    background-color: var(--color-background);
-    min-height: 5em;
-    padding: var(--padding-lg);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-combat-details {
-    background-color: var(--color-background);
-    margin: var(--margin-md) 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: var(--gap-md);
-    padding: 1em;
-  }
-
-  .container-inventory {
-    width: 100%;
-    background-color: var(--color-background);
-    min-height: 5em;
-    padding: var(--padding-lg);
-  }
-}
-
 @media (min-width: 1280px) {
   .container-combat-details {
     background-color: var(--color-background);
@@ -74,31 +20,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap-md);
-    padding: 1em;
-  }
-
-  .container-inventory {
-    width: 100%;
-    background-color: var(--color-background);
-    min-height: 5em;
-    padding: var(--padding-lg);
-  }
-}
-
-@media (min-width: 1536px) {
-  .container-combat-details {
-    background-color: var(--color-background);
-    margin: var(--margin-md) 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-md);
-    padding: 1em;
-  }
-
-  .container-inventory {
-    width: 100%;
-    background-color: var(--color-background);
-    min-height: 5em;
-    padding: var(--padding-lg);
+    padding: var(--padding-md);
   }
 }

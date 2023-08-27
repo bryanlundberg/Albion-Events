@@ -7,7 +7,7 @@
 
 .progress-bar {
   border-radius: var(--border-md);
-  background-color: #6c757d30;
+  background-color: var(--color-empty-progressbar);
   width: 80%;
   position: relative;
 }

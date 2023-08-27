@@ -12,7 +12,7 @@
 
 .win {
   background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-  background-color: rgba(0, 255, 30, 0.122);
+  background-color: var(--color-victory);
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: darken;
@@ -21,7 +21,7 @@
 
 .loss {
   background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-  background-color: #2d0b1246;
+  background-color: var(--color-loss);
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: darken;
@@ -29,7 +29,7 @@
 }
 
 .win.assistance {
-  background-color: rgba(75, 253, 253, 0.122);
+  background-color: var(--color-assistance);
 }
 
 .event-gear-section {
@@ -67,211 +67,6 @@
   gap: var(--gap-sm);
 }
 
-@media (min-width: 640px) {
-  .player-event-container {
-    min-height: auto;
-    border-radius: var(--border-md);
-    display: flex;
-    gap: var(--gap-md);
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: var(--padding-md);
-  }
-
-  .win {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-    background-color: rgba(0, 255, 30, 0.122);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .loss {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-    background-color: #2d0b1246;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .win.assistance {
-    background-color: rgba(75, 253, 253, 0.122);
-  }
-
-  .event-gear-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-sm);
-  }
-
-  .title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .subtitle {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  .time {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
-  .gear-items {
-    display: flex;
-    gap: var(--gap-sm);
-  }
-}
-
-@media (min-width: 768px) {
-  .player-event-container {
-    min-height: auto;
-    border-radius: var(--border-md);
-    display: flex;
-    gap: var(--gap-md);
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: var(--padding-md);
-  }
-
-  .win {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-    background-color: rgba(0, 255, 30, 0.122);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .loss {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-    background-color: #2d0b1246;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .win.assistance {
-    background-color: rgba(75, 253, 253, 0.122);
-  }
-
-  .event-gear-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-sm);
-  }
-
-  .title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .subtitle {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  .time {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
-  .gear-items {
-    display: flex;
-    gap: var(--gap-sm);
-  }
-}
-
-@media (min-width: 1024px) {
-  .player-event-container {
-    min-height: auto;
-    border-radius: var(--border-md);
-    display: flex;
-    justify-content: space-evenly;
-    padding: var(--padding-md);
-  }
-
-  .win {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-    background-color: rgba(0, 255, 30, 0.122);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .loss {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-    background-color: #2d0b1246;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .win.assistance {
-    background-color: rgba(75, 253, 253, 0.122);
-  }
-
-  .event-gear-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-sm);
-  }
-
-  .title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .subtitle {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  .time {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
-  .gear-items {
-    display: flex;
-    gap: var(--gap-sm);
-  }
-}
-
 @media (min-width: 1280px) {
   .player-event-container {
     min-height: auto;
@@ -280,129 +75,5 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: var(--padding-md);
-  }
-
-  .win {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-    background-color: rgba(0, 255, 30, 0.122);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .loss {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-    background-color: #2d0b1246;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .win.assistance {
-    background-color: rgba(75, 253, 253, 0.122);
-  }
-
-  .event-gear-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-sm);
-  }
-
-  .title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .subtitle {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  .time {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
-  .gear-items {
-    display: flex;
-    gap: var(--gap-sm);
-  }
-}
-
-@media (min-width: 1536px) {
-  .player-event-container {
-    height: 120px;
-    border-radius: var(--border-md);
-    display: flex;
-    justify-content: space-evenly;
-    padding: var(--padding-md);
-  }
-
-  .win {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079281039446128/bg-bottom.png?width=916&height=295);
-    background-color: rgba(0, 255, 30, 0.122);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .loss {
-    background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1145079280594866196/bg-top.png?width=916&height=438);
-    background-color: #2d0b1246;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-size: cover;
-  }
-
-  .win.assistance {
-    background-color: rgba(75, 253, 253, 0.122);
-  }
-
-  .event-gear-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-sm);
-  }
-
-  .title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .subtitle {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  .time {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
-  .gear-items {
-    display: flex;
-    gap: var(--gap-sm);
   }
 }

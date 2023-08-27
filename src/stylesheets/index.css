@@ -22,6 +22,10 @@
   --color-warning: #dcbd5b;
   --color-info: #29cee0;
   --color-especial: #b488ff;
+  --color-victory: rgba(0, 255, 30, 0.122);
+  --color-loss: #2d0b1246;
+  --color-assistance: rgba(75, 253, 253, 0.122);
+  --color-empty-progressbar: #6c757d30;
   --border-xsm: 0.2em;
   --border-sm: 0.5em;
   --border-md: 1em;

@@ -31,7 +31,7 @@
   gap: var(--gap-xsm);
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.5em;
+  margin-top: var(--margin-sm);
 }
 
 .contribuitor-frame {
@@ -74,7 +74,7 @@
     gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 0.5em;
+    margin-top: var(--margin-sm);
   }
 
   .contribuitor-frame {
