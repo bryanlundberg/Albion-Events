@@ -6,7 +6,7 @@
 .battle-id {
   width: 100%;
   background-color: var(--color-input);
-  margin-bottom: 2em;
+  margin-bottom: var(--margin-lg);
   font-size: 1.2em;
 }
 
@@ -35,7 +35,7 @@
   .battle-id {
     width: 100%;
     background-color: var(--color-input);
-    margin-bottom: 2em;
+    margin-bottom: var(--margin-lg);
     font-size: 1.2em;
   }
 
@@ -65,7 +65,7 @@
   .battle-id {
     width: 100%;
     background-color: var(--color-input);
-    margin-bottom: 2em;
+    margin-bottom: var(--margin-lg);
     font-size: 1.2em;
   }
 
@@ -95,7 +95,7 @@
   .battle-id {
     width: 100%;
     background-color: var(--color-input);
-    margin-bottom: 2em;
+    margin-bottom: var(--margin-lg);
     font-size: 1.2em;
   }
 
@@ -125,7 +125,7 @@
   .battle-id {
     width: 100%;
     background-color: var(--color-input);
-    margin-bottom: 2em;
+    margin-bottom: var(--margin-lg);
     font-size: 1.2em;
   }
 
@@ -155,7 +155,7 @@
   .battle-id {
     width: 100%;
     background-color: var(--color-input);
-    margin-bottom: 2em;
+    margin-bottom: var(--margin-lg);
     font-size: 1.2em;
   }
 

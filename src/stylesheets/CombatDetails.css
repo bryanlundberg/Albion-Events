@@ -1,6 +1,6 @@
 .container-combat-details {
   background-color: var(--color-background);
-  margin: 1em 0px;
+  margin: var(--margin-md) 0px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: var(--gap-md);
@@ -16,7 +16,7 @@
 @media (min-width: 640px) {
   .container-combat-details {
     background-color: var(--color-background);
-    margin: 1em 0px;
+    margin: var(--margin-md) 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: var(--gap-md);
@@ -34,7 +34,7 @@
 @media (min-width: 768px) {
   .container-combat-details {
     background-color: var(--color-background);
-    margin: 1em 0px;
+    margin: var(--margin-md) 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: var(--gap-md);
@@ -52,7 +52,7 @@
 @media (min-width: 1024px) {
   .container-combat-details {
     background-color: var(--color-background);
-    margin: 1em 0px;
+    margin: var(--margin-md) 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: var(--gap-md);
@@ -70,7 +70,7 @@
 @media (min-width: 1280px) {
   .container-combat-details {
     background-color: var(--color-background);
-    margin: 1em 0px;
+    margin: var(--margin-md) 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap-md);
@@ -88,7 +88,7 @@
 @media (min-width: 1536px) {
   .container-combat-details {
     background-color: var(--color-background);
-    margin: 1em 0px;
+    margin: var(--margin-md) 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap-md);

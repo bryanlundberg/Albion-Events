@@ -10,31 +10,3 @@
     gap: var(--gap-md);
   }
 }
-
-@media (min-width: 768px) {
-  .container-event-info {
-    display: flex;
-    gap: var(--gap-md);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-event-info {
-    display: flex;
-    gap: var(--gap-md);
-  }
-}
-
-@media (min-width: 1280px) {
-  .container-event-info {
-    display: flex;
-    gap: var(--gap-md);
-  }
-}
-
-@media (min-width: 1536px) {
-  .container-event-info {
-    display: flex;
-    gap: var(--gap-md);
-  }
-}

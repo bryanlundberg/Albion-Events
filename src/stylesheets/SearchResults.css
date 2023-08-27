@@ -1,5 +1,5 @@
 .result-container {
-  margin-top: 1em;
+  margin-top: var(--margin-md);
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);

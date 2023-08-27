@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   padding: var(--padding-md);
-  margin: 1rem 0px;
+  margin: var(--margin-md) 0px;
   background-color: var(--color-background);
   color: var(--color-text);
 }

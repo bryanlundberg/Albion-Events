@@ -1,7 +1,7 @@
 .filter-activity-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2.5em;
+  margin-bottom: var(--margin-lg);
 }
 
 #activity-filter {
@@ -9,6 +9,5 @@
   width: 100%;
   max-width: 8em;
   padding: var(--padding-sm);
-  border: 0px;
   cursor: pointer;
 }

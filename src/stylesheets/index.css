@@ -33,6 +33,10 @@
   --padding-sm: 0.5em;
   --padding-md: 1em;
   --padding-lg: 2em;
+  --margin-xsm: 0.2em;
+  --margin-sm: 0.5em;
+  --margin-md: 1em;
+  --margin-lg: 2em;
 }
 
 html,
@@ -82,7 +86,7 @@ table {
 input,
 select {
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 0px;
   margin: 0;
   padding: 0;
   outline: 0;

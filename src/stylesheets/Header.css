@@ -1,5 +1,5 @@
 .header-container {
-  margin: 50px 0px;
+  margin: var(--margin-lg) 0px;
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
