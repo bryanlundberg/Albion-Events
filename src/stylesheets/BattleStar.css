@@ -1,9 +1,9 @@
 .battle-star-container {
   background-color: var(--color-background);
-  padding: 1em;
+  padding: var(--padding-md);
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .card-header {
@@ -19,5 +19,5 @@
 .card-footer {
   display: flex;
   justify-content: space-evenly;
-  gap: 0.5em;
+  gap: var(--gap-sm);
 }

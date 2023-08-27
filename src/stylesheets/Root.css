@@ -9,31 +9,3 @@
     margin: auto;
   }
 }
-
-@media (min-width: 768px) {
-  .center-content {
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  .center-content {
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-width: 1280px) {
-  .center-content {
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-width: 1536px) {
-  .center-content {
-    width: 80%;
-    margin: auto;
-  }
-}

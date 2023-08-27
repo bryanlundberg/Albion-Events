@@ -1,45 +1,5 @@
 .battleground-stars-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 0.5em;
-}
-
-@media (min-width: 640px) {
-  .battleground-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 0.5em;
-  }
-}
-
-@media (min-width: 768px) {
-  .battleground-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 0.5em;
-  }
-}
-
-@media (min-width: 1024px) {
-  .battleground-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 0.5em;
-  }
-}
-
-@media (min-width: 1280px) {
-  .battleground-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 0.5em;
-  }
-}
-
-@media (min-width: 1536px) {
-  .battleground-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 0.5em;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--gap-sm);
 }

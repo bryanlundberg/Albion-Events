@@ -1,17 +1,23 @@
 import { Link } from 'react-router-dom'
 
 export default function BattleHistoryData({
+  killerId,
+  victimId,
   killer,
   victim,
   killerIp,
   victimIp,
   fame,
-  eventId,
+  eventId
 }) {
   return (
     <tr>
-      <td>{killer}</td>
-      <td>{victim}</td>
+      <td>
+        <Link to={`/players/${killerId}`}>{killer}</Link>
+      </td>
+      <td>
+        <Link to={`/players/${victimId}`}>{victim}</Link>
+      </td>
       <td>{killerIp}</td>
       <td>{victimIp}</td>
       <td>{fame}</td>

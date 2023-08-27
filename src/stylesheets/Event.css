@@ -1,8 +1,8 @@
 .event-view-layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2em;
-  margin: 50px 20px;
+  gap: var(--gap-md);
+  margin: var(--margin-lg) var(--margin-md);
   justify-content: space-evenly;
 }
 
@@ -10,8 +10,8 @@
   .event-view-layout {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 2em;
-    margin: 50px 20px;
+    gap: var(--gap-md);
+    margin: var(--margin-lg) var(--margin-md);
     justify-content: space-evenly;
   }
 }
@@ -20,28 +20,8 @@
   .event-view-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2em;
-    margin: 50px 20px;
-    justify-content: space-evenly;
-  }
-}
-
-@media (min-width: 1024px) {
-  .event-view-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2em;
-    margin: 50px 20px;
-    justify-content: space-evenly;
-  }
-}
-
-@media (min-width: 1280px) {
-  .event-view-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2em;
-    margin: 50px 20px;
+    gap: var(--gap-md);
+    margin: var(--margin-lg) var(--margin-md);
     justify-content: space-evenly;
   }
 }
@@ -50,8 +30,8 @@
   .event-view-layout {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 2em;
-    margin: 50px 20px;
+    gap: var(--gap-md);
+    margin: var(--margin-lg) var(--margin-md);
     justify-content: space-evenly;
   }
 }

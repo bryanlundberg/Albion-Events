@@ -22,6 +22,7 @@ export default function BattlegroundStars({ players }) {
 
     return (
       <BattleStar
+        playerId={topPlayer ? topPlayer.id : ''}
         key={genKey()}
         category={category.name}
         playerName={topPlayer ? topPlayer.name : ''}

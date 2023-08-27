@@ -23,7 +23,9 @@ export default function BattleInformation({
           <div className="image-section">
             <img src={API.ICONS.SKULL} alt="Representative skull battle" />
             <div>BATTLE</div>
-            <div>{startTime}</div>
+            <div>
+              {startTime.slice(0, 10) + ' - ' + startTime.slice(11, 19)}
+            </div>
           </div>
           <BattleCard>
             <div>

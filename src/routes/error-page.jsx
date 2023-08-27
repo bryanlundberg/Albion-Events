@@ -1,16 +1,17 @@
-import { useRouteError } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import '../stylesheets/ErrorBattle.css'
 
 export default function ErrorPage() {
-  const error = useRouteError()
-  console.error(error)
-
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
-    </div>
+    <>
+      <div className="container-error">
+        <div className="big">Oops</div>
+        <div className="medium">
+          Albion server has not data about this search yet.
+        </div>
+        <div className="medium">Please try again later.</div>
+        <Link to="/">Return Home</Link>
+      </div>
+    </>
   )
 }

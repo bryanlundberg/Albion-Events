@@ -1,9 +1,5 @@
-.intentory-title {
-
-}
-
 .inventory-stack {
-  margin-top: 1em;
+  margin-top: var(--margin-md);
 }
 
 .large-size {

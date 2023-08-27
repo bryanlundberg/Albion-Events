@@ -1,6 +1,6 @@
 .container-contribuitor {
   background-color: var(--color-background);
-  padding: 25px;
+  padding: var(--padding-md);
 }
 
 .contribuitor-card {
@@ -23,15 +23,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 0.4em;
+  gap: var(--gap-sm);
 }
 
 .contribuitor-set {
   display: flex;
-  gap: 0.2em;
+  gap: var(--gap-xsm);
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.5em;
+  margin-top: var(--margin-sm);
 }
 
 .contribuitor-frame {
@@ -43,7 +43,7 @@
 @media (min-width: 640px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -66,15 +66,15 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .contribuitor-set {
     display: flex;
-    gap: 0.2em;
+    gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 0.5em;
+    margin-top: var(--margin-sm);
   }
 
   .contribuitor-frame {
@@ -87,7 +87,7 @@
 @media (min-width: 768px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -110,12 +110,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .contribuitor-set {
     display: flex;
-    gap: 0.2em;
+    gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5em;
@@ -131,7 +131,7 @@
 @media (min-width: 1024px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -154,12 +154,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .contribuitor-set {
     display: flex;
-    gap: 0.2em;
+    gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5em;
@@ -175,7 +175,7 @@
 @media (min-width: 1280px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -198,12 +198,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .contribuitor-set {
     display: flex;
-    gap: 0.2em;
+    gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5em;
@@ -219,7 +219,7 @@
 @media (min-width: 1536px) {
   .container-contribuitor {
     background-color: var(--color-background);
-    padding: 25px;
+    padding: var(--padding-md);
   }
 
   .contribuitor-card {
@@ -242,12 +242,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .contribuitor-set {
     display: flex;
-    gap: 0.2em;
+    gap: var(--gap-xsm);
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5em;

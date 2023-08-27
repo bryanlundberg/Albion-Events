@@ -9,22 +9,41 @@
 :root {
   --color-link: #825391;
   --color-body: #06090f;
-  --color-background: #080C14;
+  --color-background: #0a101a87;
   --color-background-hover: #161a22;
-  --color-heading: #FFFFFF;
-  --color-text: #CACBD5;
-  --color-bg-input: #1A1D24;
-  --color-text-input: #A4A9B3;
-  --color-border: #3C3F43;
-  --color-border-active: #169DE0;
+  --color-heading: #ffffff;
+  --color-text: #cacbd5;
+  --color-bg-input: #1a1d24;
+  --color-text-input: #a4a9b3;
+  --color-border: #3c3f43;
+  --color-border-active: #169de0;
   --color-success: #29e09d74;
   --color-danger: #e02984ae;
-  --color-warning: #DCBD5B;
-  --color-info: #29CEE0;
+  --color-warning: #dcbd5b;
+  --color-info: #29cee0;
   --color-especial: #b488ff;
-  --border-pill: 1em;
+  --color-victory: rgba(0, 255, 30, 0.122);
+  --color-loss: #2d0b1246;
+  --color-assistance: rgba(75, 253, 253, 0.122);
+  --color-empty-progressbar: #6c757d30;
+  --border-xsm: 0.2em;
+  --border-sm: 0.5em;
+  --border-md: 1em;
+  --border-lg: 2em;
   --color-link: #62c2f2;
   --color-link-hover: #2aaef0;
+  --gap-xsm: 0.2em;
+  --gap-sm: 0.5em;
+  --gap-md: 1em;
+  --gap-lg: 2em;
+  --padding-xsm: 0.2em;
+  --padding-sm: 0.5em;
+  --padding-md: 1em;
+  --padding-lg: 2em;
+  --margin-xsm: 0.2em;
+  --margin-sm: 0.5em;
+  --margin-md: 1em;
+  --margin-lg: 2em;
 }
 
 html,
@@ -35,6 +54,8 @@ body {
   background-color: var(--color-body);
   font-family: 'Lato', sans-serif;
   padding-bottom: 50px;
+  background-image: url(https://media.discordapp.net/attachments/1137527038366978078/1144699179663364127/bg.png);
+  background-repeat: repeat;
 }
 
 h1,
@@ -72,7 +93,7 @@ table {
 input,
 select {
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 0px;
   margin: 0;
   padding: 0;
   outline: 0;

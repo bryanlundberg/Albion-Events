@@ -1,14 +1,13 @@
 .filter-activity-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2.5em;
+  margin-bottom: var(--margin-lg);
 }
 
 #activity-filter {
   background-color: var(--color-background);
   width: 100%;
   max-width: 8em;
-  padding: 0.5em;
-  border: 0px;
+  padding: var(--padding-sm);
   cursor: pointer;
 }

@@ -2,12 +2,12 @@
   width: 100%;
   height: 0.6em;
   display: flex;
-  gap: 7px;
+  gap: var(--gap-sm);
 }
 
 .progress-bar {
-  border-radius: var(--border-pill);
-  background-color: #6c757d30;
+  border-radius: var(--border-md);
+  background-color: var(--color-empty-progressbar);
   width: 80%;
   position: relative;
 }
@@ -26,5 +26,5 @@
   position: absolute;
   width: 0%;
   height: 100%;
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
 }
