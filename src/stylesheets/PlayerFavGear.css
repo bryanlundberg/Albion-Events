@@ -13,7 +13,7 @@
 }
 
 .check {
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
   background: linear-gradient(
     360deg,
     rgb(251, 206, 26) 8%,
@@ -25,7 +25,7 @@
 }
 
 .skilled {
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
   background: var(--color-border-active);
   background: linear-gradient(
     360deg,

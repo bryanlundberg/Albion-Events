@@ -6,7 +6,7 @@
 }
 
 .progress-bar {
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
   background-color: #6c757d30;
   width: 80%;
   position: relative;
@@ -26,5 +26,5 @@
   position: absolute;
   width: 0%;
   height: 100%;
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
 }

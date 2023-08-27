@@ -2,7 +2,7 @@
 
 .player-event-container {
   min-height: auto;
-  border-radius: var(--border-pill);
+  border-radius: var(--border-md);
   display: flex;
   gap: var(--gap-md);
   flex-direction: column;
@@ -70,7 +70,7 @@
 @media (min-width: 640px) {
   .player-event-container {
     min-height: auto;
-    border-radius: var(--border-pill);
+    border-radius: var(--border-md);
     display: flex;
     gap: var(--gap-md);
     flex-direction: column;
@@ -139,7 +139,7 @@
 @media (min-width: 768px) {
   .player-event-container {
     min-height: auto;
-    border-radius: var(--border-pill);
+    border-radius: var(--border-md);
     display: flex;
     gap: var(--gap-md);
     flex-direction: column;
@@ -208,7 +208,7 @@
 @media (min-width: 1024px) {
   .player-event-container {
     min-height: auto;
-    border-radius: var(--border-pill);
+    border-radius: var(--border-md);
     display: flex;
     justify-content: space-evenly;
     padding: var(--padding-md);
@@ -275,7 +275,7 @@
 @media (min-width: 1280px) {
   .player-event-container {
     min-height: auto;
-    border-radius: var(--border-pill);
+    border-radius: var(--border-md);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -343,7 +343,7 @@
 @media (min-width: 1536px) {
   .player-event-container {
     height: 120px;
-    border-radius: var(--border-pill);
+    border-radius: var(--border-md);
     display: flex;
     justify-content: space-evenly;
     padding: var(--padding-md);

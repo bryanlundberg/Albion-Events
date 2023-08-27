@@ -22,7 +22,10 @@
   --color-warning: #dcbd5b;
   --color-info: #29cee0;
   --color-especial: #b488ff;
-  --border-pill: 1em;
+  --border-xsm: 0.2em;
+  --border-sm: 0.5em;
+  --border-md: 1em;
+  --border-lg: 2em;
   --color-link: #62c2f2;
   --color-link-hover: #2aaef0;
   --gap-xsm: 0.2em;
