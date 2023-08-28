@@ -19,7 +19,7 @@
 }
 
 .progress-bar-text {
-  font-size: 0.6em;
+  font-size: var(--font-xsm);
 }
 
 .fill-progress-bar {

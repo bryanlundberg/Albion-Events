@@ -41,7 +41,7 @@
 }
 
 .title {
-  font-size: 1em;
+  font-size: var(--font-md);
   font-weight: 600;
 }
 
@@ -53,12 +53,12 @@
 }
 
 .subtitle {
-  font-size: 1.5em;
+  font-size: var(--font-xl);
   font-weight: 700;
 }
 
 .time {
-  font-size: 0.9em;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 

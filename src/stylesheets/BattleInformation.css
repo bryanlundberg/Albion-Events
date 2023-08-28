@@ -7,7 +7,7 @@
   width: 100%;
   background-color: var(--color-input);
   margin-bottom: var(--margin-lg);
-  font-size: 1.2em;
+  font-size: var(--font-lg);
 }
 
 .battle-resumen-container {
@@ -36,7 +36,7 @@
     width: 100%;
     background-color: var(--color-input);
     margin-bottom: var(--margin-lg);
-    font-size: 1.2em;
+    font-size: var(--font-lg);
   }
 
   .battle-resumen-container {

@@ -44,6 +44,12 @@
   --margin-sm: 0.5em;
   --margin-md: 1em;
   --margin-lg: 2em;
+  --font-xsm: 0.6em;
+  --font-sm: 0.9em;
+  --font-md: 1em;
+  --font-lg: 1.3em;
+  --font-xl: 1.5em;
+  --font-xxl: 2em;
 }
 
 html,
