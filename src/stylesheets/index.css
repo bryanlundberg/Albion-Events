@@ -50,6 +50,11 @@
   --font-lg: 1.3em;
   --font-xl: 1.5em;
   --font-xxl: 2em;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
 }
 
 html,

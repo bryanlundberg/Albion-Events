@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+.fs-xl {
+  font-size: var(--font-xl);
+}
+
 @media (min-width: 768px) {
   .battle-information {
     background-color: var(--color-background);
