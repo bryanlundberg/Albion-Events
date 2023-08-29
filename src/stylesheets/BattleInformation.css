@@ -7,7 +7,7 @@
   width: 100%;
   background-color: var(--color-input);
   margin-bottom: var(--margin-lg);
-  font-size: 1.2em;
+  font-size: var(--font-lg);
 }
 
 .battle-resumen-container {
@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+.fs-xl {
+  font-size: var(--font-xl);
+}
+
 @media (min-width: 768px) {
   .battle-information {
     background-color: var(--color-background);
@@ -36,7 +40,7 @@
     width: 100%;
     background-color: var(--color-input);
     margin-bottom: var(--margin-lg);
-    font-size: 1.2em;
+    font-size: var(--font-lg);
   }
 
   .battle-resumen-container {

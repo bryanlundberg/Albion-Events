@@ -6,7 +6,7 @@
   padding: var(--padding-sm);
   border-radius: var(--border-sm);
   width: 100%;
-  font-size: 1em;
+  font-size: var(--font-md);
   height: 2.5em;
   transition: border-color 0.3s;
   transition: font-size 0.3s;
@@ -26,5 +26,5 @@
 .search-bar:focus,
 .search-bar:hover {
   border-color: var(--color-border-active);
-  font-size: 1.05em;
+  font-size: var(--font-md);
 }

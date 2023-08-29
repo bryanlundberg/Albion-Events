@@ -7,9 +7,9 @@
 }
 
 .big {
-  font-size: 2em;
+  font-size: var(--font-xxl);
 }
 
 .medium {
-  font-size: 1.3em;
+  font-size: var(--font-lg);
 }
