@@ -5,7 +5,6 @@ import { API } from '../const/api'
 import genKey from '../functions/genKey'
 
 export default function PlayerStats({ avatar, frame }) {
-  console.log(avatar, frame)
   const { player } = useLoaderData()
   const totalFame =
     0 +

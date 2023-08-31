@@ -20,7 +20,6 @@ export default function PlayerInfo() {
           fetch(`${API.EVENT}${result.events[0].id}`)
             .then((response) => response.json())
             .then((data) => {
-              console.log(data)
               data.Participants.some((participant) => {
                 if (player.Name === participant.Name) {
                   setAvatar(participant.Avatar)
