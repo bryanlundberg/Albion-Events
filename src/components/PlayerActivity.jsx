@@ -10,8 +10,8 @@ export default function PlayerActivity() {
   const { player } = useLoaderData()
 
   const [events, setEvents] = useState([])
-  const [isLoading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
+  const [isLoading, setLoading] = useState(true)
 
   const renderPlayerEvents = events.map((event) => {
     return (
@@ -35,10 +35,6 @@ export default function PlayerActivity() {
   function onChangeFilter(option) {
     setFilter(option)
     setLoading(true)
-    // getPlayerEvents({playerName: player.Name, showAssist: option === 'assist', showDeaths: option === 'death', showKills: option === 'kill', all: option === 'all'}).then(result => {
-    //   setEvents(result.events)
-    //   setLoading(false)
-    // })
   }
 
   useEffect(() => {
@@ -48,11 +44,17 @@ export default function PlayerActivity() {
         showAssist: filter === 'assist',
         showDeaths: filter === 'death',
         showKills: filter === 'kill',
-        all: filter === 'all',
-      }).then((result) => {
-        setEvents(result.events)
-        setLoading(false)
+        all: filter === 'all'
       })
+        .then((result) => {
+          setEvents(result.events)
+        })
+        .catch((result) => {
+          console.log(result)
+        })
+        .finally((result) => {
+          setLoading(false)
+        })
     }
   }, [isLoading, filter, player.Name])
 
@@ -65,7 +67,7 @@ export default function PlayerActivity() {
           value={filter}
         />
         <div className="player-activity-event-container">
-          <>{isLoading ? 'Loading' : renderPlayerEvents}</>
+          {isLoading ? 'Loading' : renderPlayerEvents}
         </div>
       </div>
     </div>
