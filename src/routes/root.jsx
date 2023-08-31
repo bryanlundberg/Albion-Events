@@ -7,6 +7,7 @@ import '../stylesheets/Root.css'
 import { useEffect, useState } from 'react'
 import getSearch from '../functions/getSearch'
 import SearchResults from '../components/SearchResults'
+import Footer from '../components/Footer'
 
 export default function Root() {
   const events = useLoaderData()
@@ -37,6 +38,7 @@ export default function Root() {
         <SearchResults results={possibleSearch} />
       )}
       <EventsTable lastEvents={events} />
+      <Footer />
     </div>
   )
 }

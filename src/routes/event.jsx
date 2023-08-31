@@ -5,6 +5,7 @@ import EventInfo from '../components/EventInfo'
 import '../stylesheets/Event.css'
 import Header from '../components/Header'
 import { formatDistanceToNowStrict } from 'date-fns'
+import Footer from '../components/Footer'
 
 export default function Event() {
   const event = useLoaderData()
@@ -20,6 +21,7 @@ export default function Event() {
         <SidebarAssistants event={event} />
         <EventInfo event={event} />
       </div>
+      <Footer />
     </>
   )
 }

@@ -5,6 +5,7 @@ import PlayerInfo from '../components/PlayerInfo'
 import PlayerActivity from '../components/PlayerActivity'
 import '../stylesheets/Player.css'
 import genKey from '../functions/genKey'
+import Footer from '../components/Footer'
 
 export default function Player() {
   return (
@@ -15,6 +16,7 @@ export default function Player() {
         <PlayerInfo key={genKey()} />
         <PlayerActivity key={genKey()} />
       </div>
+      <Footer />
     </>
   )
 }

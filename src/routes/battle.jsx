@@ -9,6 +9,7 @@ import BattleKillHistory from '../components/BattleKillHistory'
 import BattleGuildStatistics from '../components/BattleGuildStatistics'
 import updatePlayer from '../functions/updatePlayer'
 import calMVP from '../functions/calMVP'
+import Footer from '../components/Footer'
 
 export default function Battle() {
   const { battle } = useLoaderData()
@@ -75,6 +76,7 @@ export default function Battle() {
         <BattleGuildStatistics guilds={battle.guilds} players={players} />
         <BattleKillHistory killHistory={killboard} />
       </div>
+      <Footer />
     </>
   )
 }
