@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './stylesheets/index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './stylesheets/index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Root, { loader as loaderRoot } from './routes/root';
-import ErrorPage from './routes/error-page';
-import Event, {loader as loaderEvent } from './routes/event';
-import Player, { loader as loaderPlayer } from './routes/player';
-import Battle, { loader as loaderBattle } from './routes/battle';
-import ErrorBattle from './routes/error-battle';
+import Root, { loader as loaderRoot } from './routes/root'
+import ErrorPage from './routes/error-page'
+import Event, { loader as loaderEvent } from './routes/event'
+import Player, { loader as loaderPlayer } from './routes/player'
+import Battle, { loader as loaderBattle } from './routes/battle'
+import ErrorBattle from './routes/error-battle'
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   }
 ])
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
