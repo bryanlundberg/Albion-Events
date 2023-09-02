@@ -1,4 +1,3 @@
-'use client'
 import '@/stylesheets/Header.css'
 
 export default function Header({

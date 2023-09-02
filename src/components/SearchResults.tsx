@@ -1,4 +1,3 @@
-'use client'
 import genKey from '@/functions/genKey'
 import SearchItem from './SearchItem'
 import '@/stylesheets/SearchResults.css'
