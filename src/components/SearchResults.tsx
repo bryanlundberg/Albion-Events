@@ -4,16 +4,16 @@ import SearchItem from './SearchItem'
 import '@/stylesheets/SearchResults.css'
 
 export default function SearchResults({
-  results
+  possibleSearchResults
 }: {
-  results: [{ Name: string; Id: string }]
+  possibleSearchResults: any[]
 }) {
-  const renderResults = results.map((result) => {
+  const renderResults = possibleSearchResults.map((searchResult) => {
     return (
       <SearchItem
         key={genKey()}
-        playerName={result.Name}
-        playerId={result.Id}
+        playerName={searchResult.Name}
+        playerId={searchResult.Id}
       />
     )
   })

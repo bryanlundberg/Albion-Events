@@ -8,25 +8,24 @@ import getSearch from '@/functions/getSearch'
 import SearchResults from '@/components/SearchResults'
 
 export default function Home() {
-  const lastEvents = getEvents()
-
   const [search, setSearch] = useState('')
   const [isSearching, setSearching] = useState(false)
   const [possibleSearch, setNewPossibleSearch] = useState([])
 
   function onSearch(newSearch: string) {
     setSearch(newSearch)
-    setSearching(newSearch === '')
+    newSearch === '' ? setSearching(false) : setSearching(true)
   }
 
   useEffect(() => {
     if (isSearching) {
       getSearch({ query: search }).then((result) => {
         setNewPossibleSearch(result.players)
-        console.log(result.players)
       })
+    } else {
+      setNewPossibleSearch([])
     }
-  }, [search, isSearching, possibleSearch])
+  }, [search, isSearching])
 
   return (
     <>
@@ -34,7 +33,7 @@ export default function Home() {
         <Header title="ALBION EVENTS" />
         <Search onSearch={onSearch} search={search} />
         {possibleSearch.length <= 0 || isSearching === false ? null : (
-          <SearchResults results={possibleSearch} />
+          <SearchResults possibleSearchResults={possibleSearch} />
         )}
       </div>
     </>
