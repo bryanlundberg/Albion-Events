@@ -13,7 +13,7 @@ export default function Item({
   extraClassName?: string | null
   onChoosedWeapon?: any
   clickable?: boolean
-  id?: string
+  id?: string | number
 }) {
   return (
     <>
