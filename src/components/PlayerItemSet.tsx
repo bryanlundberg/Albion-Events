@@ -1,4 +1,5 @@
 import '@/stylesheets/PlayerItemSet.css'
+import Image from 'next/image'
 
 export default function PlayerItemSet({
   url,
@@ -6,14 +7,16 @@ export default function PlayerItemSet({
   extraClassName = null
 }: {
   url: string
-  alt?: string
+  alt: string
   extraClassName: any
 }) {
   return (
-    <img
+    <Image
       className={`item-set ${extraClassName === null ? '' : extraClassName}`}
       src={url}
       alt={alt}
-    ></img>
+      width={217}
+      height={217}
+    />
   )
 }

@@ -1,4 +1,5 @@
 import '@/stylesheets/ProgressBar.css'
+import Image from 'next/image'
 
 export default function ProgressBar({
   percentage,
@@ -14,7 +15,13 @@ export default function ProgressBar({
   return (
     <>
       <div className="progress-bar-container">
-        <img src={icon} alt="" className="progress-bar-icon" />
+        <Image
+          src={icon}
+          alt=""
+          className="progress-bar-icon"
+          width={128}
+          height={128}
+        />
         <div className="progress-bar">
           <span
             style={{ width: `${percentage}%` }}
