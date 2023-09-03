@@ -3,6 +3,7 @@ import '@/stylesheets/BattleInformation.css'
 import { API } from '@/const/api'
 import { formatDistance } from 'date-fns'
 import { getBattle } from '@/loaders/getBattle'
+import Image from 'next/image'
 
 export default async function BattleInformation({
   battleId
@@ -21,7 +22,12 @@ export default async function BattleInformation({
             <div>Total Kills: {battle.totalKills}</div>
           </BattleCard>
           <div className="image-section">
-            <img src={API.ICONS.SKULL} alt="Representative skull battle" />
+            <Image
+              src={API.ICONS.SKULL}
+              alt="Representative skull battle"
+              width={200}
+              height={200}
+            />
             <div className="title fs-xl">BATTLE</div>
             <div>
               {battle.startTime.slice(0, 10) +

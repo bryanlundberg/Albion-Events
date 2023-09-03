@@ -5,7 +5,7 @@ export default async function getPlayerWeapons({
   lookbackDays = 9999
 }: {
   playerName: string
-  lookbackDays: number
+  lookbackDays?: number
 }) {
   try {
     const request = await fetch(

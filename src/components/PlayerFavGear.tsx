@@ -1,3 +1,4 @@
+'use client'
 import Item from '@/components/Item'
 import '@/stylesheets/PlayerFavGear.css'
 import { API } from '@/const/api'

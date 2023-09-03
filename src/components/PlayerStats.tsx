@@ -2,6 +2,7 @@ import '@/stylesheets/PlayerStats.css'
 import DataStats from '@/components/DataStats'
 import { API } from '@/const/api'
 import genKey from '@/functions/genKey'
+import AvatarPic from './AvatarPic'
 
 export default function PlayerStats({
   avatar,
@@ -25,20 +26,12 @@ export default function PlayerStats({
     <>
       <div className="stats-container">
         <div className="avatar-container">
-          <img
-            src={API.AVATAR + avatar + '.png'}
-            alt={`${player.Name}'s avatar in game`}
-            onError={(e) => {
-              e.target.src = `${API.AVATAR}AVATAR_01.png`
-            }}
-          />
-          <img
-            className="frame"
-            src={API.FRAME + frame + '.png'}
-            alt={`${player.Name}'s frame in game`}
-            onError={(e) => {
-              e.target.src = `${API.FRAME}RING1.png`
-            }}
+          <AvatarPic idAvatar={avatar} playerName={player.Name} type="avatar" />
+          <AvatarPic
+            idAvatar={frame}
+            playerName={player.Name}
+            type="frame"
+            classNameExtra="frame"
           />
           <div>{player.Name}</div>
         </div>
