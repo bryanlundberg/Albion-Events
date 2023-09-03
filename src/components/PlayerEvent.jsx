@@ -1,9 +1,9 @@
-import '../stylesheets/PlayerEvent.css'
-import Item from './Item'
-import { API } from '../const/api'
-import { Link } from 'react-router-dom'
+import '@/stylesheets/PlayerEvent.css'
+import Item from '@/components/Item'
+import { API } from '@/const/api'
 import { formatDistanceToNow } from 'date-fns'
-import genKey from '../functions/genKey'
+import genKey from '@/functions/genKey'
+import Link from 'next/link'
 
 export default function PlayerEvent({
   killerName,
@@ -16,7 +16,7 @@ export default function PlayerEvent({
   killerIp,
   victimIp,
   profileName,
-  partySize,
+  partySize
 }) {
   const gearItems = [0, null, 2, 3, 4, null, 7, null, null, null]
   const resultCombat = partySize > 1 ? 'Assistance' : ''
@@ -74,7 +74,7 @@ export default function PlayerEvent({
       </div>
       <div className="info-section">
         <div className="title">{combatStatus}</div>
-        <Link to={`/events/${eventId}`} className="subtitle icon-details">
+        <Link href={`/events/${eventId}`} className="subtitle icon-details">
           {dropFame.toLocaleString()}
         </Link>
         <div className="time">{formatDistanceToNow(new Date(time * 1000))}</div>

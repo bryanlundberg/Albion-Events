@@ -3,9 +3,16 @@
   margin: auto;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .center-content {
     width: 80%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .center-content {
+    width: 60%;
     margin: auto;
   }
 }
