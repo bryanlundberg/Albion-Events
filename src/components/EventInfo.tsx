@@ -1,4 +1,3 @@
-'use client'
 import Card from '@/components/Card'
 import CombatDetails from '@/components/CombatDetails'
 import '@/stylesheets/EventInfo.css'

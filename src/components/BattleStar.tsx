@@ -34,9 +34,6 @@ export default function BattleStar({
                   : `${API.ICONS.EMPTY_SLOT}`
               }
               key={genKey()}
-              onError={(e) => {
-                e.target.src = `${API.ICONS.EMPTY_SLOT}`
-              }}
             />
           )
         }

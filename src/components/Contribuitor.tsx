@@ -1,13 +1,13 @@
-'use client'
 import { API } from '@/const/api'
 import '@/stylesheets/Contribuitor.css'
 import Item from '@/components/Item'
 import ProgressBar from '@/components/ProgressBar'
 import Link from 'next/link'
+import AvatarPic from './AvatarPic'
+import genKey from '@/functions/genKey'
 
 export default function Contribuitor({
   playerName,
-  guildName,
   itemPower,
   avatar,
   equipment,
@@ -19,7 +19,6 @@ export default function Contribuitor({
   playerId
 }: {
   playerName: string
-  guildName: string
   itemPower: number
   avatar: string
   equipment: any[]
@@ -36,35 +35,35 @@ export default function Contribuitor({
     if (index === 0)
       return (
         <Item
-          key={`${playerName}${category.Type}`}
+          key={genKey()}
           url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`}
         />
       ) //main weapon
     if (index === 2)
       return (
         <Item
-          key={`${playerName}${category.Type}`}
+          key={genKey()}
           url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`}
         />
       ) //main head
     if (index === 3)
       return (
         <Item
-          key={`${playerName}${category.Type}`}
+          key={genKey()}
           url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`}
         />
       ) //main armor
     if (index === 4)
       return (
         <Item
-          key={`${playerName}${category.Type}`}
+          key={genKey()}
           url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`}
         />
       ) //main shoes
     if (index === 6)
       return (
         <Item
-          key={`${playerName}${category.Type}`}
+          key={genKey()}
           url={`${API.ITEM}${category.Type}.png?count=${category.Count}&quality=${category.Quality}`}
         />
       ) //main cape
@@ -90,22 +89,19 @@ export default function Contribuitor({
       <div className="container-contribuitor">
         <div className="contribuitor-card">
           <div className="card-align">
-            <img
-              className="contribuitor-avatar"
-              src={`${API.AVATAR}${avatar}.png`}
-              alt={`${playerName}'s avatar in game`}
-              onError={(e) => {
-                e.target.src = `${API.AVATAR}AVATAR_01.png`
-              }}
+            <AvatarPic
+              idAvatar={avatar}
+              playerName={playerName}
+              type="avatar"
+              classNameExtra="contribuitor-avatar"
             />
-            <img
-              className="contribuitor-frame"
-              src={`${API.FRAME}${frame}.png`}
-              alt={`${playerName}'s frame in game`}
-              onError={(e) => {
-                e.target.src = `${API.FRAME}RING1.png`
-              }}
+            <AvatarPic
+              idAvatar={frame}
+              playerName={playerName}
+              type="frame"
+              classNameExtra="contribuitor-frame"
             />
+
             <div className="contribuitor-info">
               <Link href={`/players/${playerId}`}>{playerName}</Link>
               <div>Item Power: {itemPower.toFixed(0)}</div>

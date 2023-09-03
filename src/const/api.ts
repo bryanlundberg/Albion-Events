@@ -1,4 +1,4 @@
-const PROXY = '' // `https://cors-proxy-0rcx.onrender.com/proxy/`
+const PROXY = `https://cors-proxy-0rcx.onrender.com/proxy/`
 export const API = {
   GITHUB: 'https://github.com/bryanlundberg/Albion-Events',
   LASTEVENTS: `${PROXY}https://gameinfo.albiononline.com/api/gameinfo/events?limit=20`,

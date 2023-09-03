@@ -1,11 +1,7 @@
-'use client'
 import PlayerFavGear from '@/components/PlayerFavGear'
 import PlayerStats from '@/components/PlayerStats'
 import '@/stylesheets/PlayerInfo.css'
 import genKey from '@/functions/genKey'
-import { useEffect, useState } from 'react'
-import { API } from '@/const/api'
-import getPlayerEvents from '@/functions/getPlayerEvents'
 
 export default function PlayerInfo({ player }: { player: any }) {
   return (

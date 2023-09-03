@@ -38,9 +38,9 @@ export default function EventRow({
           {killerName}
         </Link>
         <div className={`table-ip align-text-center`}>
-          <span>{ipKiller}</span>
+          <span>{ipKiller.toFixed(0)}</span>
           <span> vs </span>
-          <span>{ipVictim}</span>
+          <span>{ipVictim.toFixed(0)}</span>
         </div>
         <Link
           href={`/players/${victimId}`}
