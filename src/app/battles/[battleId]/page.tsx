@@ -20,7 +20,6 @@ export default async function BattlesPage({ params }: { params: any }) {
 
   return (
     <>
-      {/* <pre>{JSON.stringify(battle, null, 2)}</pre> */}
       <Header title={'BATTLE REPORT'} />
       <Link href="/">return index</Link>
       <div className="battle-view-layout">

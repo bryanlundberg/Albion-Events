@@ -11,7 +11,11 @@ export default async function getAvatarAndFrame({ player }: { player: any }) {
   const requestLastEventDetail = await fetch(
     `${API.EVENT}${playerEvents.events[0].id}`
   )
-  if (!requestLastEventDetail.ok) throw new Error('Error fetching last Event')
+  if (!requestLastEventDetail.ok) {
+    throw new Error(
+      "We couldn't locate the player last events on the server at the moment."
+    )
+  }
 
   const lastEventDetails = await requestLastEventDetail.json()
 

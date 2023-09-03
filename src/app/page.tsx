@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Search from '@/components/Search'
 import EventsTable from '@/components/EventsTable'
 import { Suspense } from 'react'
+import '@/stylesheets/Root.css'
 
 export default function Home() {
   return (

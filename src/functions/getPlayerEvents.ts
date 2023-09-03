@@ -25,7 +25,11 @@ export default async function getPlayerEvents({
         API.MURDERLEDGER
       }${playerName}/events?show_assists=${true}&show_deaths=${true}&show_kills=${true}&skip=${skip}&sort=${sort}&take=${take}`
     )
-    if (!request.ok) throw new Error()
+    if (!request.ok) {
+      throw new Error(
+        "We couldn't locate the player events on the server at the moment."
+      )
+    }
     const data = await request.json()
     return data
   } else {
