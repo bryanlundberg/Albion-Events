@@ -14,22 +14,35 @@ Welcome to Albion Events, your one-stop destination for tracking player statisti
 
 Albion Events is a web application dedicated to providing players of Albion Online with insightful statistics about their in-game performance. Whether you're a seasoned veteran or a new recruit, Albion Events has you covered with comprehensive data on battles and weapon usage.
 
+![enter image description here](https://media.discordapp.net/attachments/1137527038366978078/1148040642363134073/image.png)
+
+
 ## Features
 
-### Player Statistics
+### Player Statistics & Weapon Usage
 - View detailed player profiles.
 - Track your progress over time.
-- Compare your stats with other players.
-
-### Battle Participation
-- Analyze your participation in various battles.
-- See your win-loss ratio.
-- Discover your most frequent battlegrounds.
-
-### Weapon Usage
 - Explore your most-used weapons.
 - Check your proficiency with each weapon.
 - Plan your strategy based on weapon statistics.
+
+![](https://cdn.discordapp.com/attachments/1137527038366978078/1148038640283439124/player-profile.jpg)
+
+### Battle & Event Participation
+- Analyze your participation in various battles.
+- See your win-loss ratio.
+- Discover your most frequent battlegrounds.
+- Detailed information
+	- MVP 
+	- Most damage 
+	- Most Healing 
+	- Most Fame 
+	- Most Kills 
+	- Most Assist 
+	- And more of the battle
+	
+![](https://cdn.discordapp.com/attachments/1137527038366978078/1148038639478116363/event-details.jpg)
+![](https://cdn.discordapp.com/attachments/1137527038366978078/1148038639004176384/battle-details.jpg)
 
 ## Getting Started
 
@@ -40,7 +53,7 @@ To get started with Albion Events, follow these steps:
 3. Install the necessary dependencies:
    `npm install`
 4. Start the application:
-   `npm start`
+   `npm run dev`
 
 5. Access Albion Events through your web browser at `http://localhost:3000`.
 
