@@ -9,8 +9,7 @@ import getAvatarAndFrame from '@/loaders/getAvatarAndFrame'
 import '@/stylesheets/Player.css'
 
 export const metadata: Metadata = {
-  title: 'Albion Events | Player Performance',
-  description: '...'
+  title: 'Albion Events | Player Performance'
 }
 
 export default async function PlayerPage({

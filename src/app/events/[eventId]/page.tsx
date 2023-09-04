@@ -8,8 +8,7 @@ import EventInfo from '@/components/EventInfo'
 import '@/stylesheets/Event.css'
 
 export const metadata: Metadata = {
-  title: 'Albion Events | Lethal Event',
-  description: '...'
+  title: 'Albion Events | Lethal Event'
 }
 
 export default async function Event({

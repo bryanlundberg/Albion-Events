@@ -8,6 +8,11 @@ import getBattleFullEvents from '@/functions/getBattleFullEvents'
 import { setDefaultPlayers } from '@/functions/updatePlayer'
 import { getBattle } from '@/loaders/getBattle'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Albion Events | Lethal Event'
+}
 
 export default async function BattlesPage({ params }: { params: any }) {
   const { battle } = await getBattle({ battleId: params.battleId })
