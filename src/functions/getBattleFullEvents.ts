@@ -5,7 +5,8 @@ export default async function getBattleFullEvents({ battle }: { battle: any }) {
   let killboard: any[] = []
   while (killsOffset <= battle.totalKills) {
     const request = await fetch(
-      `${API.BATTLES.HISTORY}${battle.id}?offset=${killsOffset}&limit=51`
+      `${API.BATTLES.HISTORY}${battle.id}?offset=${killsOffset}&limit=51`,
+      { cache: 'no-store' }
     )
     if (!request.ok) throw new Error()
     const events = await request.json()
