@@ -23,7 +23,8 @@ export default async function getPlayerEvents({
     const request = await fetch(
       `${
         API.MURDERLEDGER
-      }${playerName}/events?show_assists=${true}&show_deaths=${true}&show_kills=${true}&skip=${skip}&sort=${sort}&take=${take}`
+      }${playerName}/events?show_assists=${true}&show_deaths=${true}&show_kills=${true}&skip=${skip}&sort=${sort}&take=${take}`,
+      { cache: 'no-store' }
     )
     if (!request.ok) {
       throw new Error(
@@ -34,7 +35,8 @@ export default async function getPlayerEvents({
     return data
   } else {
     const request = await fetch(
-      `${API.MURDERLEDGER}${playerName}/events?show_assists=${showAssist}&show_deaths=${showDeaths}&show_kills=${showKills}&skip=${skip}&sort=${sort}&take=${take}`
+      `${API.MURDERLEDGER}${playerName}/events?show_assists=${showAssist}&show_deaths=${showDeaths}&show_kills=${showKills}&skip=${skip}&sort=${sort}&take=${take}`,
+      { cache: 'no-store' }
     )
     if (!request.ok) throw new Error()
     const data = await request.json()

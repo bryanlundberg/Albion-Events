@@ -9,7 +9,8 @@ export default async function getAvatarAndFrame({ player }: { player: any }) {
   })
 
   const requestLastEventDetail = await fetch(
-    `${API.EVENT}${playerEvents.events[0].id}`
+    `${API.EVENT}${playerEvents.events[0].id}`,
+    { cache: 'no-store' }
   )
   if (!requestLastEventDetail.ok) {
     throw new Error(

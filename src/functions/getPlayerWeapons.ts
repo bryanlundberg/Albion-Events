@@ -9,7 +9,8 @@ export default async function getPlayerWeapons({
 }) {
   try {
     const request = await fetch(
-      `${API.MURDERLEDGER}${playerName}/stats/weapons?lookback_days=${lookbackDays}`
+      `${API.MURDERLEDGER}${playerName}/stats/weapons?lookback_days=${lookbackDays}`,
+      { cache: 'no-store' }
     )
     if (!request.ok) {
       throw new Error(

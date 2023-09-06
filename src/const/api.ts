@@ -1,4 +1,4 @@
-const PROXY = `https://cors-proxy-0rcx.onrender.com/proxy/`
+const PROXY = `https://cors-router.onrender.com/proxy/`
 export const API = {
   GITHUB: 'https://github.com/bryanlundberg/Albion-Events',
   LASTEVENTS: `${PROXY}https://gameinfo.albiononline.com/api/gameinfo/events?limit=20`,
@@ -18,6 +18,12 @@ export const API = {
     HEAL: `https://media.discordapp.net/attachments/1137527038366978078/1141526774266740857/regeneration.png`,
     EMPTY_SLOT: `https://media.discordapp.net/attachments/1137527038366978078/1142438375450746901/empty_slot.png`,
     SKULL: `https://media.discordapp.net/attachments/1137527038366978078/1143698932292141176/kill__date.png`
+  },
+  DEFAULT: {
+    AVATAR:
+      'https://media.discordapp.net/attachments/1137527038366978078/1147968592168632360/DefaultAvatar.png',
+    FRAME:
+      'https://media.discordapp.net/attachments/1137527038366978078/1147969582531879042/DefaultFrame.png'
   },
   MURDERLEDGER: `${PROXY}https://murderledger.com/api/players/`
 }
