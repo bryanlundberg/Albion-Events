@@ -1,6 +1,7 @@
 .container-contribuitor {
   background-color: var(--color-background);
   padding: var(--padding-md);
+  width: 100%;
 }
 
 .contribuitor-card {

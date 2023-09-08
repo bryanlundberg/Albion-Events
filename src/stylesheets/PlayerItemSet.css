@@ -1,64 +1,131 @@
 .item-set {
-  width: 120px;
-  height: 120px;
+  width: 95px;
+  height: 95px;
 }
 
 .position-mainhand {
   position: absolute;
-  top: 155px;
-  left: 55px;
+  top: 130px;
+  left: 40px;
 }
 
 .position-offhand {
   position: absolute;
-  top: 155px;
-  left: 310px;
+  top: 130px;
+  left: 240px;
 }
 
 .position-head {
   position: absolute;
-  top: 40px;
-  left: 180px;
+  top: 38px;
+  left: 140px;
 }
 
 .position-armor {
   position: absolute;
-  top: 155px;
-  left: 180px;
+  top: 130px;
+  left: 140px;
 }
 
 .position-shoes {
   position: absolute;
-  top: 270px;
-  left: 180px;
+  top: 215px;
+  left: 140px;
 }
 
 .position-bag {
   position: absolute;
-  top: 33px;
-  left: 27px;
+  top: 30px;
+  left: 23px;
 }
 
 .position-cape {
   position: absolute;
-  top: 33px;
-  left: 335px;
+  top: 30px;
+  left: 260px;
 }
 
 .position-mount {
   position: absolute;
-  top: 380px;
-  left: 180px;
+  top: 305px;
+  left: 140px;
 }
 
 .position-potion {
   position: absolute;
-  top: 282px;
-  left: 335px;
+  top: 225px;
+  left: 260px;
 }
 
 .position-food {
   position: absolute;
-  top: 282px;
-  left: 27px;
+  top: 225px;
+  left: 23px;
+}
+
+@media (min-width: 768px) {
+  .item-set {
+    width: 120px;
+    height: 120px;
+  }
+
+  .position-mainhand {
+    position: absolute;
+    top: 155px;
+    left: 55px;
+  }
+
+  .position-offhand {
+    position: absolute;
+    top: 155px;
+    left: 310px;
+  }
+
+  .position-head {
+    position: absolute;
+    top: 40px;
+    left: 180px;
+  }
+
+  .position-armor {
+    position: absolute;
+    top: 155px;
+    left: 180px;
+  }
+
+  .position-shoes {
+    position: absolute;
+    top: 270px;
+    left: 180px;
+  }
+
+  .position-bag {
+    position: absolute;
+    top: 33px;
+    left: 27px;
+  }
+
+  .position-cape {
+    position: absolute;
+    top: 33px;
+    left: 335px;
+  }
+
+  .position-mount {
+    position: absolute;
+    top: 380px;
+    left: 180px;
+  }
+
+  .position-potion {
+    position: absolute;
+    top: 282px;
+    left: 335px;
+  }
+
+  .position-food {
+    position: absolute;
+    top: 282px;
+    left: 27px;
+  }
 }

@@ -18,7 +18,7 @@ export default function Error({
 
   return (
     <>
-      <Header title={'USER DETAILS'} />
+      <Header title={'INDEX'} />
       <div className="container-error">
         <div className="big">Oops</div>
         <div className="medium">Albion server is not returning anything.</div>
