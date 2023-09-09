@@ -46,4 +46,8 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+  .item-set {
+    width: 120px;
+    height: 120px;
+  }
 }
