@@ -17,7 +17,6 @@ export default function CardPlayer({
   const categories = Object.values(player.Equipment);
   const renderPlayerSet = categories.map((item, index) => {
     if (item === null) return null;
-    // console.log();
     return (
       <PlayerItemSet
         key={`${item.Type}.png${item.Type}item${item.Quality}`}

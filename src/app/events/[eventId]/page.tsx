@@ -4,7 +4,6 @@ import Link from "next/link";
 import getEvent from "@/loaders/getEvent";
 import SidebarAssistants from "@/components/SidebarAssistants";
 import EventInfo from "@/components/EventInfo";
-import PrintDataFront from "@/components/PrintDataFront";
 import Card from "@/components/Card";
 
 export const metadata: Metadata = {
@@ -39,7 +38,6 @@ export default async function EventPage({
         <SidebarAssistants event={event} />
         <EventInfo event={event} />
       </div>
-      <PrintDataFront />
     </>
   );
 }
