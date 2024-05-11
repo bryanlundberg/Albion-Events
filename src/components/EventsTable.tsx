@@ -1,6 +1,7 @@
 import getEvents from "@/loaders/getEvents";
 import { OverallEvent } from "@/interfaces/OverallEvent";
 import LinkLabel from "./LinkItem";
+import Link from "next/link";
 
 export default async function EventsTable() {
   const lastEvents = await getEvents();
@@ -45,7 +46,9 @@ export default async function EventsTable() {
                       />
                     </td>
                     <td className="text-end">
-                      {event.TotalVictimKillFame.toLocaleString()}
+                      <Link href={`/events/${event.EventId}`}>
+                        {event.TotalVictimKillFame.toLocaleString()}
+                      </Link>
                     </td>
                   </tr>
                 </>
