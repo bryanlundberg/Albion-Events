@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Albion Events | Lethal Event",
 };
 
-export default async function Event({
+export default async function EventPage({
   params,
 }: {
   params: { eventId: string };
