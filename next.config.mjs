@@ -5,6 +5,7 @@ const nextConfig = {
       "render.albiononline.com",
       "media.discordapp.net",
       "albiononline.ams3.cdn.digitaloceanspaces.com",
+      "assets.albiononline.com",
     ],
   },
 };

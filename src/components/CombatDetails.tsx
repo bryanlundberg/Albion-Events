@@ -4,7 +4,7 @@ import Inventory from "@/components/Inventory";
 export default function CombatDetails({ event }: { event: OverallEvent }) {
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-3">
+      <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
         <CardPlayer
           player={event.Killer}
           title={"Killer"}
