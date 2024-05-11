@@ -1,11 +1,20 @@
-import { API } from '@/const/api'
+import { API } from "@/const/api";
+import { OverallEvent } from "@/interfaces/OverallEvent";
 
-export default async function getEvents() {
-  const request = await fetch(`${API.LASTEVENTS}`, { cache: 'no-store' })
-  if (!request.ok) {
-    throw new Error(
-      "We couldn't locate the last events on the server at the moment."
-    )
+export default async function getEvents(): Promise<OverallEvent[]> {
+  try {
+    const response = await fetch(API.LASTEVENTS, { cache: "no-store" });
+
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(`Failed to fetch events: ${errorMessage}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    // Log the error for debugging
+    console.error("Error fetching events:", error);
+    // Throw the error again to be caught elsewhere
+    throw error;
   }
-  return request.json()
 }
