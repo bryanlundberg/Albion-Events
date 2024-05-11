@@ -1,40 +1,43 @@
-'use client'
-import '@/stylesheets/Input.css'
-import { useEffect, useState } from 'react'
-import InputSearch from '@/components/InputSearch'
-import getSearch from '@/functions/getSearch'
-import SearchResults from '@/components/SearchResults'
-import { Suspense } from 'react'
+"use client";
+import "@/stylesheets/Input.css";
+import { useEffect, useState } from "react";
+import getSearch from "@/functions/getSearch";
+import SearchResults from "@/components/SearchResults";
 
 export default function Search() {
-  const [search, setSearch] = useState('')
-  const [isSearching, setIsSearching] = useState(false)
-  const [possibleSearch, setPossibleSearch] = useState([])
+  const [search, setSearch] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
+  const [results, setResults] = useState([]);
 
   function onSearch(newSearch: string) {
-    setSearch(newSearch)
-    setIsSearching(newSearch !== '')
+    setSearch(newSearch);
+    setIsSearching(newSearch !== "");
   }
 
   useEffect(() => {
     if (isSearching) {
       getSearch({ query: search }).then((result) => {
-        setPossibleSearch(result.players)
-      })
+        setResults(result.players);
+      });
     } else {
-      setPossibleSearch([])
+      setResults([]);
     }
-  }, [search, isSearching])
+  }, [search, isSearching]);
 
   return (
     <>
-      <div className="search-container">
-        <InputSearch onSearch={onSearch} search={search} />
-        <span className="gg-search"></span>
-      </div>
-      {possibleSearch.length > 0 && isSearching ? (
-        <SearchResults possibleSearchResults={possibleSearch} />
+      <input
+        onChange={(e) => onSearch(e.target.value)}
+        value={search}
+        type="text"
+        className="p-2 border border-gray-200"
+        placeholder="Enter a player's name here"
+        autoComplete="off"
+      />
+
+      {results.length > 0 && isSearching ? (
+        <SearchResults possibleSearchResults={results} />
       ) : null}
     </>
-  )
+  );
 }

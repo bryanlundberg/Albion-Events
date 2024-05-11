@@ -1,18 +1,13 @@
-import Header from '@/components/Header'
-import Search from '@/components/Search'
-import EventsTable from '@/components/EventsTable'
-import { Suspense } from 'react'
-import '@/stylesheets/Root.css'
-import Loading from '@/components/Loading'
+import Header from "@/components/Header";
+import EventsTable from "@/components/EventsTable";
 
 export default function Home() {
   return (
     <>
-      <div className="center-content">
+      <div className="max-w-3xl mx-auto px-3">
         <Header title="ALBION EVENTS" />
-        <Search />
         <EventsTable />
       </div>
     </>
-  )
+  );
 }
