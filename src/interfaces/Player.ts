@@ -15,4 +15,6 @@ interface Player {
   KillFame: number;
   LifetimeStatistics: LifetimeStatistics;
   Name: string;
+  SupportHealingDone: number;
+  DamageDone: number;
 }

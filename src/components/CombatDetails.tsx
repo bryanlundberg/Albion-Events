@@ -1,27 +1,23 @@
-import CardPlayer from '@/components/CardPlayer'
-import Invetory from '@/components/Inventory'
-import '@/stylesheets/CombatDetails.css'
+import CardPlayer from "@/components/CardPlayer";
+import Inventory from "@/components/Inventory";
 
-export default function CombatDetails({ event }: { event: any }) {
+export default function CombatDetails({ event }: { event: OverallEvent }) {
   return (
     <>
-      <div className="container-combat-details">
+      <div className="flex flex-col md:flex-row gap-3">
         <CardPlayer
-          playerId={event.Killer.Id}
-          equipment={event.Killer.Equipment}
-          title={'Killer'}
+          player={event.Killer}
+          title={"Killer"}
           subtitle={`${event.Killer.Name} - [${event.Killer.GuildName}]`}
         />
         <CardPlayer
-          playerId={event.Victim.Id}
-          equipment={event.Victim.Equipment}
-          title={'Victim'}
+          player={event.Victim}
+          title={"Victim"}
           subtitle={`${event.Victim.Name} - [${event.Victim.GuildName}]`}
         />
       </div>
-      <div className="container-inventory">
-        <Invetory victimInventory={event.Victim.Inventory} />
-      </div>
+
+      <Inventory victimInventory={event.Victim.Inventory} />
     </>
-  )
+  );
 }

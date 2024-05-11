@@ -1,4 +1,4 @@
-export interface OverallEvent {
+interface OverallEvent {
   BattleId: number;
   Category: null;
   EventId: number;

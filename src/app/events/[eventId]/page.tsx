@@ -1,33 +1,45 @@
-import Header from '@/components/Header'
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import formatDistanceToNowStrict from 'date-fns/formatDistanceToNow'
-import getEvent from '@/loaders/getEvent'
-import SidebarAssistants from '@/components/SidebarAssistants'
-import EventInfo from '@/components/EventInfo'
-import '@/stylesheets/Event.css'
+import Header from "@/components/Header";
+import type { Metadata } from "next";
+import Link from "next/link";
+import getEvent from "@/loaders/getEvent";
+import SidebarAssistants from "@/components/SidebarAssistants";
+import EventInfo from "@/components/EventInfo";
+import PrintDataFront from "@/components/PrintDataFront";
+import Card from "@/components/Card";
 
 export const metadata: Metadata = {
-  title: 'Albion Events | Lethal Event'
-}
+  title: "Albion Events | Lethal Event",
+};
 
 export default async function Event({
-  params
+  params,
 }: {
-  params: { eventId: string }
+  params: { eventId: string };
 }) {
-  const event = await getEvent({ eventId: params.eventId })
+  const event = await getEvent({ eventId: params.eventId });
   return (
     <>
-      <Header
-        title={'LETHAL EVENT'}
-        subtitle={formatDistanceToNowStrict(new Date(event.TimeStamp)) + ' ago'}
-      />
-      <Link href="/">return index</Link>
-      <div className="event-view-layout">
+      <div className="max-w-3xl mx-auto px-3">
+        <Header title={"LETHAL EVENT"} subtitle={event.TimeStamp} />
+        <Link href="/">return index</Link>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Card
+            title={"Battle Report"}
+            subTitle={
+              <Link href={`/battles/${event.BattleId}`}>{event.BattleId}</Link>
+            }
+          />
+          <Card
+            title={event.Participants.length.toString()}
+            subTitle={"Participants"}
+          />
+        </div>
+
         <SidebarAssistants event={event} />
         <EventInfo event={event} />
       </div>
+      <PrintDataFront />
     </>
-  )
+  );
 }

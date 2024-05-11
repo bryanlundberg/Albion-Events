@@ -1,13 +1,24 @@
-import { API } from '@/const/api'
+import { API } from "@/const/api";
+import { OverallEvent } from "@/interfaces/OverallEvent";
 
 export default async function getEvent({
-  eventId
+  eventId,
 }: {
-  eventId: number | string
-}) {
-  const request = await fetch(`${API.EVENT}${eventId}`, { cache: 'no-store' })
-  if (!request.ok) {
-    throw new Error("We couldn't locate the event on the server at the moment.")
+  eventId: number | string;
+}): Promise<OverallEvent> {
+  try {
+    const response = await fetch(`${API.EVENT}${eventId}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(`Failed to fetch event: ${errorMessage}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Error fetching event with ID ${eventId}:`, error);
+    throw error;
   }
-  return request.json()
 }
