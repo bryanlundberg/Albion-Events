@@ -5,14 +5,14 @@ export default function Item({
   alt = "empty",
   url,
   extraClassName = null,
-  onChoosedWeapon,
+  onChooseWeapon,
   clickable = false,
   id,
 }: {
   alt?: string;
   url: string;
   extraClassName?: string | null;
-  onChoosedWeapon?: any;
+  onChooseWeapon?: any;
   clickable?: boolean;
   id?: any;
 }) {
@@ -20,11 +20,11 @@ export default function Item({
     <>
       <Image
         onClick={(e) => {
-          if (clickable) onChoosedWeapon(id);
+          if (clickable) onChooseWeapon(alt);
         }}
-        className={`max-w-14 ${clickable === true ? "cursor" : ""} ${
-          extraClassName === null || undefined ? "" : extraClassName
-        }`}
+        className={`max-w-14 ${
+          clickable === true ? "hover:cursor-pointer" : ""
+        } ${extraClassName === null || undefined ? "" : extraClassName}`}
         width={128}
         height={128}
         src={url}

@@ -1,82 +1,78 @@
-'use client'
-import Item from '@/components/Item'
-import '@/stylesheets/PlayerFavGear.css'
-import { API } from '@/const/api'
-import { useEffect, useState } from 'react'
-import getPlayerWeapons from '@/functions/getPlayerWeapons'
-import GearStats from '@/components/GearStats'
-import genKey from '@/functions/genKey'
+"use client";
+import Item from "@/components/Item";
+import { API } from "@/const/api";
+import { useEffect, useState } from "react";
+import getPlayerWeapons from "@/functions/getPlayerWeapons";
+import GearStats from "@/components/GearStats";
+import genKey from "@/functions/genKey";
 
 export default function PlayerFavGear({
-  category,
-  player
+  title,
+  player,
 }: {
-  category: any
-  player: any
+  title: string;
+  player: Player;
 }) {
-  const [weapons, setWeapons] = useState([])
-  const [isLoading, setLoading] = useState(true)
-  const [choosedWeapon, setNewChoosedWeapon] = useState(0)
+  const [weapons, setWeapons] = useState<WeaponStat[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [chooseWeapon, setChooseWeapon] = useState<string>("");
 
-  const renderMostUsedGear = weapons.map((weaponUsed: any, index: number) => {
-    if (index < 10)
+  const renderMostUsedGear = weapons.map((weapon: any, index: number) => {
+    if (index < 16)
       return (
-        <div className={index === choosedWeapon ? 'check' : ''} key={genKey()}>
+        <div
+          className={weapon.weapon === chooseWeapon ? "bg-green-200" : ""}
+          key={weapon.weapon}
+        >
           <Item
-            key={genKey()}
-            id={index}
-            alt={weaponUsed.weapon}
-            url={`${API.ITEM}T8_${
-              weaponUsed.weapon
-            }@4.png?count=${1}&quality=${5}`}
-            onChoosedWeapon={onChoosedWeapon}
+            key={weapon.weapon}
+            alt={weapon.weapon}
+            url={`${API.ITEM}T8_${weapon.weapon}@4.png?count=${1}&quality=${5}`}
+            onChooseWeapon={onChooseWeapon}
             clickable={true}
           />
         </div>
-      )
-    return null
-  })
+      );
+    return null;
+  });
 
-  function onChoosedWeapon(newChoosedWeapon: any) {
-    setNewChoosedWeapon(newChoosedWeapon)
+  function onChooseWeapon(chooseWeapon: string) {
+    setChooseWeapon(chooseWeapon);
   }
 
   useEffect(() => {
     if (isLoading) {
       getPlayerWeapons({ playerName: player.Name }).then((result) => {
         const cleanResult = result.weapons.filter(
-          (item: any) => item.weapon !== ''
-        )
-        setWeapons(cleanResult)
-        setLoading(false)
-      })
+          (item: WeaponStat) => item.weapon !== ""
+        );
+        setWeapons(cleanResult);
+        setChooseWeapon(cleanResult[0].weapon);
+        setLoading(false);
+      });
     }
-  }, [player.Name, isLoading])
+  }, [player.Name, isLoading]);
 
-  const gearStats = weapons.map((item: any, index: number) => {
-    if (index === choosedWeapon)
+  const gearStats = weapons.map((weapon: WeaponStat) => {
+    if (weapon.weapon === chooseWeapon)
       return (
         <GearStats
-          current={item.weapon_name}
+          current={weapon.weapon_name}
           key={genKey()}
-          avgIp={item.average_item_power}
-          killFame={item.kill_fame}
-          usages={item.usages}
-          kills={item.kills}
-          assists={item.assists}
-          winRate={item.win_rate}
+          weapon={weapon}
         />
-      )
-    return null
-  })
+      );
+    return null;
+  });
 
   return (
     <>
-      <div className="favorite-gear-container">
-        <div className="title">{category}</div>
-        <div className="gear-container">{renderMostUsedGear}</div>
-        {isLoading ? 'Loading' : gearStats}
+      <div className="mt-5"></div>
+      <div className="font-semibold">{title}</div>
+      <div className="flex flex-wrap items-center justify-center gap-1 my-3">
+        {renderMostUsedGear}
       </div>
+      {isLoading ? "Loading" : gearStats}
     </>
-  )
+  );
 }
