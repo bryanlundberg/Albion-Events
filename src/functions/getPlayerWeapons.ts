@@ -1,25 +1,25 @@
-import { API } from '../const/api'
+import { API } from "../const/api";
 
 export default async function getPlayerWeapons({
   playerName,
-  lookbackDays = 9999
+  lookbackDays = 9999,
 }: {
-  playerName: string
-  lookbackDays?: number
+  playerName: string;
+  lookbackDays?: number;
 }) {
   try {
     const request = await fetch(
       `${API.MURDERLEDGER}${playerName}/stats/weapons?lookback_days=${lookbackDays}`,
-      { cache: 'no-store' }
-    )
+      { cache: "no-store" }
+    );
     if (!request.ok) {
       throw new Error(
         "We couldn't locate the player weapons on the server at the moment."
-      )
+      );
     }
-    return await request.json()
+    return await request.json();
   } catch (error) {
-    console.log(error)
-    return []
+    console.log(error);
+    return [];
   }
 }

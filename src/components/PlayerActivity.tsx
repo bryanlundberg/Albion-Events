@@ -26,7 +26,6 @@ export default function PlayerActivity({ player }: { player: Player }) {
         all: filter === "all",
       })
         .then((data: EventResponse) => {
-          console.log(data);
           setEvents(data.events);
         })
         .catch((err) => {
