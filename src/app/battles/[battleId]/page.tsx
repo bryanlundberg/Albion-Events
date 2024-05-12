@@ -47,8 +47,6 @@ export default async function BattlesPage({
         <BattlegroundStars players={players} />
         {/* <BattleGuildStatistics battle={battle} /> */}
         {/* <BattleKillHistory battleEvents={killboard} /> */}
-
-        <PrintDataFront />
       </div>
     </>
   );

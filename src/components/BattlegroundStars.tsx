@@ -41,17 +41,8 @@ export default function BattlegroundStars({
               <BattleStar
                 key={category.prop}
                 category={category.name}
-                playerName={topPlayer ? topPlayer.name : ""}
-                score={
-                  topPlayer
-                    ? category.prop === "killFame" ||
-                      category.prop === "dropFame"
-                      ? topPlayer[category.prop].toLocaleString()
-                      : topPlayer[category.prop]
-                    : 0 // Default value
-                }
-                equipment={topPlayer ? topPlayer.equipment : null}
-                playerId={topPlayer ? topPlayer.id : ""}
+                score={category.prop}
+                player={topPlayer}
               />
             );
           })}

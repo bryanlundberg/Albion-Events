@@ -8,59 +8,57 @@ import { useEffect } from "react";
 
 export default function BattleStar({
   category,
-  playerName,
+  player,
   score,
-  equipment,
-  playerId,
 }: {
-  category: any;
-  playerName: string;
+  category: string;
+  player: BattlePlayer;
   score: any;
-  equipment: any;
-  playerId: string;
 }) {
-  console.log(equipment);
-  // const gearItems = [0, null, 2, 3, 4, null, 7, null, null, null];
+  let gearItems: (keyof Equipment)[];
 
-  const gearItems = Object.keys(equipment);
+  if (player.equipment) {
+    const keys = Object.keys(player.equipment) as (keyof Equipment)[];
+    gearItems = keys;
+  }
 
-  useEffect(() => {
-    console.log(equipment);
-  }, [equipment]);
+  const renderPlayerItems = () => {
+    if (gearItems === undefined || gearItems.length === 0) {
+      return [1, 2, 3, 4, 5].map((item) => (
+        <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
+      ));
+    }
 
-  const renderPlayerItems = () => {};
-  // const renderPlayerItems = () => {
-  //   if (Array.isArray(equipment)) {
-  //     return equipment.map((item, index) => {
-  //       if (gearItems[index] !== null) {
-  //         return (
-  //           <Item
-  //             alt={`${item.Type}`}
-  //             url={
-  //               item.Type !== ""
-  //                 ? `${API.ITEM}${item.Type}.png?count=${1}&quality=${
-  //                     item.Quality
-  //                   }`
-  //                 : `${API.ICONS.EMPTY_SLOT}`
-  //             }
-  //             key={genKey()}
-  //           />
-  //         );
-  //       }
-  //       return null;
-  //     });
-  //   } else {
-  //     return (
-  //       <>
-  //         <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
-  //         <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
-  //         <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
-  //         <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
-  //         <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
-  //       </>
-  //     );
-  //   }
-  // };
+    return gearItems.map((key) => {
+      const item = player.equipment[key];
+
+      if (
+        key === "Mount" ||
+        key === "Food" ||
+        key === "OffHand" ||
+        key === "Bag" ||
+        key === "Potion"
+      ) {
+        // Skips this keys
+        return null;
+      }
+      if (item?.Type) {
+        return (
+          <BattleItemSet
+            key={genKey()}
+            url={`${API.ITEM}${item.Type}.png?count=${1}&quality=${
+              item.Quality
+            }`}
+            alt=""
+            item={key}
+          />
+        );
+      }
+      return (
+        <Item key={genKey()} alt="EMPTY SLOT" url={API.ICONS.EMPTY_SLOT} />
+      );
+    });
+  };
 
   return (
     <div className="border p-5">
@@ -69,9 +67,9 @@ export default function BattleStar({
         <div>ICON</div>
       </div>
       <div className="flex items-center justify-between">
-        <LinkLabel href={`/players/${playerId}`} label={playerName} />
-
-        <div className="player-score">{score}</div>
+        <LinkLabel href={`/players/${player.id}`} label={player.name} />{" "}
+        <span className="text-xs">({player.guildName})</span>
+        <div>{player[score as keyof BattlePlayer] as React.ReactNode}</div>
       </div>
       <div className="flex justify-center flex-wrap gap-2 mt-5 relative">
         {renderPlayerItems()}
