@@ -2,6 +2,7 @@ import Item from "@/components/Item";
 import { API } from "@/const/api";
 import { formatDistanceToNow } from "date-fns";
 import LinkLabel from "./LinkItem";
+import genKey from "@/functions/genKey";
 
 export default function PlayerEvent({
   player,
@@ -11,7 +12,6 @@ export default function PlayerEvent({
   event: KillEvent;
 }) {
   const gearItems = [0, null, 2, 3, 4, null, 7, null, null, null];
-  const resultCombat = event.party_size > 1 ? "Assistance" : "";
   const combatStatus = player.Name === event.killer.name ? "Win" : "Loss";
 
   const categoryItemsKiller = Object.values(event.killer.loadout);
@@ -25,7 +25,7 @@ export default function PlayerEvent({
               ? `${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}`
               : `${API.ICONS.EMPTY_SLOT}`
           }
-          key={`${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}`}
+          key={item.id === "" ? genKey() : `${item.id}`}
           // @ts-ignore
           onError={(e) => {
             e.target.src = `${API.ICONS.EMPTY_SLOT}`;
@@ -46,7 +46,7 @@ export default function PlayerEvent({
               ? `${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}`
               : `${API.ICONS.EMPTY_SLOT}`
           }
-          key={`${API.ITEM}${item.id}.png?count=${1}&quality=${item.quality}`}
+          key={item.id === "" ? genKey() : `${item.id}`}
           // @ts-ignore
           onError={(e) => {
             e.target.src = `${API.ICONS.EMPTY_SLOT}`;

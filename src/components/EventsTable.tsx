@@ -43,9 +43,10 @@ export default async function EventsTable() {
                   />
                 </td>
                 <td className="text-end">
-                  <Link href={`/events/${event.EventId}`}>
-                    {event.TotalVictimKillFame.toLocaleString()}
-                  </Link>
+                  <LinkLabel
+                    href={`/events/${event.EventId}`}
+                    label={event.TotalVictimKillFame.toLocaleString()}
+                  />
                 </td>
               </tr>
             ))}

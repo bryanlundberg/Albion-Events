@@ -8,7 +8,7 @@ export default function LinkLabel({
   href: string;
 }) {
   return (
-    <Link className="text-blue-500 hover:text-blue-700" href={href}>
+    <Link className="text-blue-400 hover:text-blue-900" href={href}>
       {label}
     </Link>
   );
