@@ -17,7 +17,7 @@ export const API = {
     BATTLE: `/images/sword.png`,
     HEAL: `/images/regeneration.png`,
     EMPTY_SLOT: `/images/empty_slot.png`,
-    SKULL: `https://media.discordapp.net/attachments/1137527038366978078/1143698932292141176/kill__date.png`,
+    SKULL: `/images/devilSkull.png`,
   },
   DEFAULT: {
     AVATAR: "/images/DefaultAvatar.png",

@@ -1,16 +1,17 @@
-import updatePlayer from '@/functions/updatePlayer'
-import calMVP from '@/functions/calMVP'
-export default async function createBattlePlayersList({
-  killboard,
-  players
+import updatePlayer from "@/functions/updatePlayer";
+import calMVP from "@/functions/calMVP";
+
+export default function createBattlePlayersList({
+  killBoard,
+  players,
 }: {
-  killboard: any[]
-  players: any[]
-}) {
-  const updatedPlayerList = players.map((player, index) => {
-    updatePlayer(player, killboard)
-    player.mvp = calMVP(player)
-    return player
-  })
-  return updatedPlayerList
+  killBoard: OverallEvent[];
+  players: BattlePlayer[];
+}): BattlePlayer[] {
+  const updatedPlayerList = players.map((player) => {
+    updatePlayer(player, killBoard);
+    player.mvp = calMVP(player);
+    return player;
+  });
+  return updatedPlayerList;
 }

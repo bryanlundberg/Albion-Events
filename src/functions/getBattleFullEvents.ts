@@ -1,19 +1,27 @@
-import { API } from '@/const/api'
+import { API } from "@/const/api";
 
-export default async function getBattleFullEvents({ battle }: { battle: any }) {
-  let killsOffset: number = 0
-  let killboard: any[] = []
+export default async function getBattleFullEvents({
+  battle,
+}: {
+  battle: Battle;
+}): Promise<OverallEvent[]> {
+  let killsOffset: number = 0;
+  let killBoard: OverallEvent[] = [];
+
   while (killsOffset <= battle.totalKills) {
     const request = await fetch(
       `${API.BATTLES.HISTORY}${battle.id}?offset=${killsOffset}&limit=51`,
-      { cache: 'no-store' }
-    )
-    if (!request.ok) throw new Error()
-    const events = await request.json()
+      { cache: "no-store" }
+    );
 
-    killboard = killboard.concat(events)
-    killsOffset += 51
+    if (!request.ok) {
+      throw new Error("Failed to fetch battle events.");
+    }
+    const events = await request.json();
+
+    killBoard = [...killBoard, ...events];
+    killsOffset += 51;
   }
 
-  return killboard
+  return killBoard;
 }
