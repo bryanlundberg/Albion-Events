@@ -39,6 +39,9 @@ export default function PlayerItemSet({
     case "Food":
       positionClass = "absolute bottom-20 right-4 ";
       break;
+    case "OffHand":
+      positionClass = "absolute bottom-40 right-8 mb-1 ";
+      break;
     default:
       break;
   }
