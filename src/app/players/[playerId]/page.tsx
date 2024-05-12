@@ -4,7 +4,6 @@ import PlayerInfo from "@/components/PlayerInfo";
 import Link from "next/link";
 import type { Metadata } from "next";
 import forceSyncPlayerInfo from "@/loaders/forceSyncPlayerInfo";
-import PrintDataFront from "@/components/PrintDataFront";
 
 export const metadata: Metadata = {
   title: "Albion Events | Player Performance",
@@ -28,7 +27,6 @@ export default async function PlayerPage({
           <PlayerInfo player={player} />
           <PlayerActivity player={player} />
         </div>
-        <PrintDataFront />
       </div>
     </>
   );
