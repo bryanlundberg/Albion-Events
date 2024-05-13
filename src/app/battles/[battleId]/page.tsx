@@ -10,6 +10,7 @@ import { getBattle } from "@/loaders/getBattle";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PrintDataFront from "@/components/PrintDataFront";
+import LinkLabel from "@/components/LinkItem";
 
 export const metadata: Metadata = {
   title: "Albion Events | Lethal Event",
@@ -39,14 +40,14 @@ export default async function BattlesPage({
     <>
       <div className="max-w-3xl mx-auto px-3">
         <Header title={"BATTLE REPORT"} />
-        <Link href="/">return index</Link>
+        <LinkLabel label="return index" href="/" />
 
         <p>Battle #{battle.id}</p>
 
         <BattleInformation battle={battle} />
         <BattlegroundStars players={players} />
         <BattleGuildStatistics battle={battle} players={players} />
-        {/* <BattleKillHistory battleEvents={killboard} /> */}
+        <BattleKillHistory battleEvents={killBoard} />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Link from "next/link";
+import LinkLabel from "./LinkItem";
 
 export default function BattleHistoryData({
   killerId,
@@ -8,31 +9,31 @@ export default function BattleHistoryData({
   killerIp,
   victimIp,
   fame,
-  eventId
+  eventId,
 }: {
-  killerId: string
-  victimId: string
-  killer: string
-  victim: string
-  killerIp: string | number
-  victimIp: string | number
-  fame: string | number
-  eventId: number
+  killerId: string;
+  victimId: string;
+  killer: string;
+  victim: string;
+  killerIp: string | number;
+  victimIp: string | number;
+  fame: string | number;
+  eventId: number;
 }) {
   return (
-    <tr>
+    <tr className="text-xs odd:bg-gray-100">
       <td>
-        <Link href={`/players/${killerId}`}>{killer}</Link>
+        <LinkLabel href={`/players/${killerId}`} label={killer} />
       </td>
       <td>
-        <Link href={`/players/${victimId}`}>{victim}</Link>
+        <LinkLabel href={`/players/${victimId}`} label={victim} />
       </td>
-      <td>{killerIp}</td>
-      <td>{victimIp}</td>
+      <td className="hidden sm:inline-block text-center w-32">{killerIp}</td>
+      <td className="hidden sm:inline-block text-center w-32">{victimIp}</td>
       <td>{fame}</td>
       <td>
-        <Link href={`/events/${eventId}`}>Details</Link>
+        <LinkLabel href={`/events/${eventId}`} label={"Open"} />
       </td>
     </tr>
-  )
+  );
 }

@@ -16,7 +16,7 @@ export default function BattleKillBoardData({
   ip: number;
 }) {
   return (
-    <tr className="text-xs">
+    <tr className="text-xs odd:bg-gray-100">
       <td className="text-start">{guild}</td>
       <td className="hidden sm:block">{alliance}</td>
       <td>{members}</td>

@@ -25,7 +25,7 @@ export default function PlayerItemSet({
       positionClass = "absolute bottom-20 left-28 ms-2 mb-2";
       break;
     case "Cape":
-      positionClass = "absolute top-16 right-5 mt-2";
+      positionClass = "absolute top-16 right-8 mt-2";
       break;
     case "Mount":
       positionClass = "absolute bottom-3 left-28 ms-2";

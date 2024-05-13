@@ -5,6 +5,7 @@ import getEvent from "@/loaders/getEvent";
 import SidebarAssistants from "@/components/SidebarAssistants";
 import EventInfo from "@/components/EventInfo";
 import Card from "@/components/Card";
+import LinkLabel from "@/components/LinkItem";
 
 export const metadata: Metadata = {
   title: "Albion Events | Lethal Event",
@@ -20,13 +21,16 @@ export default async function EventPage({
     <>
       <div className="max-w-3xl mx-auto px-3">
         <Header title={"LETHAL EVENT"} subtitle={event.TimeStamp} />
-        <Link href="/">return index</Link>
+        <LinkLabel label="return index" href="/" />
 
         <div className="flex flex-col sm:flex-row gap-3">
           <Card
             title={"Battle Report"}
             subTitle={
-              <Link href={`/battles/${event.BattleId}`}>{event.BattleId}</Link>
+              <LinkLabel
+                href={`/battles/${event.BattleId}`}
+                label={event.BattleId}
+              />
             }
           />
           <Card
