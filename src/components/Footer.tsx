@@ -1,12 +1,15 @@
-import Link from 'next/link'
-import { API } from '@/const/api'
-import '@/stylesheets/Footer.css'
+import Link from "next/link";
+import { API } from "@/const/api";
 
 export default function Footer() {
   return (
     <>
-      <div className="footer-container">
-        <Link href={API.GITHUB} target="_blank">
+      <div className="w-full my-5 ">
+        <Link
+          className="flex gap-3 items-center justify-center"
+          href={API.GITHUB}
+          target="_blank"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -21,5 +24,5 @@ export default function Footer() {
         </Link>
       </div>
     </>
-  )
+  );
 }

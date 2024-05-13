@@ -1,37 +1,36 @@
-'use client'
-import '@/stylesheets/Item.css'
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
 
 export default function Item({
-  alt = 'empty',
+  alt = "empty",
   url,
   extraClassName = null,
-  onChoosedWeapon,
+  onChooseWeapon,
   clickable = false,
-  id
+  id,
 }: {
-  alt?: string
-  url: string
-  extraClassName?: string | null
-  onChoosedWeapon?: any
-  clickable?: boolean
-  id?: any
+  alt?: string;
+  url: string;
+  extraClassName?: string | null;
+  onChooseWeapon?: any;
+  clickable?: boolean;
+  id?: any;
 }) {
   return (
     <>
       <Image
         onClick={(e) => {
-          if (clickable) onChoosedWeapon(id)
+          if (clickable) onChooseWeapon(alt);
         }}
-        className={`item ${clickable === true ? 'cursor' : ''} ${
-          extraClassName === null || undefined ? '' : extraClassName
-        }`}
-        width={64}
-        height={64}
+        className={`max-w-14 ${
+          clickable === true ? "hover:cursor-pointer" : ""
+        } ${extraClassName === null || undefined ? "" : extraClassName}`}
+        width={128}
+        height={128}
         src={url}
         alt={alt}
         id={id}
       />
     </>
-  )
+  );
 }

@@ -1,11 +1,23 @@
-import { API } from '@/const/api'
+import { API } from "@/const/api";
 
-export default async function getPlayer({ playerId }: { playerId: string }) {
-  const request = await fetch(`${API.STATS}${playerId}`, { cache: 'no-store' })
-  if (!request.ok) {
-    throw new Error(
-      "We couldn't locate the player info on the server at the moment."
-    )
+export default async function getPlayer({
+  playerId,
+}: {
+  playerId: string;
+}): Promise<Player> {
+  try {
+    const response = await fetch(`${API.STATS}${playerId}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(`Failed to fetch player info: ${errorMessage}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Error fetching player info for ID ${playerId}:`, error);
+    throw error;
   }
-  return request.json()
 }

@@ -1,47 +1,51 @@
-import BattleStar from '@/components/BattleStar'
-import '@/stylesheets/BattlegroundStars.css'
-import genKey from '@/functions/genKey'
+import BattleStar from "@/components/BattleStar";
 
-export default async function BattlegroundStars({ players }: { players: any }) {
-  const categories = [
-    { name: 'MVP', prop: 'mvp' },
-    { name: 'Highest Item Power', prop: 'averageItemPower' },
-    { name: 'Most Fame', prop: 'killFame' },
-    { name: 'Most Kills', prop: 'kills' },
-    { name: 'Most Assists', prop: 'assistDone' },
-    { name: 'Most Damage', prop: 'damageDone' },
-    { name: 'Most Healing', prop: 'supportHealingDone' },
-    { name: 'Most Drop Fame', prop: 'dropFame' }
-  ]
-  const stars = categories.map((category) => {
-    const sortedPlayers = [...players].sort(
-      (a, b) => b[category.prop] - a[category.prop]
-    )
-    const topPlayer = Array.isArray(sortedPlayers) ? sortedPlayers[0] : null
-    return (
-      <BattleStar
-        playerId={topPlayer ? topPlayer.id : ''}
-        key={genKey()}
-        category={category.name}
-        playerName={topPlayer ? topPlayer.name : ''}
-        score={
-          topPlayer
-            ? category.prop === 'killFame' || category.prop === 'dropFame'
-              ? topPlayer[category.prop].toLocaleString()
-              : topPlayer[category.prop].toFixed(0)
-            : 0
-        }
-        equipment={
-          topPlayer && topPlayer.equipment !== null
-            ? Object.values(topPlayer.equipment)
-            : null
-        }
-      />
-    )
-  })
+type Category = {
+  name: string;
+  prop: keyof BattlePlayerExtended;
+};
+
+export default function BattlegroundStars({
+  players,
+}: {
+  players: BattlePlayerExtended[];
+}) {
+  const categories: Category[] = [
+    { name: "MVP", prop: "mvp" },
+    { name: "Highest Item Power", prop: "averageItemPower" },
+    { name: "Most Fame", prop: "killFame" },
+    { name: "Most Kills", prop: "kills" },
+    { name: "Most Assists", prop: "assistDone" },
+    { name: "Most Damage", prop: "damageDone" },
+    { name: "Most Healing", prop: "supportHealingDone" },
+    { name: "Most Drop Fame", prop: "dropFame" },
+  ];
+
   return (
-    <div className="battleground-stars-container">
-      {players.length === 0 || players === null ? null : stars}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-10">
+      {players.length === 0
+        ? null
+        : categories.map((category) => {
+            const sortedPlayers = players.slice().sort((a, b) => {
+              const propA = a[category.prop];
+              const propB = b[category.prop];
+
+              if (typeof propA === "number" && typeof propB === "number") {
+                return propB - propA;
+              }
+
+              return 0;
+            });
+            const topPlayer = sortedPlayers[0];
+            return (
+              <BattleStar
+                key={category.prop}
+                category={category.name}
+                score={category.prop}
+                player={topPlayer}
+              />
+            );
+          })}
     </div>
-  )
+  );
 }

@@ -1,62 +1,53 @@
-import BattleKillboardData from '@/components/BattleKillboardData'
-import '@/stylesheets/BattleGuildStatistics.css'
-import genKey from '@/functions/genKey'
-import calAvgIp from '@/functions/calAvgIp'
-import getBattleFullEvents from '@/functions/getBattleFullEvents'
-import { setDefaultPlayers } from '@/functions/updatePlayer'
-import createBattlePlayersList from '@/functions/createBattlePlayersList'
+import calAvgIp from "@/functions/calAvgIp";
+import BattleKillBoard from "./BattleKillBoard";
 
 export default async function BattleGuildStatistics({
-  battle
+  battle,
+  players,
 }: {
-  battle: any
+  battle: Battle;
+  players: BattlePlayerExtended[];
 }) {
-  const killboard = await getBattleFullEvents({ battle: battle })
-  const defaultPlayerList = setDefaultPlayers({ battle: battle })
-  const players = await createBattlePlayersList({
-    killboard: killboard,
-    players: defaultPlayerList
-  })
-
-  const renderGuilds = Object.values(battle.guilds).map((guild: any) => {
-    const playerSameGuildwithIp = players.filter(
-      (player) => player.guildId === guild.id && player.averageItemPower !== 0
-    )
-    const playersSameGuild = players.filter(
-      (player) => player.guildId === guild.id
-    )
-    return (
-      <BattleKillboardData
-        key={genKey()}
-        guild={guild.name}
-        alliance={guild.alliance}
-        members={playersSameGuild.length}
-        kills={guild.kills}
-        deaths={guild.deaths}
-        fame={guild.killFame.toLocaleString()}
-        ip={calAvgIp(playerSameGuildwithIp, 'averageItemPower')}
-      />
-    )
-  })
+  const renderGuilds = Object.values(battle.guilds).map(
+    (guild: BattleGuild) => {
+      const playerSameGuildWithIp = players.filter(
+        (player) => player.guildId === guild.id && player.averageItemPower !== 0
+      );
+      const playersSameGuild = players.filter(
+        (player) => player.guildId === guild.id
+      );
+      return (
+        <BattleKillBoard
+          key={guild.id}
+          guild={guild.name}
+          alliance={guild.alliance}
+          members={playersSameGuild.length}
+          kills={guild.kills}
+          deaths={guild.deaths}
+          fame={guild.killFame}
+          ip={calAvgIp(playerSameGuildWithIp, "averageItemPower")}
+        />
+      );
+    }
+  );
 
   return (
-    <div className="battle-killboard-container">
-      <div className="filter"></div>
-      <div>GUILD STATISTICS</div>
-      <table>
-        <thead>
+    <>
+      <p className="font-semibold mb-5">GUILD STATISTICS</p>
+      <table className="w-full text-center">
+        <thead className="text-sm">
           <tr>
-            <th>Guild</th>
-            <th>Alliance</th>
+            <th className="text-start">Guild</th>
+            <th className="hidden sm:block">Alliance</th>
             <th>Members</th>
             <th>Kills</th>
             <th>Deaths</th>
-            <th>Fame</th>
-            <th>AVG IP</th>
+            <th className="hidden sm:block">Fame</th>
+            <th>Avg IP</th>
           </tr>
         </thead>
         <tbody>{renderGuilds}</tbody>
       </table>
-    </div>
-  )
+    </>
+  );
 }

@@ -1,55 +1,51 @@
-import BattleCard from '@/components/BattleCard'
-import '@/stylesheets/BattleInformation.css'
-import { API } from '@/const/api'
-import { formatDistance } from 'date-fns'
-import { getBattle } from '@/loaders/getBattle'
-import Image from 'next/image'
+import BattleCard from "@/components/BattleCard";
+import { API } from "@/const/api";
+import { formatDistance } from "date-fns";
+import Image from "next/image";
 
 export default async function BattleInformation({
-  battleId
+  battle,
 }: {
-  battleId: string
+  battle: Battle;
 }) {
-  const { battle } = await getBattle({ battleId: battleId })
+  const playersId = Object.keys(battle.players);
 
   return (
     <>
-      <div className="battle-information">
-        <div className="battle-id">Battle #{battle.id}</div>
-        <div className="battle-resumen-container">
-          <BattleCard>
-            <div>Total Players: {battle.players.length}</div>
-            <div>Total Kills: {battle.totalKills}</div>
-          </BattleCard>
-          <div className="image-section">
-            <Image
-              src={API.ICONS.SKULL}
-              alt="Representative skull battle"
-              width={200}
-              height={200}
-            />
-            <div className="title fs-xl">BATTLE</div>
-            <div>
-              {battle.startTime.slice(0, 10) +
-                ' - ' +
-                battle.startTime.slice(11, 19)}
-            </div>
+      <div className="flex items-center justify-center border text-center py-5 gap-10">
+        <BattleCard>
+          <div>Total Players: {playersId.length}</div>
+          <div>Total Kills: {battle.totalKills}</div>
+        </BattleCard>
+        <div className="flex flex-col justify-center items-center gap-3">
+          <Image
+            src={API.ICONS.SKULL}
+            alt="Representative skull battle"
+            width={200}
+            height={200}
+            className="max-w-24"
+          />
+          <div className="text-lg">SLAUGHTER</div>
+          <div className="text-xs">
+            {battle.startTime.slice(0, 10) +
+              " " +
+              battle.startTime.slice(11, 19)}
           </div>
-          <BattleCard>
-            <div>
-              Duration:{' '}
-              {formatDistance(
-                new Date(battle.startTime),
-                new Date(battle.endTime),
-                {
-                  includeSeconds: true
-                }
-              )}
-            </div>
-            <div>Fame: {battle.totalFame.toLocaleString()}</div>
-          </BattleCard>
         </div>
+        <BattleCard>
+          <div>
+            Duration:{" "}
+            {formatDistance(
+              new Date(battle.startTime),
+              new Date(battle.endTime),
+              {
+                includeSeconds: true,
+              }
+            )}
+          </div>
+          <div>Fame: {battle.totalFame.toLocaleString()}</div>
+        </BattleCard>
       </div>
     </>
-  )
+  );
 }

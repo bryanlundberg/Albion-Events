@@ -1,52 +1,30 @@
-import genKey from '@/functions/genKey'
-import DataStats from '@/components/DataStats'
+import DataStats from "@/components/DataStats";
 
 export default function GearStats({
-  avgIp,
-  killFame,
-  usages,
-  kills,
-  assists,
-  winRate,
-  current
+  weapon,
+  current,
 }: {
-  avgIp: number
-  killFame: number | string
-  usages: number | string
-  kills: number | string
-  assists: number | string
-  winRate: number
-  current: number | string
+  weapon: WeaponStat;
+  current: number | string;
 }) {
   return (
     <>
-      <DataStats key={genKey()} title={'Current:'} stat={current} />
+      <DataStats title={"Current:"} stat={current} />
+      <DataStats title={"Usages:"} stat={weapon.usages.toLocaleString()} />
       <DataStats
-        key={genKey()}
-        title={'Usages:'}
-        stat={usages.toLocaleString()}
-      />
-      <DataStats key={genKey()} title={'Average IP:'} stat={avgIp.toFixed(0)} />
-      <DataStats
-        key={genKey()}
-        title={'Kill Fame:'}
-        stat={killFame.toLocaleString()}
+        title={"Average IP:"}
+        stat={weapon.average_item_power.toFixed(0)}
       />
       <DataStats
-        key={genKey()}
-        title={'Kills:'}
-        stat={kills.toLocaleString()}
+        title={"Kill Fame:"}
+        stat={weapon.kill_fame.toLocaleString()}
       />
+      <DataStats title={"Kills:"} stat={weapon.kills.toLocaleString()} />
+      <DataStats title={"Assists:"} stat={weapon.assists.toLocaleString()} />
       <DataStats
-        key={genKey()}
-        title={'Assists:'}
-        stat={assists.toLocaleString()}
-      />
-      <DataStats
-        key={genKey()}
-        title={'Win rate:'}
-        stat={`${(winRate * 100).toFixed(2)}%`}
+        title={"Win rate:"}
+        stat={`${(weapon.win_rate * 100).toFixed(2)}%`}
       />
     </>
-  )
+  );
 }

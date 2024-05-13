@@ -1,33 +1,33 @@
-import Header from '@/components/Header'
-import PlayerActivity from '@/components/PlayerActivity'
-import PlayerInfo from '@/components/PlayerInfo'
-import genKey from '@/functions/genKey'
-import Link from 'next/link'
-import type { Metadata } from 'next'
-import getPlayer from '@/loaders/getPlayer'
-import getAvatarAndFrame from '@/loaders/getAvatarAndFrame'
-import '@/stylesheets/Player.css'
+import Header from "@/components/Header";
+import PlayerActivity from "@/components/PlayerActivity";
+import PlayerInfo from "@/components/PlayerInfo";
+import type { Metadata } from "next";
+import forceSyncPlayerInfo from "@/loaders/forceSyncPlayerInfo";
+import LinkLabel from "@/components/LinkItem";
 
 export const metadata: Metadata = {
-  title: 'Albion Events | Player Performance'
-}
+  title: "Albion Events | Player Performance",
+};
 
 export default async function PlayerPage({
-  params
+  params,
 }: {
-  params: { playerId: string }
+  params: { playerId: string };
 }) {
-  const player = await getPlayer({ playerId: params.playerId })
-  const newPlayerData = await getAvatarAndFrame({ player: player })
+  // We use this variant function because, normal don't include
+  // updated frames/avatars
+  const player = await forceSyncPlayerInfo({ playerId: params.playerId });
 
   return (
     <>
-      <Header title={'Performance Overview'} />
-      <Link href="/">return index</Link>
-      <div className="player-view-layout">
-        <PlayerInfo key={genKey()} player={newPlayerData} />
-        <PlayerActivity key={genKey()} player={newPlayerData} />
+      <div className="max-w-3xl mx-auto px-3">
+        <Header title={"Performance Overview"} />
+        <LinkLabel label="return index" href="/" />
+        <div className="flex flex-col sm:flex-row gap-3">
+          <PlayerInfo player={player} />
+          <PlayerActivity player={player} />
+        </div>
       </div>
     </>
-  )
+  );
 }

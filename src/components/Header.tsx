@@ -1,16 +1,19 @@
-import '@/stylesheets/Header.css'
+import Search from "./Search";
 
 export default function Header({
   title,
-  subtitle
+  subtitle,
 }: {
-  title: string
-  subtitle?: string
+  title: string;
+  subtitle?: string;
 }) {
   return (
-    <div className="header-container">
-      <h1 className="align-text-center">{title}</h1>
-      <div className="align-text-center">{subtitle}</div>
-    </div>
-  )
+    <>
+      <div className="text-center my-10 flex flex-col gap-2">
+        <h1 className="text-4xl font-semibold">{title}</h1>
+        <div>{subtitle}</div>
+        <Search />
+      </div>
+    </>
+  );
 }
