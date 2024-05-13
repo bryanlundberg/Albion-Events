@@ -1,3 +1,4 @@
+"use server";
 import { API } from "@/const/api";
 
 export default async function getEvent({

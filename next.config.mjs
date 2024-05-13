@@ -1,11 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "render.albiononline.com",
-      "media.discordapp.net",
-      "albiononline.ams3.cdn.digitaloceanspaces.com",
-      "assets.albiononline.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "render.albiononline.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "media.discordapp.net",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "albiononline.ams3.cdn.digitaloceanspaces.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.albiononline.com",
+        port: "",
+      },
     ],
   },
 };

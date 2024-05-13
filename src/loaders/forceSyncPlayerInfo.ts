@@ -1,3 +1,4 @@
+"use server";
 import { API } from "@/const/api";
 import getPlayerEvents from "@/functions/getPlayerEvents";
 import getPlayer from "./getPlayer";
@@ -65,6 +66,6 @@ export default async function forceSyncPlayerInfo({
     return player;
   } catch (error) {
     console.error("Error fetching avatar and frame:", error);
-    throw new Error("Failed to fetch avatar and frame.");
+    throw error;
   }
 }
