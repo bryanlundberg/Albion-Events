@@ -1,5 +1,4 @@
 "use client";
-import "@/stylesheets/Input.css";
 import { useEffect, useState } from "react";
 import getSearch from "@/functions/getSearch";
 import SearchResults from "@/components/SearchResults";

@@ -7,9 +7,7 @@ import createBattlePlayersList from "@/functions/createBattlePlayersList";
 import getBattleFullEvents from "@/functions/getBattleFullEvents";
 import { setDefaultPlayers } from "@/functions/updatePlayer";
 import { getBattle } from "@/loaders/getBattle";
-import Link from "next/link";
 import type { Metadata } from "next";
-import PrintDataFront from "@/components/PrintDataFront";
 import LinkLabel from "@/components/LinkItem";
 
 export const metadata: Metadata = {

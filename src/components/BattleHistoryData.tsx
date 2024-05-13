@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LinkLabel from "./LinkItem";
 
 export default function BattleHistoryData({

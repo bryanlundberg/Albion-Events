@@ -1,10 +1,8 @@
-"use client";
 import Item from "@/components/Item";
 import { API } from "@/const/api";
 import genKey from "@/functions/genKey";
 import LinkLabel from "./LinkItem";
 import BattleItemSet from "./BattleItemSet";
-import { useEffect } from "react";
 
 export default function BattleStar({
   category,
@@ -12,7 +10,7 @@ export default function BattleStar({
   score,
 }: {
   category: string;
-  player: BattlePlayer;
+  player: BattlePlayerExtended;
   score: any;
 }) {
   let gearItems: (keyof Equipment)[];
@@ -69,7 +67,9 @@ export default function BattleStar({
       <div className="flex items-center justify-between">
         <LinkLabel href={`/players/${player.id}`} label={player.name} />{" "}
         <span className="text-xs">({player.guildName})</span>
-        <div>{player[score as keyof BattlePlayer] as React.ReactNode}</div>
+        <div>
+          {player[score as keyof BattlePlayerExtended] as React.ReactNode}
+        </div>
       </div>
       <div className="flex justify-center flex-wrap gap-2 mt-5 relative">
         {renderPlayerItems()}

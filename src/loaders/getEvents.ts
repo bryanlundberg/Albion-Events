@@ -1,5 +1,4 @@
 import { API } from "@/const/api";
-import { OverallEvent } from "@/interfaces/OverallEvent";
 
 export default async function getEvents(): Promise<OverallEvent[]> {
   try {

@@ -38,7 +38,9 @@ interface BattlePlayer {
   killFame: number;
   kills: number;
   name: string;
-  // Additions
+}
+
+interface BattlePlayerExtended extends BattlePlayer {
   damageDone: number;
   supportHealingDone: number;
   assistDone: number;

@@ -29,7 +29,7 @@ export default async function EventPage({
             subTitle={
               <LinkLabel
                 href={`/battles/${event.BattleId}`}
-                label={event.BattleId}
+                label={event.BattleId.toString()}
               />
             }
           />

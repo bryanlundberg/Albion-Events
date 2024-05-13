@@ -2,13 +2,13 @@ import BattleStar from "@/components/BattleStar";
 
 type Category = {
   name: string;
-  prop: keyof BattlePlayer;
+  prop: keyof BattlePlayerExtended;
 };
 
 export default function BattlegroundStars({
   players,
 }: {
-  players: BattlePlayer[];
+  players: BattlePlayerExtended[];
 }) {
   const categories: Category[] = [
     { name: "MVP", prop: "mvp" },

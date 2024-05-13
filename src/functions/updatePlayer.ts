@@ -1,7 +1,7 @@
 export default function updatePlayer(
-  player: BattlePlayer,
+  player: BattlePlayerExtended,
   events: OverallEvent[]
-): BattlePlayer {
+): BattlePlayerExtended {
   // Initialize dropFame to 0
   if (player.dropFame === undefined) {
     player.dropFame = 0;
@@ -36,7 +36,7 @@ export function setDefaultPlayers({
   battle,
 }: {
   battle: Battle;
-}): BattlePlayer[] {
+}): BattlePlayerExtended[] {
   const playersList = Object.values(battle.players).map(
     (player: BattlePlayer) => {
       return {
@@ -46,7 +46,18 @@ export function setDefaultPlayers({
         assistDone: 0,
         averageItemPower: 0,
         dropFame: 0,
-        equipment: undefined,
+        equipment: {
+          Armor: {},
+          Bag: {},
+          Cape: {},
+          Food: {},
+          Head: {},
+          MainHand: {},
+          Mount: {},
+          OffHand: {},
+          Potion: {},
+          Shoes: {},
+        },
         mvp: 0,
       };
     }

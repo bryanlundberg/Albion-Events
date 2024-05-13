@@ -6,8 +6,8 @@ export default function createBattlePlayersList({
   players,
 }: {
   killBoard: OverallEvent[];
-  players: BattlePlayer[];
-}): BattlePlayer[] {
+  players: BattlePlayerExtended[];
+}): BattlePlayerExtended[] {
   const updatedPlayerList = players.map((player) => {
     updatePlayer(player, killBoard);
     player.mvp = calMVP(player);

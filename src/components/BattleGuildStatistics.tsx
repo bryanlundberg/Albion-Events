@@ -6,7 +6,7 @@ export default async function BattleGuildStatistics({
   players,
 }: {
   battle: Battle;
-  players: BattlePlayer[];
+  players: BattlePlayerExtended[];
 }) {
   const renderGuilds = Object.values(battle.guilds).map(
     (guild: BattleGuild) => {
