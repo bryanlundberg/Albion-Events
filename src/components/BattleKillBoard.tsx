@@ -1,4 +1,4 @@
-export default function BattleKillBoardData({
+export default function BattleKillBoard({
   guild,
   alliance,
   members,

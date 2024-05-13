@@ -1,5 +1,5 @@
 import calAvgIp from "@/functions/calAvgIp";
-import BattleKillBoardData from "./BattleKillBoardData";
+import BattleKillBoard from "./BattleKillBoard";
 
 export default async function BattleGuildStatistics({
   battle,
@@ -17,7 +17,7 @@ export default async function BattleGuildStatistics({
         (player) => player.guildId === guild.id
       );
       return (
-        <BattleKillBoardData
+        <BattleKillBoard
           key={guild.id}
           guild={guild.name}
           alliance={guild.alliance}
