@@ -22,7 +22,9 @@ export default async function forceSyncPlayerInfo({
     // Fetch details of the last event
     const requestLastEventDetail = await fetch(
       `${API.EVENT}${playerEvents.events[0].id}`,
-      { cache: "no-store" }
+      {
+        next: { revalidate: 10 },
+      }
     );
 
     if (!requestLastEventDetail.ok) {

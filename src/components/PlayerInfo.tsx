@@ -16,7 +16,7 @@ export default function PlayerInfo({ player }: { player: Player }) {
           playerName={player.Name}
           type="frame"
         />
-        <p className="font-semibold">{player.Name}</p>
+        <p className="font-semibold text-center">{player.Name}</p>
       </div>
       <PlayerStats player={player} />
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import getPlayerWeapons from "@/functions/getPlayerWeapons";
 import GearStats from "@/components/GearStats";
 import genKey from "@/functions/genKey";
+import Loading from "./Loading";
 
 export default function PlayerFavGear({
   title,
@@ -72,7 +73,7 @@ export default function PlayerFavGear({
       <div className="flex flex-wrap items-center justify-center gap-1 my-3">
         {renderMostUsedGear}
       </div>
-      {isLoading ? "Loading" : gearStats}
+      {isLoading ? <Loading /> : gearStats}
     </>
   );
 }

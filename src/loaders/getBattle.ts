@@ -9,7 +9,7 @@ export async function getBattle({
   try {
     // Fetch battle data from the API
     const request = await fetch(`${API.BATTLES.OVERALL}${battleId}`, {
-      cache: "no-store",
+      next: { revalidate: 10 },
     });
 
     // Check if the request is successful

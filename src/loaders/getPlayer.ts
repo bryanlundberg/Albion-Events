@@ -8,7 +8,7 @@ export default async function getPlayer({
 }): Promise<Player> {
   try {
     const response = await fetch(`${API.STATS}${playerId}`, {
-      cache: "no-store",
+      next: { revalidate: 10 },
     });
 
     if (!response.ok) {

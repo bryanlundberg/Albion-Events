@@ -3,6 +3,7 @@ import FilterActivity from "@/components/FilterActivity";
 import PlayerEvent from "@/components/PlayerEvent";
 import { useEffect, useState } from "react";
 import getPlayerEvents from "@/functions/getPlayerEvents";
+import Loading from "./Loading";
 
 export default function PlayerActivity({ player }: { player: Player }) {
   const [events, setEvents] = useState<KillEvent[]>([]);
@@ -13,8 +14,6 @@ export default function PlayerActivity({ player }: { player: Player }) {
     setFilter(option);
     setLoading(true);
   }
-
-  console.log(events);
 
   useEffect(() => {
     if (isLoading) {
@@ -45,17 +44,19 @@ export default function PlayerActivity({ player }: { player: Player }) {
         filter={filter}
       />
       <div className="flex flex-col mt-3 gap-3">
-        {isLoading
-          ? "Loading"
-          : events.map((event: KillEvent) => {
-              return (
-                <PlayerEvent
-                  key={player.Id + "-" + event.id + "-" + event.battle_id}
-                  player={player}
-                  event={event}
-                />
-              );
-            })}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          events.map((event: KillEvent) => {
+            return (
+              <PlayerEvent
+                key={player.Id + "-" + event.id + "-" + event.battle_id}
+                player={player}
+                event={event}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );

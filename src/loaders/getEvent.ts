@@ -8,7 +8,7 @@ export default async function getEvent({
 }): Promise<OverallEvent> {
   try {
     const response = await fetch(`${API.EVENT}${eventId}`, {
-      cache: "no-store",
+      next: { revalidate: 10 },
     });
 
     if (!response.ok) {

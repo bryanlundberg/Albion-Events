@@ -3,7 +3,9 @@ import { API } from "@/const/api";
 
 export default async function getEvents(): Promise<OverallEvent[]> {
   try {
-    const response = await fetch(API.LASTEVENTS, { cache: "no-store" });
+    const response = await fetch(API.LASTEVENTS, {
+      next: { revalidate: 10 },
+    });
 
     if (!response.ok) {
       const errorMessage = await response.text();

@@ -1,5 +1,15 @@
-import '@/stylesheets/Loading.css'
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Loading() {
-  return <span className="loader"></span>
+  return (
+    <div className="mt-10 w-full flex items-center justify-center">
+      <RotatingLines
+        visible={true}
+        width="32"
+        strokeWidth="5"
+        animationDuration="0.75"
+        ariaLabel="rotating-lines-loading"
+      />
+    </div>
+  );
 }
