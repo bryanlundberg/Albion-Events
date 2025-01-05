@@ -1,6 +1,5 @@
 import getEvents from "@/loaders/getEvents";
 import LinkLabel from "./LinkItem";
-import Link from "next/link";
 
 export default async function EventsTable() {
   const lastEvents = await getEvents();

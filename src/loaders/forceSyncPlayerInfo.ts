@@ -21,10 +21,7 @@ export default async function forceSyncPlayerInfo({
 
     // Fetch details of the last event
     const requestLastEventDetail = await fetch(
-      `${API.EVENT}${playerEvents.events[0].id}`,
-      {
-        next: { revalidate: 10 },
-      }
+      `${API.EVENT}${playerEvents.events[0].id}`
     );
 
     if (!requestLastEventDetail.ok) {

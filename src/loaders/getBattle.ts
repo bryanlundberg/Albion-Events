@@ -8,9 +8,7 @@ export async function getBattle({
 }): Promise<Battle> {
   try {
     // Fetch battle data from the API
-    const request = await fetch(`${API.BATTLES.OVERALL}${battleId}`, {
-      next: { revalidate: 10 },
-    });
+    const request = await fetch(`${API.BATTLES.OVERALL}${battleId}`);
 
     // Check if the request is successful
     if (!request.ok) {

@@ -7,9 +7,7 @@ export default async function getPlayer({
   playerId: string;
 }): Promise<Player> {
   try {
-    const response = await fetch(`${API.STATS}${playerId}`, {
-      next: { revalidate: 10 },
-    });
+    const response = await fetch(`${API.STATS}${playerId}`);
 
     if (!response.ok) {
       const errorMessage = await response.text();

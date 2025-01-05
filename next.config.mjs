@@ -2,6 +2,7 @@
 const nextConfig = {
   crossOrigin: "anonymous",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

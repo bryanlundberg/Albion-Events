@@ -7,9 +7,7 @@ export default async function getEvent({
   eventId: number | string;
 }): Promise<OverallEvent> {
   try {
-    const response = await fetch(`${API.EVENT}${eventId}`, {
-      next: { revalidate: 10 },
-    });
+    const response = await fetch(`${API.EVENT}${eventId}`);
 
     if (!response.ok) {
       const errorMessage = await response.text();
